@@ -1,0 +1,13 @@
+{
+  "audited_rejected_price_count": 16,
+  "group_counts": {
+    "exact_bound_guard": 5,
+    "interior_near_bound_guard": 10,
+    "strict_bound_violation": 1
+  },
+  "guard_rejection_count": 15,
+  "strict_bound_violation_count": 1,
+  "near_bound_tolerance": 1e-10,
+  "classification_order": "test strict violation first; then exact-bound guard; then strictly-interior near-bound guard",
+  "scope": "replay of the generated synthetic R10 failures; not market data"
+}
