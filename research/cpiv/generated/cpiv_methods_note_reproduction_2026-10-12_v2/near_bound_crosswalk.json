@@ -1,0 +1,40 @@
+{
+  "status": "case_level_cross_tab_complete",
+  "case_count": 16,
+  "binary64_group_counts": {
+    "interior_near_bound_guard": 10,
+    "exact_bound_guard": 5,
+    "strict_bound_violation": 1
+  },
+  "decimal180_stored_price_relation_counts": {
+    "inside": 12,
+    "on_boundary": 2,
+    "violation": 2
+  },
+  "decimal180_roundtrip_text_relation_counts": {
+    "inside": 12,
+    "on_boundary": 2,
+    "violation": 2
+  },
+  "cross_tab_binary64_rows_decimal180_columns": {
+    "interior_near_bound_guard": {
+      "inside": 10,
+      "on_boundary": 0,
+      "violation": 0
+    },
+    "exact_bound_guard": {
+      "inside": 2,
+      "on_boundary": 2,
+      "violation": 1
+    },
+    "strict_bound_violation": {
+      "inside": 0,
+      "on_boundary": 0,
+      "violation": 1
+    }
+  },
+  "decimal_comparison_definition": "exact binary64 numerical value (Decimal.from_float) compared with reconstructed 180-digit bounds; exact Decimal-generated price classification is not substituted",
+  "roundtrip_text_comparison_definition": "the shortest round-trip decimal serialization of the binary64 price compared with the same 180-digit bounds; reported separately because it can differ at a boundary",
+  "join_definition": "option type, S/K, days, target IV, and stored binary64 price; duplicate or unmatched case keys are rejected",
+  "scope": "generated synthetic near-bound cases only; not a market failure rate"
+}

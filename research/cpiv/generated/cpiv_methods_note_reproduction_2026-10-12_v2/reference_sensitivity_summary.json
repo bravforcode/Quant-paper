@@ -1,0 +1,135 @@
+{
+  "schema_version": "cpiv.reference-sensitivity/1.0",
+  "status": "synthetic_reference_sensitivity_only",
+  "market_data_used": false,
+  "trading_or_alpha_claim": false,
+  "grid": {
+    "cell_n": 720,
+    "baseline_guard_passing_n": 624,
+    "baseline_guard_failing_n": 96,
+    "baseline_absolute_vega_guard_usd_per_decimal_iv": 1e-06,
+    "weighting": "each resolved grid cell receives equal weight"
+  },
+  "d_cubic_diagnostic": {
+    "error_by_absolute_target_spread": [
+      {
+        "n": 208,
+        "median_abs_error_pp": 8.38753657575464e-06,
+        "p95_nearest_rank_abs_error_pp": 0.006630221576545581,
+        "max_abs_error_pp": 0.01815965904365524,
+        "absolute_target_spread_pp": 0.5
+      },
+      {
+        "n": 208,
+        "median_abs_error_pp": 6.711867656933324e-05,
+        "p95_nearest_rank_abs_error_pp": 0.05307022352104718,
+        "max_abs_error_pp": 0.14712387667326943,
+        "absolute_target_spread_pp": 1.0,
+        "median_growth_vs_previous_spread": 8.00219181915096,
+        "p95_growth_vs_previous_spread": 8.004291094702351
+      },
+      {
+        "n": 208,
+        "median_abs_error_pp": 0.0005375381106833554,
+        "p95_nearest_rank_abs_error_pp": 0.42546438952411236,
+        "max_abs_error_pp": 1.2355196428895123,
+        "absolute_target_spread_pp": 2.0,
+        "median_growth_vs_previous_spread": 8.008771003225629,
+        "p95_growth_vs_previous_spread": 8.017007679558331
+      }
+    ],
+    "per_configuration_log_log_slope": {
+      "n": 104,
+      "median": 3.0002977813915535,
+      "minimum": 2.873305960512433,
+      "maximum": 3.04411851084959,
+      "error_floor_pp": 1e-09,
+      "configuration_keys": [
+        "spot_strike_ratio",
+        "days_to_expiry",
+        "reference_iv_decimal",
+        "rate",
+        "effective_yield"
+      ],
+      "fit_points": [
+        0.5,
+        1.0,
+        2.0
+      ]
+    }
+  },
+  "off_centre_reference": {
+    "definition": "sigma_ref = symmetric midpoint +/- offset; one evaluation at zero, both signed offsets otherwise",
+    "offset_unit": "volatility percentage points",
+    "method": "100 times the integrated-vega residual divided by project BSM vega at sigma_ref, compared with the generated target CPIV",
+    "nonpositive_reference_policy": "skip; a BSM reference volatility must be positive",
+    "denominator": "only cells passing the baseline midpoint absolute-vega guard",
+    "summaries": [
+      {
+        "n": 624,
+        "median_abs_error_pp": 7.858335325755528e-05,
+        "p95_nearest_rank_abs_error_pp": 0.0872030105887851,
+        "max_abs_error_pp": 1.2355196428895123,
+        "absolute_reference_offset_vol_points": 0.0,
+        "signed_offsets_evaluated_vol_points": [
+          0.0
+        ],
+        "skipped_nonpositive_reference_count": 0,
+        "baseline_guard_passing_cell_denominator": 624
+      },
+      {
+        "n": 1248,
+        "median_abs_error_pp": 0.04238115182143384,
+        "p95_nearest_rank_abs_error_pp": 1.4766873648322805,
+        "max_abs_error_pp": 32.554749254168364,
+        "absolute_reference_offset_vol_points": 1.0,
+        "signed_offsets_evaluated_vol_points": [
+          -1.0,
+          1.0
+        ],
+        "skipped_nonpositive_reference_count": 0,
+        "baseline_guard_passing_cell_denominator": 624
+      },
+      {
+        "n": 1248,
+        "median_abs_error_pp": 0.08279868074162394,
+        "p95_nearest_rank_abs_error_pp": 5.183761197302875,
+        "max_abs_error_pp": 945.2828466928157,
+        "absolute_reference_offset_vol_points": 2.0,
+        "signed_offsets_evaluated_vol_points": [
+          -2.0,
+          2.0
+        ],
+        "skipped_nonpositive_reference_count": 0,
+        "baseline_guard_passing_cell_denominator": 624
+      },
+      {
+        "n": 1248,
+        "median_abs_error_pp": 0.22238139823023212,
+        "p95_nearest_rank_abs_error_pp": 857.846918175739,
+        "max_abs_error_pp": 46233562692716.734,
+        "absolute_reference_offset_vol_points": 5.0,
+        "signed_offsets_evaluated_vol_points": [
+          -5.0,
+          5.0
+        ],
+        "skipped_nonpositive_reference_count": 0,
+        "baseline_guard_passing_cell_denominator": 624
+      },
+      {
+        "n": 1080,
+        "median_abs_error_pp": 0.30107398833142784,
+        "p95_nearest_rank_abs_error_pp": 1185.6133248994977,
+        "max_abs_error_pp": 15828239740.351587,
+        "absolute_reference_offset_vol_points": 10.0,
+        "signed_offsets_evaluated_vol_points": [
+          -10.0,
+          10.0
+        ],
+        "skipped_nonpositive_reference_count": 168,
+        "baseline_guard_passing_cell_denominator": 624
+      }
+    ]
+  },
+  "input_grid_sha256": "4b778f039d7367f238fd5d711a19926c08be46b1c25380e09111d0243c835b5d"
+}

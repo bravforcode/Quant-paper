@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" role="img" aria-labelledby="title description">
+<title id="title">Synthetic call-put implied-volatility spreads</title>
+<desc id="description">Ten fictional option pairs. Bars show call implied volatility minus put implied volatility; whiskers show a quote-width sensitivity interval.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,sans-serif;fill:#17202a}.small{font-size:13px}.label{font-size:15px}.head{font-size:19px;font-weight:700}</style>
+<text x="40" y="42" class="head">Fictional option pairs - CPIV = call IV minus put IV</text>
+<text x="40" y="69" class="small">Bars: point value; whiskers: quote-width
+ sensitivity, not a confidence interval</text>
+<line x1="520.00" y1="100" x2="520.00" y2="526" stroke="#536273" stroke-width="2"/>
+<text x="40" y="115" class="label">SIM01</text>
+<line x1="262.29" y1="110" x2="303.74" y2="110" stroke="#34495e" stroke-width="2"/>
+<line x1="262.29" y1="105" x2="262.29" y2="115" stroke="#34495e" stroke-width="2"/>
+<line x1="303.74" y1="105" x2="303.74" y2="115" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="110" x2="283.01" y2="110" stroke="#bf4b43" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="115" class="small">-4.00 pp</text>
+<text x="40" y="157" class="label">SIM02</text>
+<line x1="321.53" y1="152" x2="362.99" y2="152" stroke="#34495e" stroke-width="2"/>
+<line x1="321.53" y1="147" x2="321.53" y2="157" stroke="#34495e" stroke-width="2"/>
+<line x1="362.99" y1="147" x2="362.99" y2="157" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="152" x2="342.26" y2="152" stroke="#bf4b43" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="157" class="small">-3.00 pp</text>
+<text x="40" y="199" class="label">SIM03</text>
+<line x1="380.78" y1="194" x2="422.23" y2="194" stroke="#34495e" stroke-width="2"/>
+<line x1="380.78" y1="189" x2="380.78" y2="199" stroke="#34495e" stroke-width="2"/>
+<line x1="422.23" y1="189" x2="422.23" y2="199" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="194" x2="401.51" y2="194" stroke="#bf4b43" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="199" class="small">-2.00 pp</text>
+<text x="40" y="241" class="label">SIM04</text>
+<line x1="440.02" y1="236" x2="481.48" y2="236" stroke="#34495e" stroke-width="2"/>
+<line x1="440.02" y1="231" x2="440.02" y2="241" stroke="#34495e" stroke-width="2"/>
+<line x1="481.48" y1="231" x2="481.48" y2="241" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="236" x2="460.75" y2="236" stroke="#bf4b43" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="241" class="small">-1.00 pp</text>
+<text x="40" y="283" class="label">SIM05</text>
+<line x1="499.27" y1="278" x2="540.73" y2="278" stroke="#34495e" stroke-width="2"/>
+<line x1="499.27" y1="273" x2="499.27" y2="283" stroke="#34495e" stroke-width="2"/>
+<line x1="540.73" y1="273" x2="540.73" y2="283" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="278" x2="520.00" y2="278" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="283" class="small">+0.00 pp</text>
+<text x="40" y="325" class="label">SIM06</text>
+<line x1="558.52" y1="320" x2="599.98" y2="320" stroke="#34495e" stroke-width="2"/>
+<line x1="558.52" y1="315" x2="558.52" y2="325" stroke="#34495e" stroke-width="2"/>
+<line x1="599.98" y1="315" x2="599.98" y2="325" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="320" x2="579.25" y2="320" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="325" class="small">+1.00 pp</text>
+<text x="40" y="367" class="label">SIM07</text>
+<line x1="617.76" y1="362" x2="659.22" y2="362" stroke="#34495e" stroke-width="2"/>
+<line x1="617.76" y1="357" x2="617.76" y2="367" stroke="#34495e" stroke-width="2"/>
+<line x1="659.22" y1="357" x2="659.22" y2="367" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="362" x2="638.49" y2="362" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="367" class="small">+2.00 pp</text>
+<text x="40" y="409" class="label">SIM08</text>
+<line x1="677.01" y1="404" x2="718.47" y2="404" stroke="#34495e" stroke-width="2"/>
+<line x1="677.01" y1="399" x2="677.01" y2="409" stroke="#34495e" stroke-width="2"/>
+<line x1="718.47" y1="399" x2="718.47" y2="409" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="404" x2="697.74" y2="404" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="409" class="small">+3.00 pp</text>
+<text x="40" y="451" class="label">SIM09</text>
+<line x1="736.26" y1="446" x2="777.72" y2="446" stroke="#34495e" stroke-width="2"/>
+<line x1="736.26" y1="441" x2="736.26" y2="451" stroke="#34495e" stroke-width="2"/>
+<line x1="777.72" y1="441" x2="777.72" y2="451" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="446" x2="756.99" y2="446" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="451" class="small">+4.00 pp</text>
+<text x="40" y="493" class="label">SIM10</text>
+<line x1="795.50" y1="488" x2="836.96" y2="488" stroke="#34495e" stroke-width="2"/>
+<line x1="795.50" y1="483" x2="795.50" y2="493" stroke="#34495e" stroke-width="2"/>
+<line x1="836.96" y1="483" x2="836.96" y2="493" stroke="#34495e" stroke-width="2"/>
+<line x1="520.00" y1="488" x2="816.23" y2="488" stroke="#138a72" stroke-width="9" stroke-linecap="round"/>
+<text x="900" y="493" class="small">+5.00 pp</text>
+<text x="165" y="595" class="small">Put IV higher</text>
+<text x="780" y="595" class="small">Call IV higher</text>
+</svg>
