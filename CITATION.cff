@@ -3,6 +3,8 @@ message: "If you use this software or the CPIV review package, please cite it us
 title: "Diagnosing Call–Put Implied-Volatility Spreads: Exact European-BSM Mapping and Synthetic Reliability Tests"
 type: software
 date-released: 2026-10-18
+version: v28
+doi: 10.5281/zenodo.23442601
 license: MIT
 repository-code: "https://github.com/bravforcode/Quant-paper"
 authors:
