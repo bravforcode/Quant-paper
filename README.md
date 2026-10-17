@@ -45,7 +45,7 @@ dependency and can be run offline.
 
 ## Evidence boundary
 
-The attached documents in `C:/Users/menum/Downloads/` are project inputs, not
+The three source documents listed below are project inputs, not
 independent evidence. Claims about exchange mechanics are linked to official
 documentation; academic claims are linked to the canonical paper or DOI.
 News links about the October 10, 2025 event were reviewed but are not used in
@@ -103,9 +103,11 @@ claim depends on those pages.
 
 ## Source documents
 
-- `C:/Users/menum/Downloads/hidden-leverage-study.md`
-- `C:/Users/menum/Downloads/BUILD-SPEC.md`
-- `C:/Users/menum/Downloads/PROMPTS.md`
+- `hidden-leverage-study.md`
+- `BUILD-SPEC.md`
+- `PROMPTS.md`
+
+These three files are local working inputs and are not included in this repository.
 
 Source and venue audits:
 
