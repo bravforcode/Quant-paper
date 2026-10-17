@@ -1,0 +1,16 @@
+{
+  "title": "Quant-paper: CPIV review package (v28) and reproduction code",
+  "description": "Reproducible CPIV (call-put implied-volatility spread) measurement framework: exact European-BSM mapping, synthetic reliability tests, the v28 (r26) review build, SHA-256 manifests and reproduction scripts. Synthetic data only; no market data is used.",
+  "upload_type": "software",
+  "license": "mit",
+  "access_right": "open",
+  "version": "v28",
+  "keywords": ["implied volatility", "put-call parity", "Black-Scholes-Merton", "reproducibility"],
+  "creators": [
+    {
+      "name": "Jitnarong, Phirawit",
+      "affiliation": "Independent researcher",
+      "orcid": "0009-0006-8368-5309"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or the CPIV review package, please cite it using these metadata."
+title: "Diagnosing Call–Put Implied-Volatility Spreads: Exact European-BSM Mapping and Synthetic Reliability Tests"
+type: software
+date-released: 2026-10-18
+license: MIT
+repository-code: "https://github.com/bravforcode/Quant-paper"
+authors:
+  - family-names: Jitnarong
+    given-names: Phirawit
+    orcid: "https://orcid.org/0009-0006-8368-5309"
+    affiliation: "Independent researcher"
+keywords:
+  - implied volatility
+  - put-call parity
+  - Black-Scholes-Merton
+  - reproducibility
