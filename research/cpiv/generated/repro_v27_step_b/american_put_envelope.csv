@@ -1,0 +1,5 @@
+scenario,methods,min_cpiv_pp,max_cpiv_pp,mean_cpiv_pp,spread_pp,status
+atm_30d_base,4,-0.2653333886552478,-0.22155080813116568,-0.25301012222697233,0.043782580524082126,author_run_synthetic_numerical_check
+deep_itm_90d_high_rate,4,-22.015131908574954,-22.015131908574954,-22.015131908574954,0.0,author_run_synthetic_numerical_check
+zero_rate_control_30d,3,-0.00017741331817533457,4.895584604369674e-07,-5.884080357583995e-05,0.00017790287663577153,author_run_synthetic_numerical_check
+dividend_365d_otm_put,4,-0.2031754283972731,-0.15650677295017124,-0.17111872968385566,0.04666865544710186,author_run_synthetic_numerical_check

@@ -1,0 +1,13 @@
+{
+  "status": "synthetic_carry_forward_sensitivity_only",
+  "market_data_used": false,
+  "case_count": 14,
+  "cases_by_input": {
+    "effective_yield": 6,
+    "spot": 8
+  },
+  "forward_consistency_formula": "F = S * exp((r - q) * T)",
+  "forward_observation_used": false,
+  "interpretation": "finite examples reproduce synthetic source/assumed-input perturbations; gradient is an exact local derivative, not a finite-change identity",
+  "csv": "cpiv_r11_carry_forward_sensitivity.csv"
+}

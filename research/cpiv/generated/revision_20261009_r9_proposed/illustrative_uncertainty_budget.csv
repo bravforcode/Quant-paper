@@ -1,0 +1,4 @@
+call_put_error_correlation,illustrative_residual_sd_usd,vega_usd_per_decimal_iv,first_order_cpiv_sd_pp,status
+0.0,0.036524094751244476,11.409152833527433,0.3201297702307325,illustrative independent input scales; not a confidence interval
+0.5,0.030561568961653206,11.409152833527433,0.2678688716645433,illustrative independent input scales; not a confidence interval
+0.9,0.024779215027879404,11.409152833527433,0.2171871600760937,illustrative independent input scales; not a confidence interval

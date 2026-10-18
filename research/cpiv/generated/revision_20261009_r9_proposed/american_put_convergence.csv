@@ -1,0 +1,9 @@
+method,steps,american_put_usd,european_call_usd,implied_cpiv_pp,note
+CRR,400,2.112510367684593,2.4933768194037427,-0.2570181594079346,numerical American put; exact BSM European call
+CRR,800,2.1129708836713017,2.4933768194037427,-0.2610646925829574,numerical American put; exact BSM European call
+CRR,1600,2.1132004595082012,2.4933768194037427,-0.2630819638361537,numerical American put; exact BSM European call
+CRR,3200,2.1133146191551235,2.4933768194037427,-0.26408507856146013,numerical American put; exact BSM European call
+Jarrow-Rudd,400,2.114870641965722,2.4933768194037427,-0.2777577473797921,numerical American put; exact BSM European call
+Jarrow-Rudd,800,2.114140434260141,2.4933768194037427,-0.2713414656697555,numerical American put; exact BSM European call
+Jarrow-Rudd,1600,2.113498321978739,2.4933768194037427,-0.2656992650356349,numerical American put; exact BSM European call
+Jarrow-Rudd,3200,2.1135145076566,2.4933768194037427,-0.265841487659374,numerical American put; exact BSM European call

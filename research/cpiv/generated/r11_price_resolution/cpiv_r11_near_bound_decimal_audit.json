@@ -1,0 +1,15 @@
+{
+  "audited_rejected_cases": 16,
+  "double_precision_failure_status_counts": {
+    "rejected_by_configured_absolute_near_bound_guard": 15,
+    "theoretical_bound_violation": 1
+  },
+  "decimal_strictly_inside_bound_count": 16,
+  "target_root_inside_configured_bracket_count": 16,
+  "decimal_price_within_absolute_guard_count": 16,
+  "double_price_strictly_inside_bounds_count": 12,
+  "decimal_precision_digits": 180,
+  "reference": "standard-library Decimal BSM implementation with Decimal normal-CDF series",
+  "scope_limit": "generated near-bound cases only; not a proof or market-data assessment",
+  "csv": "research\\cpiv\\generated\\r11_price_resolution\\cpiv_r11_near_bound_decimal_audit.csv"
+}
