@@ -30,8 +30,11 @@ DOCX = ARTIFACT_DIR / f"{STEM}.docx"
 PDF = ARTIFACT_DIR / f"{STEM}.pdf"
 SCREENSHOT_DIR = os.environ.get("CPIV_SCREENSHOT_DIR")
 
-# MathML elements in the built HTML. Update when an equation is added or removed.
-EXPECTED_MATH_ELEMENTS = 317  # 305 inline + 12 display in the r26 manuscript (r25: 282)
+# MathML elements in the built HTML, per revision. Update when an equation is added or removed.
+EXPECTED_MATH_ELEMENTS = {
+    "r26": 317,  # 305 inline + 12 display (r25: 282)
+    "r28": 332,  # r26 plus 15 inline equations in the per-name stress text
+}
 EXPECTED_FIGURES = 5
 MINIMUM_TABLES = 10
 PHONE_WIDTH = 375
@@ -128,7 +131,7 @@ def test_html_structure_math_figures_and_alt_text(browser: Any) -> None:
               };
             }"""
         )
-        assert stats["math"] == EXPECTED_MATH_ELEMENTS
+        assert stats["math"] == EXPECTED_MATH_ELEMENTS[REVISION]
         assert stats["rendered"] == stats["math"]
         assert stats["tables"] >= MINIMUM_TABLES
         assert stats["figures"] == EXPECTED_FIGURES
