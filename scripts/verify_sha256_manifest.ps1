@@ -7,8 +7,12 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
-$root = [System.IO.Path]::GetFullPath($RootPath)
-$manifest = [System.IO.Path]::GetFullPath((Join-Path (Get-Location).Path $ManifestPath))
+# Resolve both paths against the PowerShell location: .NET GetFullPath uses the
+# process directory, which differs after Set-Location/Push-Location. Path.Combine
+# returns an absolute second argument unchanged.
+$base = (Get-Location).ProviderPath
+$root = [System.IO.Path]::GetFullPath([System.IO.Path]::Combine($base, $RootPath))
+$manifest = [System.IO.Path]::GetFullPath([System.IO.Path]::Combine($base, $ManifestPath))
 if (-not (Test-Path -LiteralPath $root -PathType Container)) {
     throw "Manifest root directory does not exist: $root"
 }
