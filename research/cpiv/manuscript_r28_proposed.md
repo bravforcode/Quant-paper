@@ -184,6 +184,8 @@ The synthetic grid reuses the 120 combinations of \(S/K\), expiry, reference IV,
 
 ## 7. Results
 
+Section 7 reports the synthetic results in the order of Section 6, from local approximation (7.1) to the workflow comparison (7.9). Every result in this section is computed from synthetic data and is not an estimate of market-observed CPIV.
+
 ### 7.1 Local approximation and numerical resolution
 
 Of the 720 grid cells, 624 pass the configured absolute midpoint-vega guard and 96 do not. The midpoint-reference approximation is evaluated only on the 624 passing cells, with each cell equally weighted. Put-endpoint and call-endpoint vega errors remain separate, each with 624 observations; their median, nearest-rank p95, and maximum are equal because the absolute call-endpoint error at spread \(+d\) matches the absolute put-endpoint error at spread \(-d\) for each reflected configuration, not because the two endpoint errors match within a cell. The midpoint is specified by construction and makes this a favorable centered-reference diagnostic, not evidence that a market-observed reference will be centered. The worst centered-grid error occurs at \(S/K=0.8\), 90 days, 10% reference IV, and a two-point spread. Table 1 reports the error by spread and under deliberately shifted reference volatilities; these are equally weighted synthetic diagnostics, not estimates of live-chain error.
