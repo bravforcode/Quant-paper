@@ -1,0 +1,110 @@
+{
+  "status": "synthetic_methods_diagnostics_only",
+  "market_data_used": false,
+  "trading_or_alpha_claim": false,
+  "seeds": [
+    20261009,
+    20261010,
+    20261011
+  ],
+  "replicates_per_seed": 100,
+  "ranking_total_replicates_per_scenario": 300,
+  "identity_grid": {
+    "cases": 24,
+    "max_abs_error_usd": 2.4091839634365897e-14
+  },
+  "local_approximation_grid": {
+    "n": 720,
+    "resolved_n": 624,
+    "unresolved_low_vega_n": 96,
+    "vega_floor_usd_per_decimal_iv": 1e-06,
+    "max_absolute_error_pp": 1.2355196428895132,
+    "median_absolute_error_pp": 7.858335325755528e-05,
+    "p95_absolute_error_pp": 0.08720301058878333
+  },
+  "iv_inversion": {
+    "generated_quote_cases": 120,
+    "successfully_inverted_generated_quotes": 104,
+    "rejected_generated_quotes": 16,
+    "configured_iv_bracket": [
+      1e-08,
+      5.0
+    ],
+    "bisection_iterations": 64,
+    "rejected_invalid_price_cases": 10,
+    "unexpectedly_accepted_invalid_price_cases": 0,
+    "max_absolute_repricing_error_usd": 2.842170943040401e-14,
+    "input_clipping": false
+  },
+  "american_put": {
+    "steps": [
+      400,
+      800,
+      1600,
+      3200
+    ],
+    "methods": [
+      "CRR",
+      "Jarrow-Rudd"
+    ],
+    "claim": "numerical convergence comparison; no exact American price asserted"
+  },
+  "quote_interval": {
+    "interpretation": "quote-implied endpoint range, not confidence interval or arbitrage bound",
+    "spread_scenarios_usd": [
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.25
+    ]
+  },
+  "ranking_families": {
+    "signals": [
+      "equally_spaced",
+      "clustered_near_zero",
+      "near_ties",
+      "two_clusters_cutoff",
+      "wide_tails"
+    ],
+    "noise": [
+      "bounded_uniform",
+      "gaussian",
+      "contaminated_gaussian",
+      "heteroskedastic_gaussian",
+      "call_put_correlated_rho_0.8",
+      "common_input_shock"
+    ],
+    "target_noise_sd_pp": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "universe_sizes": [
+      10,
+      50
+    ],
+    "uncalibrated": true
+  },
+  "uncertainty_budget": "illustrative input-error scales; not a confidence interval",
+  "files": [
+    "bsm_identity_grid.csv",
+    "local_approximation_grid.csv",
+    "iv_inversion_roundtrips.csv",
+    "american_put_convergence.csv",
+    "carry_sensitivity.csv",
+    "spot_mismatch_sensitivity.csv",
+    "quote_implied_intervals.csv",
+    "illustrative_uncertainty_budget.csv",
+    "rank_noise_sensitivity.csv",
+    "rank_per_name_membership.csv"
+  ],
+  "figures": [
+    "cpiv_r9_local_approximation_error.png",
+    "cpiv_r9_local_approximation_error.svg",
+    "cpiv_r9_rank_sensitivity.png",
+    "cpiv_r9_rank_sensitivity.svg",
+    "cpiv_r9_american_convergence.png",
+    "cpiv_r9_american_convergence.svg"
+  ]
+}

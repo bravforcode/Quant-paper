@@ -1,0 +1,6 @@
+quote_half_spread_usd,pairs_total,pairs_valid,valid_pair_coverage,median_quote_implied_interval_width_pp,pairwise_order_identified_fraction,cpiv_sign_identified_fraction,interpretation
+0.01,10,10,1.0,0.349879729628344,1.0,0.9,quote-implied interval; not CI or arbitrage bound
+0.02,10,10,1.0,0.6997594647664862,1.0,0.9,quote-implied interval; not CI or arbitrage bound
+0.05,10,10,1.0,1.7493987583376254,0.8,0.9,quote-implied interval; not CI or arbitrage bound
+0.1,10,10,1.0,3.4987982054012434,0.4666666666666667,0.7,quote-implied interval; not CI or arbitrage bound
+0.25,10,10,1.0,8.747007566253437,0.022222222222222223,0.1,quote-implied interval; not CI or arbitrage bound

@@ -1,0 +1,143 @@
+{
+  "status": "synthetic_sensitivity_analysis_only",
+  "market_data_used": false,
+  "network_access_used": false,
+  "carry_misspecification": [
+    {
+      "true_effective_yield": 0.0,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19999999999999923,
+      "put_iv_under_assumed_yield": 0.19999999999999918,
+      "cpiv_pp": 5.551115123125783e-15
+    },
+    {
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19634524584833357,
+      "put_iv_under_assumed_yield": 0.20353152445998995,
+      "cpiv_pp": -0.7186278611656383
+    },
+    {
+      "true_effective_yield": 0.02,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19273460419186517,
+      "put_iv_under_assumed_yield": 0.20710125800628765,
+      "cpiv_pp": -1.436665381442248
+    },
+    {
+      "true_effective_yield": 0.05,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.18216662707914,
+      "put_iv_under_assumed_yield": 0.21803908974166514,
+      "cpiv_pp": -3.5872462662525137
+    }
+  ],
+  "american_model_mismatch": {
+    "steps": 800,
+    "risk_free_rate": 0.05,
+    "dividend_yield": 0.0,
+    "true_iv": 0.2,
+    "american_call_price": 2.4926618399256455,
+    "american_put_price": 2.1129708836713017,
+    "european_call_price_at_true_iv": 2.4933768194037427,
+    "european_put_price_at_true_iv": 2.0832611958241714,
+    "call_iv_from_european_bsm": 0.19993717160643543,
+    "put_iv_from_european_bsm": 0.20261064692582959,
+    "cpiv_pp_from_european_bsm": -0.26734753193941585
+  },
+  "quote_noise_ranking": {
+    "seed": 20261008,
+    "method": "Independent uniform price perturbations in [-half_spread, +half_spread] applied to each synthetic call and put midpoint.",
+    "replicates": 2000,
+    "true_call_ivs": [
+      0.16,
+      0.17,
+      0.18,
+      0.19,
+      0.2,
+      0.21000000000000002,
+      0.22,
+      0.23,
+      0.24,
+      0.25
+    ],
+    "true_put_iv": 0.2,
+    "results": [
+      {
+        "half_spread_usd_per_option": 0.0,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.01,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.02,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.03,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.05,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 1.0,
+        "spearman_rho_p05": 0.9878787878787879,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.1,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 2.0,
+        "rank_inversions_p95": 4.0,
+        "spearman_rho_p05": 0.9515151515151515,
+        "spearman_rho_median": 0.9757575757575757,
+        "spearman_rho_p95": 1.0
+      },
+      {
+        "half_spread_usd_per_option": 0.25,
+        "replicates": 2000,
+        "rank_inversions_p05": 3.0,
+        "rank_inversions_median": 6.0,
+        "rank_inversions_p95": 10.0,
+        "spearman_rho_p05": 0.7212121212121212,
+        "spearman_rho_median": 0.8666666666666667,
+        "spearman_rho_p95": 0.9636363636363636
+      }
+    ]
+  },
+  "warning": "All scenarios are constructed. They are neither market estimates, confidence intervals, nor evidence of trading profitability."
+}

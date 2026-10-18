@@ -1,0 +1,720 @@
+{
+  "status": "synthetic_sensitivity_analysis_only",
+  "market_data_used": false,
+  "network_access_used": false,
+  "carry_misspecification": [
+    {
+      "true_effective_yield": 0.0,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19999999999999923,
+      "put_iv_under_assumed_yield": 0.19999999999999918,
+      "cpiv_pp": 5.551115123125783e-15,
+      "parity_residual_usd": 0.0
+    },
+    {
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19634524584833357,
+      "put_iv_under_assumed_yield": 0.20353152445998995,
+      "cpiv_pp": -0.7186278611656383,
+      "parity_residual_usd": -0.08215801262993949
+    },
+    {
+      "true_effective_yield": 0.02,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.19273460419186517,
+      "put_iv_under_assumed_yield": 0.20710125800628765,
+      "cpiv_pp": -1.436665381442248,
+      "parity_residual_usd": -0.16424852586948901
+    },
+    {
+      "true_effective_yield": 0.05,
+      "assumed_effective_yield": 0.0,
+      "true_iv": 0.2,
+      "call_iv_under_assumed_yield": 0.18216662707914,
+      "put_iv_under_assumed_yield": 0.21803908974166514,
+      "cpiv_pp": -3.5872462662525137,
+      "parity_residual_usd": -0.4101156235795713
+    }
+  ],
+  "american_model_mismatch": {
+    "steps": 800,
+    "risk_free_rate": 0.05,
+    "dividend_yield": 0.0,
+    "true_iv": 0.2,
+    "american_call_price": 2.4933768194037427,
+    "american_put_price": 2.1129708836713017,
+    "european_call_price_at_true_iv": 2.4933768194037427,
+    "european_put_price_at_true_iv": 2.0832611958241714,
+    "call_early_exercise_premium_usd": 0.0,
+    "put_early_exercise_premium_usd": 0.02970968784713035,
+    "parity_residual_usd": -0.02970968784713035,
+    "vega_per_vol_point_usd": 0.1137988610440581,
+    "local_cpiv_approximation_pp": -0.2610719261559922,
+    "call_iv_from_european_bsm": 0.2,
+    "put_iv_from_european_bsm": 0.20261064692582959,
+    "cpiv_pp_from_european_bsm": -0.2610646925829574
+  },
+  "spot_timestamp_mismatch": [
+    {
+      "quote_spot_usd": 100.0,
+      "spot_used_usd": 100.02,
+      "spot_misalignment_usd": 0.02,
+      "parity_residual_usd": -0.01999999999999602,
+      "vega_per_vol_point_usd": 0.11433694064118266,
+      "local_cpiv_approximation_pp": -0.1749215947867708,
+      "cpiv_pp": -0.17492158023863502
+    },
+    {
+      "quote_spot_usd": 100.0,
+      "spot_used_usd": 100.05,
+      "spot_misalignment_usd": 0.05,
+      "parity_residual_usd": -0.04999999999999716,
+      "vega_per_vol_point_usd": 0.11435043637570938,
+      "local_cpiv_approximation_pp": -0.43725237598322175,
+      "cpiv_pp": -0.43725229121943654
+    },
+    {
+      "quote_spot_usd": 100.0,
+      "spot_used_usd": 100.1,
+      "spot_misalignment_usd": 0.1,
+      "parity_residual_usd": -0.09999999999999432,
+      "vega_per_vol_point_usd": 0.11436597572186825,
+      "local_cpiv_approximation_pp": -0.8743859296333798,
+      "cpiv_pp": -0.8743857556008983
+    },
+    {
+      "quote_spot_usd": 100.0,
+      "spot_used_usd": 100.25,
+      "spot_misalignment_usd": 0.25,
+      "parity_residual_usd": -0.25,
+      "vega_per_vol_point_usd": 0.11436054019145997,
+      "local_cpiv_approximation_pp": -2.1860687224934,
+      "cpiv_pp": -2.1860810829513913
+    }
+  ],
+  "dte_tradeoff_sensitivity": [
+    {
+      "days_to_expiry": 7,
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "quote_noise_half_width_usd_per_leg": 0.05,
+      "quote_noise_cpiv_sd_pp_linearized": 0.7390151912655939,
+      "omitted_carry_cpiv_pp": -0.3471302952395616,
+      "vega_per_vol_point_usd": 0.055242205476821266
+    },
+    {
+      "days_to_expiry": 30,
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "quote_noise_half_width_usd_per_leg": 0.05,
+      "quote_noise_cpiv_sd_pp_linearized": 0.3570907422463015,
+      "omitted_carry_cpiv_pp": -0.7186278611656383,
+      "vega_per_vol_point_usd": 0.11432620400510857
+    },
+    {
+      "days_to_expiry": 90,
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "quote_noise_half_width_usd_per_leg": 0.05,
+      "quote_noise_cpiv_sd_pp_linearized": 0.20633595768319887,
+      "omitted_carry_cpiv_pp": -1.244698169203018,
+      "vega_per_vol_point_usd": 0.19785610566757028
+    },
+    {
+      "days_to_expiry": 365,
+      "true_effective_yield": 0.01,
+      "assumed_effective_yield": 0.0,
+      "quote_noise_half_width_usd_per_leg": 0.05,
+      "quote_noise_cpiv_sd_pp_linearized": 0.10284561544160525,
+      "omitted_carry_cpiv_pp": -2.506561674987573,
+      "vega_per_vol_point_usd": 0.39695254747701175
+    }
+  ],
+  "quote_noise_scale_sensitivity": [
+    {
+      "spot_usd": 20.0,
+      "strike_usd": 20.0,
+      "days_to_expiry": 7,
+      "vega_per_vol_point_usd": 0.011048441095364252,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 3.69507595632797,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.006765760784209719
+    },
+    {
+      "spot_usd": 20.0,
+      "strike_usd": 20.0,
+      "days_to_expiry": 30,
+      "vega_per_vol_point_usd": 0.022865240801021716,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 1.7854537112315072,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.014002043202092527
+    },
+    {
+      "spot_usd": 20.0,
+      "strike_usd": 20.0,
+      "days_to_expiry": 90,
+      "vega_per_vol_point_usd": 0.03957122113351406,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 1.0316797884159943,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.024232325068986902
+    },
+    {
+      "spot_usd": 100.0,
+      "strike_usd": 100.0,
+      "days_to_expiry": 7,
+      "vega_per_vol_point_usd": 0.055242205476821266,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.7390151912655939,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.033828803921048596
+    },
+    {
+      "spot_usd": 100.0,
+      "strike_usd": 100.0,
+      "days_to_expiry": 30,
+      "vega_per_vol_point_usd": 0.11432620400510857,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.3570907422463015,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.07001021601046263
+    },
+    {
+      "spot_usd": 100.0,
+      "strike_usd": 100.0,
+      "days_to_expiry": 90,
+      "vega_per_vol_point_usd": 0.19785610566757028,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.20633595768319887,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.12116162534493449
+    },
+    {
+      "spot_usd": 500.0,
+      "strike_usd": 500.0,
+      "days_to_expiry": 7,
+      "vega_per_vol_point_usd": 0.27621102738410636,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.14780303825311875,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.169144019605243
+    },
+    {
+      "spot_usd": 500.0,
+      "strike_usd": 500.0,
+      "days_to_expiry": 30,
+      "vega_per_vol_point_usd": 0.5716310200255429,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.0714181484492603,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.35005108005231317
+    },
+    {
+      "spot_usd": 500.0,
+      "strike_usd": 500.0,
+      "days_to_expiry": 90,
+      "vega_per_vol_point_usd": 0.9892805283378514,
+      "noise_half_width_usd_per_leg": 0.05,
+      "cpiv_noise_sd_pp_at_half_width": 0.041267191536639776,
+      "half_width_usd_per_leg_for_0_5pp_cpiv_sd": 0.6058081267246724
+    }
+  ],
+  "quote_noise_ranking": {
+    "seed": 20261008,
+    "method": "Each synthetic option price receives an independent uniform perturbation. Per-leg dollar half-width is calibrated by local BSM vega so the linearized paired CPIV-noise SD matches the requested volatility-point level; exact IV is then reinverted.",
+    "scale_basis": "target standard deviation of the paired CPIV measurement error, in volatility percentage points, using local vega",
+    "vega_reference": {
+      "spot_usd": 100.0,
+      "strike_usd": 100.0,
+      "days_to_expiry": 30,
+      "rate": 0.0,
+      "effective_yield": 0.0,
+      "volatility": 0.2,
+      "vega_per_vol_point_usd": 0.11432620400510857
+    },
+    "replicates": 2000,
+    "true_call_ivs": [
+      0.16,
+      0.17,
+      0.18,
+      0.19,
+      0.2,
+      0.21000000000000002,
+      0.22,
+      0.23,
+      0.24,
+      0.25
+    ],
+    "true_put_iv": 0.2,
+    "results": [
+      {
+        "target_cpiv_noise_sd_pp": 0.0,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "probability_no_pairwise_inversions": 1.0,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -3.999999999999954,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -2.9999999999999583,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -1.9999999999999352,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.0000000000000397,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": 5.551115123125783e-15,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 0.9999999999999842,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 2.0000000000000853,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 3.000000000000036,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 4.000000000000082,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 5.0000000000000435,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 0.1,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "probability_no_pairwise_inversions": 1.0,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -4.028063250515435,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -2.8288921041479123,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -2.142298952270938,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.0706049770372983,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": 0.13731542060833046,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 0.9469352435245049,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 2.1304092227156235,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 2.857419979372511,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 4.03606053575607,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 4.986535593304348,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 0.2,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 0.0,
+        "probability_no_pairwise_inversions": 1.0,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.0,
+        "spearman_rho_p05": 1.0,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -4.15279957359126,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -3.38672095496787,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -2.0706835737701548,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.1324240119470586,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": -0.10733456145611275,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 0.8370546398137391,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 2.090913640842673,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 3.2128612590595518,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 4.022569207338589,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 5.0381861534259444,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 0.35,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 0.0,
+        "rank_inversions_p95": 1.0,
+        "probability_no_pairwise_inversions": 0.8295,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.038,
+        "spearman_rho_p05": 0.9878787878787879,
+        "spearman_rho_median": 1.0,
+        "spearman_rho_p95": 1.0,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -4.003345474675285,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -2.7951642656959654,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -2.179598673918864,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.0483245764649485,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": -0.517390911930371,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 0.7818040143246829,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 2.382150480482803,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 2.4346505872708537,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 4.04037547535982,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 5.158127873119994,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 0.5,
+        "replicates": 2000,
+        "rank_inversions_p05": 0.0,
+        "rank_inversions_median": 1.0,
+        "rank_inversions_p95": 2.0,
+        "probability_no_pairwise_inversions": 0.436,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.155,
+        "spearman_rho_p05": 0.9757575757575757,
+        "spearman_rho_median": 0.9878787878787879,
+        "spearman_rho_p95": 1.0,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -4.468384726689728,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -3.051089688090902,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -1.6500216390221256,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.1885538633119919,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": -0.220086339943093,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 1.402784292106879,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 1.421975178135787,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 3.2675628090861384,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 4.744576539540002,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 5.031604085559632,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 1.0,
+        "replicates": 2000,
+        "rank_inversions_p05": 1.0,
+        "rank_inversions_median": 3.0,
+        "rank_inversions_p95": 5.0,
+        "probability_no_pairwise_inversions": 0.025,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.5505,
+        "spearman_rho_p05": 0.9030303030303031,
+        "spearman_rho_median": 0.9636363636363636,
+        "spearman_rho_p95": 0.9878787878787879,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -3.078508125060547,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -2.9786593704270503,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -2.3569012998312155,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.4979909505357047,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": -0.5714103508213053,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 1.1004719480638747,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 1.638524778931627,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": 2.7622049220946074,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 3.643761461914546,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 4.209074253812483,
+            "rank_low_to_high": 10
+          }
+        ]
+      },
+      {
+        "target_cpiv_noise_sd_pp": 2.0,
+        "replicates": 2000,
+        "rank_inversions_p05": 3.0,
+        "rank_inversions_median": 7.0,
+        "rank_inversions_p95": 11.0,
+        "probability_no_pairwise_inversions": 0.001,
+        "probability_top_true_name_in_bottom_quintile": 0.0,
+        "probability_bottom_true_name_in_top_quintile": 0.0,
+        "probability_any_extreme_quintile_crossover": 0.0,
+        "probability_long_short_membership_change": 0.8545,
+        "spearman_rho_p05": 0.6606060606060606,
+        "spearman_rho_median": 0.8484848484848484,
+        "spearman_rho_p95": 0.9515151515151515,
+        "example_ranked_names": [
+          {
+            "symbol": "SIM02",
+            "cpiv_pp": -3.19188441288612,
+            "rank_low_to_high": 1
+          },
+          {
+            "symbol": "SIM04",
+            "cpiv_pp": -1.8245756581397654,
+            "rank_low_to_high": 2
+          },
+          {
+            "symbol": "SIM01",
+            "cpiv_pp": -1.2925421778337554,
+            "rank_low_to_high": 3
+          },
+          {
+            "symbol": "SIM08",
+            "cpiv_pp": -0.8241555123498667,
+            "rank_low_to_high": 4
+          },
+          {
+            "symbol": "SIM03",
+            "cpiv_pp": -0.7248328630456824,
+            "rank_low_to_high": 5
+          },
+          {
+            "symbol": "SIM05",
+            "cpiv_pp": -0.6734526070763747,
+            "rank_low_to_high": 6
+          },
+          {
+            "symbol": "SIM06",
+            "cpiv_pp": 1.6152160608770672,
+            "rank_low_to_high": 7
+          },
+          {
+            "symbol": "SIM09",
+            "cpiv_pp": 2.6767387040208757,
+            "rank_low_to_high": 8
+          },
+          {
+            "symbol": "SIM07",
+            "cpiv_pp": 2.845374835679232,
+            "rank_low_to_high": 9
+          },
+          {
+            "symbol": "SIM10",
+            "cpiv_pp": 4.4028056652347995,
+            "rank_low_to_high": 10
+          }
+        ]
+      }
+    ]
+  },
+  "warning": "All scenarios are constructed. They are neither market estimates, confidence intervals, nor evidence of trading profitability."
+}
