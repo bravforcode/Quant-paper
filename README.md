@@ -59,8 +59,10 @@ uv run python scripts/reproduce_cpiv_methods.py --output research/cpiv/generated
 Verify the v28 package against its manifest:
 
 ```bash
-pwsh -File scripts/verify_sha256_manifest.ps1 -ManifestPath reports/cpiv_v28_manifest_2026-10-18.sha256 -RootPath .
+pwsh -File scripts/verify_sha256_manifest.ps1 -ManifestPath reports/cpiv_v28_manifest_cpiv-only_2026-10-18.sha256 -RootPath .
 ```
+
+The CPIV-only manifest checks the 171 CPIV files. The full manifest (`reports/cpiv_v28_manifest_2026-10-18.sha256`, 268 entries) also covers the non-CPIV v28 tree, which this repository does not contain in full, so it fails here by design.
 
 The manifests do not cover `README.md` or `CITATION.cff`.
 
