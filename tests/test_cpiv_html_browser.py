@@ -38,7 +38,9 @@ EXPECTED_MATH_ELEMENTS = {
     "r28": 332,  # r26 plus 15 inline equations in the per-name stress text
     "r29": 337,  # r28 plus 5 inline expressions added in the r29 text (r=, q=, S=, t=, [-1,1])
     "r30": 337,  # r29 text edits: title, Table C1 caption and four references, no inline math
-    "r31": 343,  # r30 plus inline tau_IV in the Section 7.9 ablation text, Table C6 caption and header
+    "r31": 343,  # r30 plus inline tau_IV in the Section 7.9 ablation text, Table C6 header
+    "r32": 359,  # r31 plus Table C7, the Section 6.2 premium paragraph and Table C5-C6 rows
+    "r33": 359,  # r32 plus prose only in Sections 8 and 9 and Appendix D
 }
 EXPECTED_FIGURES = 5
 MINIMUM_TABLES = 10
