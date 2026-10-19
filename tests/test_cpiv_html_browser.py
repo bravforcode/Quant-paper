@@ -2,8 +2,9 @@
 
 Browser tests skip when Playwright's Chromium is missing or the built HTML is absent. Run
 ``uv run playwright install chromium`` once and build the release before running them. Set
-``CPIV_ARTIFACT_DIR`` and ``CPIV_REVISION`` to check another build, and ``CPIV_SCREENSHOT_DIR``
-to keep full-page screenshots for visual review.
+``CPIV_ARTIFACT_DIR``, ``CPIV_REVISION``, and ``CPIV_ARTIFACT_DATE`` to check another build,
+``CPIV_SOURCE`` for its manuscript source, and ``CPIV_SCREENSHOT_DIR`` to keep full-page
+screenshots for visual review.
 """
 
 from __future__ import annotations
@@ -19,12 +20,13 @@ import pytest
 pytest.importorskip("playwright.sync_api")
 
 ROOT = Path(__file__).resolve().parents[1]
-MANUSCRIPT = ROOT / "research/cpiv/manuscript_r11_proposed.md"
+MANUSCRIPT = ROOT / os.environ.get("CPIV_SOURCE", "research/cpiv/manuscript_r11_proposed.md")
 REVISION = os.environ.get("CPIV_REVISION", "r26")
 ARTIFACT_DIR = Path(
     os.environ.get("CPIV_ARTIFACT_DIR", ROOT / "dist/cpiv/quantcorner-cpiv-reviewed-2026-10-18-v28")
 ).resolve()
-STEM = f"quantcorner-cpiv-review-{REVISION}-2026-10-18"
+ARTIFACT_DATE = os.environ.get("CPIV_ARTIFACT_DATE", "2026-10-18")
+STEM = f"quantcorner-cpiv-review-{REVISION}-{ARTIFACT_DATE}"
 HTML = ARTIFACT_DIR / f"{STEM}.html"
 DOCX = ARTIFACT_DIR / f"{STEM}.docx"
 PDF = ARTIFACT_DIR / f"{STEM}.pdf"
@@ -34,6 +36,9 @@ SCREENSHOT_DIR = os.environ.get("CPIV_SCREENSHOT_DIR")
 EXPECTED_MATH_ELEMENTS = {
     "r26": 317,  # 305 inline + 12 display (r25: 282)
     "r28": 332,  # r26 plus 15 inline equations in the per-name stress text
+    "r29": 337,  # r28 plus 5 inline expressions added in the r29 text (r=, q=, S=, t=, [-1,1])
+    "r30": 337,  # r29 text edits: title, Table C1 caption and four references, no inline math
+    "r31": 343,  # r30 plus inline tau_IV in the Section 7.9 ablation text, Table C6 caption and header
 }
 EXPECTED_FIGURES = 5
 MINIMUM_TABLES = 10
