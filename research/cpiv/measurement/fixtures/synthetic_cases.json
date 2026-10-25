@@ -1,0 +1,35 @@
+{
+  "identity": {
+    "spot": 100.0,
+    "strike": 100.0,
+    "days": 30,
+    "rate": 0.03,
+    "dividend_yield": 0.01,
+    "sigma_call": 0.22,
+    "sigma_put": 0.18
+  },
+  "tick_convention": {
+    "spot": 100.0,
+    "strike": 92.0,
+    "days": 10,
+    "rate": 0.0,
+    "dividend_yield": 0.0,
+    "sigma_call": 0.22,
+    "sigma_put": 0.20,
+    "tick": 0.01,
+    "call_half_spread": 0.01,
+    "put_half_spread": 0.005
+  },
+  "deep_otm": {
+    "spot": 100.0,
+    "strike": 96.0,
+    "days": 7,
+    "rate": 0.0,
+    "dividend_yield": 0.0,
+    "sigma_call": 0.22,
+    "sigma_put": 0.10,
+    "tick": 0.01,
+    "call_half_spread": 0.01,
+    "put_half_spread": 0.0004
+  }
+}

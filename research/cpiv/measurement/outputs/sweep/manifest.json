@@ -1,0 +1,20 @@
+{
+  "config_sha256": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a",
+  "environment_sha256": "489f7aec4c18748bc11da0f0be9661ed20ad33286ff63df68b921e660aa60028",
+  "generated_at_utc": "2026-10-22T11:28:11.884157+00:00",
+  "git_sha": "ad08140b1462991a63689c0ac6dc8fd37a1f0efa",
+  "licence_mode": "synthetic-no-market-data",
+  "os": "Windows-11-10.0.26200-SP0",
+  "output_sha256": {
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\outputs\\sweep\\seed_draws.csv": "dbfc527134b6fd1b8b735a70d2dda1d39624b924754258f7a02e5f395d6fec91",
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\outputs\\sweep\\sweep_summary.json": "0a83d839c7af0a923ecb0e2b4df22497ecad625f8fc89188ae829e7f198bf8d8"
+  },
+  "python": "3.14.3",
+  "raw_sha256": {
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\configs\\study.yaml": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a"
+  },
+  "seed": 20261022,
+  "status_counts": {
+    "draws": 24
+  }
+}

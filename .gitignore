@@ -1,0 +1,16 @@
+.venv/
+.env
+data/
+reports/.holdout_unlocked
+reports/config_hashes.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+site/_build/
+dist/
+.paper-memory/
+# Verification page renders left over from PDF checks; not part of the package
+docs/cpiv-jcf/submission/.p*.png

@@ -1,0 +1,155 @@
+{
+  "deep_otm": {
+    "cpiv_mid_pp": 12.00000000000037,
+    "displacement_pp": null,
+    "failed_stage": "time_value",
+    "interval_high_pp": 13.26083024014246,
+    "interval_low_pp": 11.071404699984857,
+    "mid_inside_bounds": false,
+    "otm_time_value": 0.0006228620056059064,
+    "otm_vega": 0.07024039940595873,
+    "pair_id": "deep-otm",
+    "parity_residual": null,
+    "reason": "time_value_below_scale",
+    "terminal": "unresolved"
+  },
+  "funnel": [
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "contract"
+    },
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "timing"
+    },
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "quote"
+    },
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "input"
+    },
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "midpoint"
+    },
+    {
+      "count": 3,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 1.0,
+      "share_of_prior": 1.0,
+      "stage": "endpoint"
+    },
+    {
+      "count": 1,
+      "dominant_rejection_reason": "time_value_below_scale",
+      "share_of_attempted": 0.3333333333333333,
+      "share_of_prior": 0.3333333333333333,
+      "stage": "time_value"
+    },
+    {
+      "count": 1,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.3333333333333333,
+      "share_of_prior": 1.0,
+      "stage": "finite_shock"
+    },
+    {
+      "count": 1,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.3333333333333333,
+      "share_of_prior": 1.0,
+      "stage": "tolerance"
+    }
+  ],
+  "identity": {
+    "average_vega_usd_per_decimal_iv": 11.409089844332291,
+    "exact_cpiv_pp": 4.000000000000001,
+    "identity_error_usd": 1.2212453270876722e-14,
+    "integrated_vega_usd": 0.4563635937732917,
+    "local_cpiv_pp": 4.0000000000001075,
+    "local_error_pp": 1.0658141036401503e-13,
+    "parity_residual_usd": 0.45636359377330393
+  },
+  "reconciliation": {
+    "attempted": 3,
+    "stage_counts": {
+      "contract": 3,
+      "endpoint": 3,
+      "finite_shock": 1,
+      "input": 3,
+      "midpoint": 3,
+      "quote": 3,
+      "time_value": 1,
+      "timing": 3,
+      "tolerance": 1
+    },
+    "terminal_counts": {
+      "contract_mismatch": 0,
+      "identified_outside_tolerance": 1,
+      "invalid_input": 0,
+      "partially_resolved": 0,
+      "resolved_within_tolerance": 0,
+      "timing_mismatch": 0,
+      "unresolved": 2
+    }
+  },
+  "solver_grid": {
+    "contract_configurations": 60,
+    "failures_by_class": {
+      "near_bound_guard": 15,
+      "theoretical_bound_violation": 1
+    },
+    "inverted": 104,
+    "max_iv_recovery_error_decimal": 1.1871170713106949e-11,
+    "max_repricing_error_usd": 2.842170943040401e-14,
+    "option_leg_prices": 120,
+    "rejected": 16
+  },
+  "tick_convention": {
+    "full_tick": {
+      "cpiv_mid_pp": 1.9999999999970874,
+      "displacement_pp": null,
+      "failed_stage": "time_value",
+      "interval_high_pp": 7.006804570621999,
+      "interval_low_pp": -2.8197881005934846,
+      "mid_inside_bounds": false,
+      "otm_time_value": 0.006002700503098923,
+      "otm_vega": 0.26545045473457907,
+      "pair_id": "tick-full",
+      "parity_residual": null,
+      "reason": "time_value_below_scale",
+      "terminal": "unresolved"
+    },
+    "half_tick": {
+      "cpiv_mid_pp": 1.9999999999970874,
+      "displacement_pp": 5.006804570624912,
+      "failed_stage": null,
+      "interval_high_pp": 7.006804570621999,
+      "interval_low_pp": -2.8197881005934846,
+      "mid_inside_bounds": true,
+      "otm_time_value": 0.006002700503098923,
+      "otm_vega": 0.26545045473457907,
+      "pair_id": "tick-half",
+      "parity_residual": 0.0071725620640599175,
+      "reason": "tolerance_exceeded",
+      "terminal": "identified_outside_tolerance"
+    }
+  }
+}

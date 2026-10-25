@@ -1,0 +1,50 @@
+# Configuration for the ground-truth study.
+# No market data is read, so the licence gate is not applicable to this run.
+# Every parameter here is declared before the run and recorded in the manifest.
+role: synthetic
+licence_mode: synthetic-no-market-data
+seed: 20261022
+
+generator:
+  underlyings: ["SIM-A", "SIM-B"]
+  base_spots: [100.0, 250.0]
+  trading_days: 30
+  expiries: [14, 30, 60]
+  strike_fractions: [0.90, 0.95, 1.00, 1.05, 1.10]
+  rate: 0.05
+  dividend_yield: 0.0
+  base_vol: 0.22
+  vol_term_slope: 0.0012
+  vol_skew: -1.10
+  tick: 0.01
+  tree_steps: 800
+  half_spread_ticks: 1
+  wing_spread_ticks: 1
+  short_dated_extra_ticks: 1
+  wide_day_period: 7
+  quote_sync_tolerance_seconds: 2.0
+  timestamp_jitter_seconds: 0.35
+  stale_quote_rate: 0.015
+  crossed_quote_rate: 0.008
+  out_of_bounds_rate: 0.005
+  contract_mismatch_rate: 0.005
+  missing_leg_rate: 0.004
+  spot_drift_sd: 0.012
+
+resolution:
+  resolution_ticks: 1.0
+  quote_sync_tolerance_seconds: 2.0
+
+tolerances_pp: [0.05, 0.10, 0.25]
+primary_tolerance_pp: 0.10
+sign_band_pp: 0.05
+primary_day_cut: 15
+
+inference:
+  bootstrap_unit: underlying-day
+  resamples: 2000
+  seed: 20261022
+  confidence: 0.95
+
+secondary_outcome:
+  calibration_fit: "quadratic in log-moneyness, per expiry slice, on the CPIV surface"

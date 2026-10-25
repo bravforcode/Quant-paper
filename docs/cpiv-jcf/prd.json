@@ -1,0 +1,307 @@
+{
+  "project": "CPIV Measurement (Journal of Computational Finance)",
+  "branchName": "ralph/cpiv-measurement-core",
+  "description": "Data contract, inversion and abstention core for the CPIV measurement paper. Every market-data path stays behind the licence gate. While the gate is closed, the protocol is validated on a synthetic instrument with a known truth under the frozen pre-registration addendum (see docs/cpiv-jcf/PHASE0.md and docs/cpiv-jcf/preregistration_addendum_A1_synthetic.md).",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Block every market-data run behind a licence record",
+      "description": "As the author, I need the pipeline to refuse to run on market data unless a written publication licence is on file, so that no result can exist without documented rights.",
+      "acceptanceCriteria": [
+        "Config loading raises LicenceMissingError and exits non-zero when licence_record is null, missing, or past its expiry",
+        "The licence record must include vendor, permitted_outputs containing aggregate_publication, and expires",
+        "Unit tests cover missing, incomplete and expired records",
+        "The gate performs no network access",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Implement the terminal status taxonomy and count reconciliation",
+      "description": "As a reviewer, I need every attempted pair to end in exactly one declared status, so that the funnel cannot silently drop observations.",
+      "acceptanceCriteria": [
+        "Seven terminal statuses exist: RESOLVED_WITHIN_TOLERANCE, IDENTIFIED_OUTSIDE_TOLERANCE, PARTIALLY_RESOLVED, UNRESOLVED, INVALID_INPUT, TIMING_MISMATCH, CONTRACT_MISMATCH",
+        "A terminal status that contradicts the failed stage raises ReconciliationError, and a record cannot be built without a terminal status",
+        "Reason codes are stored separately and cannot replace a terminal status",
+        "A reconciler checks that each stage count equals the sum of downstream terminal statuses and raises ReconciliationError on any residual",
+        "Unit tests cover the happy path, a double assignment, and a one-pair residual",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Implement the European BSM inversion contract with recorded diagnostics",
+      "description": "As the author, I need one declared inversion contract whose brackets, guards and errors are recorded per leg, so that CPIV is reproducible rather than solver-dependent.",
+      "acceptanceCriteria": [
+        "Bisection runs in the decimal-IV bracket [1e-8, 5] for at most 64 iterations with no quote clipping",
+        "Non-finite or negative prices, and prices within 1e-10 of a European bound, are rejected with a named failure class",
+        "Failure classes are invalid input, theoretical-bound violation, near-bound guard, outside bracket, and numerical",
+        "Repricing error and IV-recovery error are stored separately per leg",
+        "A round-trip test on the 60-configuration grid reproduces 104 successful inversions with maximum repricing error below 1e-12 currency units",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 3,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Build deterministic synthetic fixtures for the three published examples",
+      "description": "As the author, I need the identity check, one tick-convention case, and one deep-OTM unresolved case as fixed fixtures, so the method contract stays testable without market data.",
+      "acceptanceCriteria": [
+        "A fixture asserts the exact integral identity: the parity residual equals the integrated vega over the IV segment within 1e-10 USD, and reports the local-approximation error separately",
+        "A tick-convention fixture shows the same pair identified at half tick and UNRESOLVED at full tick, with both outcomes stored",
+        "A deep-OTM fixture passes the vega guard but resolves to UNRESOLVED with reason TIME_VALUE_BELOW_SCALE or FINITE_SHOCK_ABSENT",
+        "Fixtures are committed JSON files with a fixed seed and no network call",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 4,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "Implement contract matching and timestamp validation",
+      "description": "As the author, I need pair construction to fail loudly on a contract or timing mismatch, so that mismatched pairs never reach inversion.",
+      "acceptanceCriteria": [
+        "Pairs match on underlying, strike, expiry, multiplier, exercise style and settlement",
+        "A field mismatch yields CONTRACT_MISMATCH and records which field differed",
+        "call_put_lag, call_spot_lag and put_spot_lag are recorded for every attempted pair",
+        "A lag beyond the configured tolerance yields TIMING_MISMATCH with the lags retained",
+        "Unit tests cover a matched pair, a strike mismatch, and an out-of-tolerance lag",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 5,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "Implement time-value, finite-shock and endpoint-range resolution rules",
+      "description": "As the author, I need resolution to depend on declared scale rules rather than on a local vega check, so that unresolved means unresolved instead of zero.",
+      "acceptanceCriteria": [
+        "OTM-equivalent time value is computed per pair and compared with the declared resolution scale",
+        "A declared positive and negative shock must both return valid roots; otherwise the pair is UNRESOLVED with reason FINITE_SHOCK_ABSENT",
+        "The quote-implied range is 100 * [IV(C_bid) - IV(P_ask), IV(C_ask) - IV(P_bid)]",
+        "An endpoint without a finite root becomes a one-sided bound and the pair becomes PARTIALLY_RESOLVED; no endpoint is imputed",
+        "A zero-bid test case produces a one-sided bound rather than a dropped pair",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 6,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Implement baselines, own-set and common-set metrics",
+      "description": "As the author, I need stability gains reported on both the own set and the common set, so that a gain caused by discarding hard pairs cannot be presented as an improvement.",
+      "acceptanceCriteria": [
+        "Baselines exist for raw midpoint, bound-filtered midpoint, endpoint interval, parity residual, and the abstention-aware protocol",
+        "Coverage, sign disagreement, Spearman rank, pairwise inversion rate, tail turnover, endpoint ambiguity and input sensitivity are computed",
+        "Own-set and common-set results are produced in separate, labelled columns",
+        "The parity-residual table carries an algebraically-dependent label",
+        "A fixture with known answers reproduces the hand-computed metric values",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 7,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Emit the attrition funnel with rejection reasons",
+      "description": "As a reviewer, I need a funnel whose counts reconcile to the attempted total, so that attrition is visible at every stage.",
+      "acceptanceCriteria": [
+        "The funnel reports count, share of attempted pairs, share of the prior stage, and the dominant rejection reason per stage",
+        "The run fails when terminal counts do not sum to attempted pairs",
+        "Output is written as both CSV and Markdown",
+        "A test fixture with one deliberately dropped pair makes the run fail",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 8,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Record run manifests and add reproducible Make targets",
+      "description": "As an external reproducer, I need each run to record its inputs and outputs, so that a reported table can be traced to an exact configuration.",
+      "acceptanceCriteria": [
+        "Each manifest records git SHA, config hash, raw file hash, environment lock hash, UTC timestamp, seed, OS and Python version, output hashes, data licence mode and status counts",
+        "make test and make reproduce-synthetic run from a clean checkout",
+        "Two runs on the same input produce identical output hashes",
+        "A test asserts every manifest field is present",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": "make is unavailable in this environment; the module command was run directly and output hashes are stable."
+    },
+    {
+      "id": "US-010",
+      "title": "Refuse primary and holdout runs without a frozen preregistration",
+      "description": "As the author, I need the primary and holdout runs to require a matching frozen configuration hash, so that thresholds cannot be changed after seeing results.",
+      "acceptanceCriteria": [
+        "A primary or holdout run aborts unless preregistration status is FROZEN",
+        "The run aborts when the config SHA-256 differs from frozen_config_hash",
+        "A pilot run is allowed while the status is DRAFT and is labelled non-reportable",
+        "Unit tests cover draft status, hash mismatch, and the allowed pilot path",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 10,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "Add a vendor-agnostic CSV adapter to the canonical quote schema (blocked until the vendor is known)",
+      "description": "As the author, I need ingestion that maps a licensed vendor file into the canonical schema without network access, so that swapping vendors does not touch the analysis code. Do not start before a licence record and the vendor field schema exist.",
+      "acceptanceCriteria": [
+        "Starts only after a licence record and the vendor field schema are on file",
+        "The adapter maps vendor columns to the canonical schema and records the raw file hash",
+        "Unknown units or missing required columns abort the run with a named error",
+        "A malformed row becomes an INVALID_INPUT pair rather than being dropped",
+        "The adapter performs no network call and imports no vendor SDK",
+        "A synthetic CSV test covers a clean file, a missing column, and one malformed row",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "Build a synthetic market whose true CPIV is defined before any quote exists",
+      "description": "As the author, I need a synthetic market with a known truth, so that the measurement protocol can be validated for accuracy, not only for coverage and stability. This is the instrument that makes the closed market-data gate survivable.",
+      "acceptanceCriteria": [
+        "The generator fixes a truth value per pair from the unrounded fair values, inverted under the same European map the protocol uses, before any quote is rounded or a defect is injected",
+        "The generator is a pure function of its seed and configuration: the same seed reproduces the same quotes, pair identifiers and truth values",
+        "Microstructure is declared and varied by configuration: tick size, half-spread, wing spread, wide-session period, timestamp jitter and injected defect rates",
+        "The put leg is an American option priced by a binomial lattice, so the true spread is non-zero by construction",
+        "Every pair carries its block identifier, checked log-moneyness and true CPIV, and unit tests cover determinism, the American premium, spread ordering and defect injection",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 12,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "Vectorise the American put pricing so the benchmark is affordable to replicate",
+      "description": "As the author, I need a batch pricer that agrees with the scalar reference, so that 23 replication seeds and 18 specifications can be re-run in minutes rather than hours.",
+      "acceptanceCriteria": [
+        "The batch pricer reproduces the scalar binomial reference to 1e-8 absolute on the declared case grid",
+        "The batch pricer is deterministic and returns an empty array for empty input",
+        "Mismatched input lengths and non-positive volatility raise ValueError",
+        "The scalar reference is shown to converge as the step count rises, and the declared step count is within 1e-2 of the 2x-step price",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 13,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-014",
+      "title": "Run the protocol as a study with an error profile, strata, perturbations and a period split",
+      "description": "As the author, I need the whole protocol exercised end to end on the synthetic instrument, so that every pre-specified outcome is produced by one reproducible command.",
+      "acceptanceCriteria": [
+        "Every attempted pair receives exactly one terminal status and the run fails if the status counts do not reconcile to the attempted count",
+        "The study reports own-set and common-set error separately, an error profile (median, p90, p95, max, share within 0.10 pp), coverage at each tolerance, and the abstained-set error",
+        "Coverage and error are stratified by moneyness, maturity, spread and truth magnitude, and written to CSV",
+        "The six declared perturbations are each applied and their coverage and CPIV change recorded",
+        "The primary and holdout periods are reported separately and never merged into one headline number",
+        "The run records a manifest and writes its outputs under outputs/study/ with no network access",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 14,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-015",
+      "title": "Test the abstention rule against size-matched random subsets",
+      "description": "As a reviewer, I need the certified subset compared with random subsets of the same size, so that the abstention mechanism is not presented as an improvement it does not deliver. The protocol labels pairs; it does not re-estimate them, so on the common set it is numerically identical to the raw midpoint and every own-set difference is a selection effect.",
+      "acceptanceCriteria": [
+        "For each declared tolerance the certified subset is compared with a pair null drawn uniformly over the scored universe and a block null that draws whole underlying-days with replacement, preserving the within-day dependence",
+        "The reported p-value is the add-one Monte Carlo estimator and the null mean, sd and 5%/95% quantiles are reported",
+        "A partially taken block in the block null selects its members at random, so the null does not systematically favour the earliest pairs of a day",
+        "The certified set's own error and the abstained set's error are reported beside each null",
+        "A test constructs a certified set that is genuinely easier to measure and one that is not, and asserts the p-values differ in the expected direction",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 15,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-016",
+      "title": "Replicate the study across declared seeds and specifications",
+      "description": "As the author, I need one draw replaced by a distribution, so that no reported quantity can be an artefact of a single synthetic market or a single analyst setting.",
+      "acceptanceCriteria": [
+        "The 24 declared seeds are a pure function of a declared base seed and stride, and are listed in the output",
+        "The 18 declared specifications vary volatility, quote width, tick size, the wide-session period, the strike grid, the maturities, the tolerance and the resolution scale one factor at a time",
+        "Every draw reports the same quantities, and the sweep reports their mean, sd, min, median and max",
+        "Outputs are written to seed_draws.csv, specifications.csv and sweep_summary.json with a manifest, and the run performs no network access",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 16,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-017",
+      "title": "Evaluate the pre-registered decision rules mechanically",
+      "description": "As the author, I need the pre-registration's decision rules applied by code that only reads the sweep outputs, so that a rule cannot be reworded or retuned after the result is seen.",
+      "acceptanceCriteria": [
+        "The six rules R1 to R6 of addendum section A1.6 are implemented as functions of the sweep and study outputs, with their thresholds hard-coded from the addendum",
+        "The development draw is excluded from every tally, and only the 23 declared replication seeds are counted",
+        "The output states, for every rule, whether it passed, the condition, the number of draws evaluated and the observed counts",
+        "A failed rule is reported with the same prominence as a passed one, and the falsification consequence is carried in the output",
+        "Unit tests cover a passing rule, a failing rule, the development-draw exclusion and a missing input",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 17,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-018",
+      "title": "Draft the JCF manuscript sections that the synthetic benchmark can support",
+      "description": "As the author, I need the manuscript's front matter, method section and benchmark section written against the pre-registered outputs, so that the paper can be submitted without any number being typed by hand.",
+      "acceptanceCriteria": [
+        "Every number in the manuscript is generated from the study, sweep and verdict outputs, and a verification script fails when a hand-typed number disagrees with the outputs",
+        "The abstract, key messages and conclusion state the R3 failure and the coverage's dependence on quote microstructure, with the same prominence as the passing rules",
+        "No sentence converts a synthetic number into a statement about real markets, and the benchmark is labelled as a model artefact wherever a number appears",
+        "The references follow APA 7th edition and every reference is cited in the text",
+        "pytest passes",
+        "Typecheck passes"
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": "Draft in progress: the benchmark section is written; the number cross-check script is still to be added."
+    }
+  ]
+}
