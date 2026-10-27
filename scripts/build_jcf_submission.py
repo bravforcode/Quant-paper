@@ -47,6 +47,10 @@ DOCUMENTS = (
     ("manuscript_jcf_supplement", MANUSCRIPT_DIR / "manuscript_jcf_supplement.md"),
 )
 
+#: Built for the journal upload, but kept out of the public tree and the
+#: manifest: they carry the author's name and contact details.
+PRIVATE_STEMS = frozenset({"title_page", "combined"})
+
 #: Horizontal rules above, below and between rows; no vertical rules, which is
 #: the usual convention for numeric tables in a journal manuscript.
 _TBL_BORDERS = (
@@ -232,6 +236,11 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def public_files(files: list[Path]) -> list[Path]:
+    """Drop the files that carry the author's name and contact details."""
+    return [path for path in files if path.stem not in PRIVATE_STEMS]
+
+
 def make_combined_markdown() -> Path:
     """Create a combined markdown file with title page, manuscript, and supplement."""
     combined = SUBMISSION / "combined.md"
@@ -324,7 +333,7 @@ def main() -> int:
                 "the combined build should emit a page break, not this text"
             )
 
-    files = sorted(SUBMISSION.glob("*.docx")) + sorted(SUBMISSION.glob("*.pdf"))
+    files = public_files(sorted(SUBMISSION.glob("*.docx")) + sorted(SUBMISSION.glob("*.pdf")))
     files += sorted((SUBMISSION / "tables").glob("*.csv"))
     files += sorted(figure_dir.glob("figure_*.*"))
     lines = [f"{sha256(path)}  {path.relative_to(SUBMISSION).as_posix()}" for path in files]
