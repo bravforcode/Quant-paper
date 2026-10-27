@@ -1,0 +1,23 @@
+{
+  "config_sha256": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a",
+  "environment_sha256": "489f7aec4c18748bc11da0f0be9661ed20ad33286ff63df68b921e660aa60028",
+  "generated_at_utc": "2026-10-26T21:11:02.181654+00:00",
+  "git_sha": "74490ea409b9c0c394fe6fdd61bb64011da48033",
+  "licence_mode": "synthetic-no-market-data",
+  "os": "Windows-11-10.0.26200-SP0",
+  "output_sha256": {
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\outputs\\sweep\\perturbations_replication.csv": "31fa695298f75476b169040f51631365a0f9e3de1f6df14806acfa8746464a74",
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\outputs\\sweep\\seed_draws.csv": "dbfc527134b6fd1b8b735a70d2dda1d39624b924754258f7a02e5f395d6fec91",
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\outputs\\sweep\\specifications.csv": "453427687713c06aaa5803a1a848ada491c5f193aa18e7697b0436e937a16d5f",
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\outputs\\sweep\\specifications_replication.csv": "4b8bea26a7af9a213b87b05cd92913ddcb3c4e0638e253b0cfe73d627e69ee54",
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\outputs\\sweep\\sweep_summary.json": "0a83d839c7af0a923ecb0e2b4df22497ecad625f8fc89188ae829e7f198bf8d8"
+  },
+  "python": "3.14.3",
+  "raw_sha256": {
+    "C:\\paper\\quant-paper\\.claude\\worktrees\\jcf-manuscript-audit-165402\\research\\cpiv\\measurement\\configs\\study.yaml": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a"
+  },
+  "seed": 20261022,
+  "status_counts": {
+    "draws": 24
+  }
+}

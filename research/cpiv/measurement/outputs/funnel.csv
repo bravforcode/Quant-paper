@@ -1,0 +1,10 @@
+stage,count,share_of_attempted,share_of_prior,dominant_rejection_reason
+contract,3,1.0,1.0,
+timing,3,1.0,1.0,
+quote,3,1.0,1.0,
+input,3,1.0,1.0,
+midpoint,3,1.0,1.0,
+endpoint,3,1.0,1.0,
+time_value,1,0.3333333333333333,0.3333333333333333,time_value_below_scale
+finite_shock,1,0.3333333333333333,1.0,
+tolerance,1,0.3333333333333333,1.0,

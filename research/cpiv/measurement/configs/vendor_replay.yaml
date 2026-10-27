@@ -1,0 +1,62 @@
+# Vendor schema for the real-shape replay.
+#
+# The file this describes is a *shape*, not a dataset. The committed fixture
+# is synthetic and carries no market data. The schema is declared here so
+# that a licensed run and the replay run share one loader: only the bytes and
+# the licence record differ.
+role: replay-fixture
+licence_mode: synthetic-no-market-data
+source_kind: fixture
+
+schema:
+  vendor: SYNTHETIC-SHAPE-0
+  # Vendor prices arrive in cents.
+  price_scale: 100.0
+  timestamp_format: iso8601_utc
+  columns:
+    root_id: root_symbol
+    underlying: underlying_symbol
+    option_type: option_type
+    strike: strike_price
+    expiry: expiration
+    bid: bid_price
+    ask: ask_price
+    bid_size: bid_size
+    ask_size: ask_size
+    quote_time: quote_timestamp
+    spot: underlying_last
+    spot_time: underlying_timestamp
+    multiplier: multiplier
+    exercise_style: exercise_style
+    settlement: settle_type
+    condition: condition
+  option_type_codes:
+    C: call
+    P: put
+    X: call
+    Y: put
+  condition_codes:
+    A: normal
+    X: crossed_quote
+    Z: stale_quote
+  missing_markers: ["", "NaN", "NULL"]
+
+protocol:
+  rate: 0.05
+  dividend_yield: 0.0
+  tick: 0.01
+  resolution_ticks: 1.0
+  primary_tolerance_pp: 0.10
+  quote_sync_tolerance_seconds: 2.0
+  # The pairing window is wider than the synchronisation requirement: a leg
+  # can be matched to its counterpart and still fail the timing stage.
+  pairing_skew_seconds: 3.0
+  spot_relative_tolerance: 0.0001
+
+fixture:
+  path: research/cpiv/measurement/fixtures/vendor_shape_quotes.csv
+  trading_days: 5
+  note: >
+    Synthetic file with the declared shape. Faults are injected on a fixed
+    stride so that every ingestion rejection reason and every terminal status
+    of the protocol appears at least once.

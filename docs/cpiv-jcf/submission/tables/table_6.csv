@@ -1,0 +1,11 @@
+Specification,Mean certified coverage,Draws with zero coverage
+base,8.5 %,0 of 23
+low_vol,8.5 %,0 of 23
+high_vol,8.5 %,0 of 23
+wide_quotes,0.0 %,23 of 23
+very_wide_quotes,0.0 %,23 of 23
+coarse_tick,0.0 %,23 of 23
+no_wide_sessions,10.1 %,0 of 23
+wide_strike_grid,8.3 %,0 of 23
+short_dated,0.3 %,15 of 23
+long_dated,16.7 %,0 of 23

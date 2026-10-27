@@ -1,0 +1,144 @@
+{
+  "all_rules_passed": false,
+  "consequence_if_r1_or_r2_fails": "The benchmark shows that abstaining on hard pairs does not buy accuracy, and the paper's central mechanism claim must be reduced to coverage and stability only.",
+  "development_seed": 20261022,
+  "market_data_used": false,
+  "replication_draws_evaluated": 23,
+  "replication_seeds": [
+    20268941,
+    20276860,
+    20284779,
+    20292698,
+    20300617,
+    20308536,
+    20316455,
+    20324374,
+    20332293,
+    20340212,
+    20348131,
+    20356050,
+    20363969,
+    20371888,
+    20379807,
+    20387726,
+    20395645,
+    20403564,
+    20411483,
+    20419402,
+    20427321,
+    20435240,
+    20443159
+  ],
+  "rules": [
+    {
+      "condition": "certified error below the block-null mean in >= 16 of 23 draws, and block-null p < 0.05 in >= 16",
+      "draws_below_block_null": 23,
+      "draws_block_null_p_below_0_05": 23,
+      "draws_evaluable": 23,
+      "evaluated": true,
+      "passed": true,
+      "rule": "R1",
+      "statement": "The abstention rule selects a set that is genuinely easier to measure.",
+      "threshold": 16
+    },
+    {
+      "condition": "certified error below raw error in >= 16 of 23 draws",
+      "draws_better": 23,
+      "draws_evaluable": 23,
+      "evaluated": true,
+      "passed": true,
+      "rule": "R2",
+      "statement": "The protocol's own-set error is lower than the raw midpoint's.",
+      "threshold": 16
+    },
+    {
+      "condition": "minimum market-specification coverage >= 50% of the median market-specification coverage",
+      "coverage_by_specification": {
+        "base": 0.08451741413378422,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08480845500847349,
+        "long_dated": 0.1666092816685916,
+        "low_vol": 0.08451741413378422,
+        "no_wide_sessions": 0.10134287758576106,
+        "short_dated": 0.0030068176186086545,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08340160327568258
+      },
+      "draws_evaluable": 10,
+      "evaluated": true,
+      "median_coverage": 0.0839595087047334,
+      "minimum_coverage": 0.0,
+      "minimum_over_median": 0.0,
+      "passed": false,
+      "replicates_by_specification": {
+        "base": 23,
+        "coarse_tick": 23,
+        "high_vol": 23,
+        "long_dated": 23,
+        "low_vol": 23,
+        "no_wide_sessions": 23,
+        "short_dated": 23,
+        "very_wide_quotes": 23,
+        "wide_quotes": 23,
+        "wide_strike_grid": 23
+      },
+      "rule": "R3",
+      "statement": "Certification coverage does not depend on one synthetic market.",
+      "threshold": 0.5
+    },
+    {
+      "condition": "monotone in >= 22 of 23 draws",
+      "draws_evaluable": 23,
+      "draws_monotone": 23,
+      "evaluated": true,
+      "passed": true,
+      "rule": "R4",
+      "statement": "Coverage is non-decreasing in the certification tolerance.",
+      "threshold": 22
+    },
+    {
+      "condition": "error-reduction sign agrees in >= 16 draws and coverage is within 10% in >= 16",
+      "draws_coverage_within_tolerance": 23,
+      "draws_evaluable": 23,
+      "draws_sign_agrees": 23,
+      "evaluated": true,
+      "passed": true,
+      "rule": "R5",
+      "statement": "The primary and holdout periods agree.",
+      "threshold": 16
+    },
+    {
+      "condition": "no perturbation moves certified coverage by more than 15% in absolute value",
+      "coverage_change_by_perturbation": {
+        "endpoint_outward": -0.0667165334639518,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.00014546634052777798,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08451741413378422
+      },
+      "draws_evaluable": 6,
+      "evaluated": true,
+      "passed": true,
+      "rule": "R6",
+      "statement": "The perturbation set does not dominate the result.",
+      "threshold": 0.15,
+      "worst_absolute_coverage_change": 0.08451741413378422,
+      "worst_single_draw_absolute_change": 0.10133630289532294
+    }
+  ],
+  "rules_failed": [
+    "R3"
+  ],
+  "rules_not_evaluated": [],
+  "rules_passed": [
+    "R1",
+    "R2",
+    "R4",
+    "R5",
+    "R6"
+  ],
+  "source": "docs/cpiv-jcf/preregistration_addendum_A1_synthetic.md \u00a7A1.6",
+  "status": "pre_registered_synthetic_verdict_only"
+}

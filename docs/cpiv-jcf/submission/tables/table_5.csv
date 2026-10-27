@@ -1,0 +1,7 @@
+Rule,Statement,Outcome
+R1,"The abstention rule selects a set that is genuinely easier to measure, not merely smaller",PASS
+R2,The protocol's own-set error is lower than the raw midpoint's,PASS
+R3,Certification coverage does not depend on one particular synthetic market,FAIL
+R4,Coverage is non-decreasing in the certification tolerance,PASS
+R5,The primary and holdout periods agree,PASS
+R6,The perturbation set does not dominate the result,PASS

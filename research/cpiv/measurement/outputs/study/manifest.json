@@ -1,0 +1,27 @@
+{
+  "config_sha256": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a",
+  "environment_sha256": "489f7aec4c18748bc11da0f0be9661ed20ad33286ff63df68b921e660aa60028",
+  "generated_at_utc": "2026-10-22T11:09:48.176254+00:00",
+  "git_sha": "ad08140b1462991a63689c0ac6dc8fd37a1f0efa",
+  "licence_mode": "synthetic-no-market-data",
+  "os": "Windows-11-10.0.26200-SP0",
+  "output_sha256": {
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\outputs\\study\\funnel.csv": "8bc2f5b45952a560e6c1790b55c76b98583951529467937451abd1b4199f9265",
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\outputs\\study\\strata.csv": "79d902f95c704fe983fc4f596dd0567cd89718e742b1668b8f8d5292263c0778",
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\outputs\\study\\study_summary.json": "3079c4ad9776eabe103bc05476f5a54fc0d93daadf101f4666f4645def55dbc6"
+  },
+  "python": "3.14.3",
+  "raw_sha256": {
+    "C:\\paper\\quant-paper\\research\\cpiv\\measurement\\configs\\study.yaml": "0918f7acda72a50c5cc5f088f75d7056bbd83b8db41da771f175ac68566f187a"
+  },
+  "seed": 20261022,
+  "status_counts": {
+    "contract_mismatch": 2,
+    "identified_outside_tolerance": 719,
+    "invalid_input": 13,
+    "partially_resolved": 77,
+    "resolved_within_tolerance": 72,
+    "timing_mismatch": 11,
+    "unresolved": 0
+  }
+}
