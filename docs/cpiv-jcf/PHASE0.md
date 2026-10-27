@@ -123,7 +123,7 @@ Locking this before the freeze makes it a declared outcome rather than post-hoc 
 
 ## 6. What Phase 0 did not do
 
-- No data purchase, trial download, or vendor contact was made. The two vendor letters in `licence_correspondence/drafts/` are prepared and **unsent**.
+- No data purchase, trial download, or vendor contact was made during Phase 0. The two vendor requests were sent on 2026-10-24, after Phase 0 closed; the records are in `licence_correspondence/`.
 - No market-data pipeline was created. The data-independent measurement core now exists at `research/cpiv/measurement/` (US-001–US-010 in [prd.json](prd.json)) and runs only on synthetic fixtures; every market-data path stays behind the licence gate.
 - The main pre-registration was **not** frozen. It cannot be, because universe, windows, sampling rule and tick convention all depend on the vendor's schema.
 - No claim was made about any real security, index or option.
@@ -149,7 +149,7 @@ The full tally is in `research/cpiv/measurement/outputs/sweep/verdict.json`, pro
 
 ## 8. Next actions
 
-1. Send the §4 request in [DATA_RIGHTS.md](DATA_RIGHTS.md) to **Cboe DataShop** and **Databento** (the only two routes that satisfy the timestamp requirement without an institutional affiliation). The prepared letters are in `licence_correspondence/drafts/`.
+1. Done 2026-10-24: sent the §4 request in [DATA_RIGHTS.md](DATA_RIGHTS.md) to **Cboe DataShop** and **Databento** (the only two routes that satisfy the timestamp requirement without an institutional affiliation). The prepared letters are in `licence_correspondence/drafts/`; records are in `licence_correspondence/`.
 2. Record every answer verbatim in `docs/cpiv-jcf/licence_correspondence/` — the paper's data-availability statement will need to cite it.
 3. When a written permission arrives, close §4 of `preregistration.md`, freeze it, tag the commit, and only then start Phase 1.
 4. Keep the benchmark's public claim narrow. The manuscript's synthetic section is a methods and validation section; it is not an empirical result about markets.
