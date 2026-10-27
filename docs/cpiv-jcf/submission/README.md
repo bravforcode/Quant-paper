@@ -74,7 +74,7 @@ cannot quietly break the format.
    rebuild.
 3. **The AI-use statement names Perplexity for deep research plus the AI
    work across the project: drafting the phase-0 record and the
-   pre-registration, writing and maintaining the measurement and analysis
+   design addendum, writing and maintaining the measurement and analysis
    code and its tests, the build and limits scripts, and manuscript
    language.** No AI system generated a result, a number or a table; every
    number is slot-filled from run artefacts. That is the full extent of it,
@@ -83,9 +83,10 @@ cannot quietly break the format.
    permitted list — per the author's decision, disclose the truth and let
    the editor rule.
 4. **Submit.** Nothing in this directory has been uploaded. The two vendor
-   letters in [../licence_correspondence/drafts/](../licence_correspondence/drafts/)
-   are drafts and have not been sent, so no licence has been granted;
-   Section 1.4 of the manuscript says so.
+   requests were sent on 2026-10-24 to Cboe DataShop and Databento. No reply
+   has been received and no licence has been granted; Section 1.4 of the
+   manuscript says so. Records are in
+   [../licence_correspondence/](../licence_correspondence/).
 5. **Review MAJOR 1.** R3 and R6 are now scored on the 23 replication seeds
    (`outputs/sweep/verdict.json`). R3 fails and R6 passes, so five of six rules
    pass. The abstract, Section 5.5, Section 6.6 and Section 7 report the R3

@@ -1,5 +1,5 @@
 <!--
-Anonymised manuscript. The title page is a separate document and the
+Anonymized manuscript. The title page is a separate document and the
 appendices are separate supplementary material, as the journal requires.
 The blocks below follow the journal's compilation order: figure and table
 legends, abstract, keywords, key messages, title, main text, declarations,
@@ -25,8 +25,7 @@ add-one p-values.
 coverage, certified error and raw-midpoint error, reported as median,
 interquartile range and full range.
 
-**Table 5.** The pre-registered rule tally over the 23 replication draws,
-reporting each of the six rules as passed, failed or not evaluated.
+**Table 5.** The declared rule tally over the 23 replication draws, reporting each of the six rules as passed or failed.
 
 **Table 6.** Certified coverage and certified and raw-midpoint error across
 the ten market specifications of the sweep, at the primary tolerance.
@@ -57,7 +56,7 @@ null. With no licensed quote data, the protocol is validated on a synthetic
 instrument whose true spread is defined before any quote exists. In all 23
 replication draws the certified set's error is below the day-block null mean,
 with p below 0.05 in each. Five of the six declared rules pass on the
-replication draws. R3, coverage stability across market specifications, fails:
+replication draws. The coverage-stability rule fails:
 coverage is zero in three of ten specifications in all 23 draws. Coverage is a
 property of the market it meets, not a fixed yield.
 
@@ -72,7 +71,7 @@ numerical validation
 - Coverage is zero on wide-quote and coarse-tick markets in all 23 draws
 - Abstention selects a genuinely easier set, not merely a smaller one
 - On the common set the protocol is identical to the raw midpoint
-- Rule timing relative to the sweep is not established (Section 5.1)
+- Certified error is below the day-block null in 23 of 23 replication draws (R1)
 
 # When Is a Call–Put Implied-Volatility Spread Measurable? An Abstention-Aware Protocol Validated Against a Known Truth
 
@@ -157,7 +156,7 @@ Answering that requires a counterfactual that respects the dependence in the
 data, and this paper constructs two size-matched nulls for each tolerance.
 
 ### 1.4 Why the validation is synthetic
-The obvious way to answer the previous question is with real quotes, and that is not currently possible. No licensed product covering the required data was available at the time of writing. The data gate is deliberately closed: no market-data path will run without a written licence record permitting publication of the aggregate outputs. No enquiry to the two candidate vendors has been sent, so no licence has been granted. Options market data is not freely redistributable, and tables derived from it cannot be published.
+The obvious way to answer the previous question is with real quotes, and that is not currently possible. No licensed product covering the required data was available at the time of writing. The data gate is deliberately closed: no market-data path will run without a written license record permitting publication of the aggregate outputs. Inquiries were sent to both candidate vendors on 24 October 2026, and no license has been granted. Options market data is not freely redistributable, and tables derived from it cannot be published.
 The alternative taken here is to make the *method* the object of validation
 and to give the method a test a real market could not have provided. A
 synthetic market can be constructed in which the true call–put implied
@@ -189,11 +188,9 @@ bind the abstract and the conclusion.
    common set, and requires every own-set comparison to carry the frontier
    p-values that say whether the selected set beats an arbitrary set of the
    same size.
-4. **A pre-registered synthetic ground-truth benchmark with a rule tally.**
+4. **A synthetic ground-truth benchmark with a declared rule tally.**
    The generator, settings, seeds, specification grid, null construction and
-   decision rules are declared in a pre-registration addendum, and the tally
-   reports which rules passed, which failed and which could not be evaluated on
-   the replication seeds, with the same prominence.
+   decision rules are declared in a design addendum, and the tally reports which rules passed and which failed on the replication seeds, with the same prominence.
 
 ## 2. The measurement problem
 
@@ -244,7 +241,7 @@ A protocol can produce a *second estimator*: a different way of computing
 the CPIV, expected to be closer to the truth, whose common-set difference
 would be non-trivial and whose fall in common-set error would be evidence
 about the estimator.
-Or it can produce a *labelling device*: a rule that selects a subset and
+Or it can produce a *labeling device*: a rule that selects a subset and
 declines to speak about the rest, whose output on the selected subset is
 whatever the original estimator would have produced there. The common-set
 difference is exactly zero, and any advantage is a function of which pairs
@@ -256,10 +253,10 @@ therefore be tested against a counterfactual, because the common-set
 comparison is vacuous by construction (Section 2.5).
 
 ### 2.4 Declared baselines and the comparison that matters
-Five baselines are declared in the pre-registration:
+Five baselines are declared in the design addendum:
 the raw midpoint CPIV, with no filter beyond the existence of a finite root;
 the bound-filtered midpoint CPIV; the bid–ask endpoint interval, reported as
-an interval rather than a point; the parity residual, labelled throughout as
+an interval rather than a point; the parity residual, labeled throughout as
 algebraically dependent on the CPIV and so not an independent validation;
 and the abstention-aware protocol itself, with its certified subset, its
 abstentions and its funnel.
@@ -282,7 +279,7 @@ Two nulls are constructed, and the difference between them is the point.
 The **pair null** draws *k* pairs uniformly without replacement from the
 scored universe. It asks whether the certified set is better than a random
 selection of the same size, if selections were independent of everything. It
-is the natural null, and the one most likely to favour the protocol,
+is the natural null, and the one most likely to favor the protocol,
 because it ignores that pairs from the same underlying-day are not
 independent.
 The **day-block null** draws whole underlying-days with replacement until
@@ -333,7 +330,7 @@ a contract mismatch, with the offending field named, and the pair is
 excluded from measurement without being dropped from the denominator.
 Each quote carries a timestamp, and each pair carries three lags: the
 call–put lag, the call–spot lag and the put–spot lag. A pair whose lags
-exceed the declared synchronisation tolerance is a timing mismatch, and the
+exceed the declared synchronization tolerance is a timing mismatch, and the
 lags are retained on the record so the exclusion can be audited rather than
 trusted.
 The spot used for inversion is the underlying's own quote at its own
@@ -422,7 +419,7 @@ attempted pairs were certified, and
 {{study.terminal.identified_outside_tolerance}} were identified but outside
 the tolerance, with the remainder split across partially resolved, invalid
 input, timing mismatch and contract mismatch.
-The abstention rate is not a cost to be minimised. It is the price of the
+The abstention rate is not a cost to be minimized. It is the price of the
 claim being made, and the paper's secondary outcome (Section 6.9) puts a
 number on what that price buys in the one place a downstream user needs a
 *set* rather than a *number*: the calibration of a volatility surface.
@@ -454,7 +451,7 @@ values recover it, with a median absolute error of
 development draw (Section 6.2).
 
 The alternative treatment, an American fallback for the put leg, is
-available and is a protocol change under the pre-registration rather than an
+available and is a protocol change under the design addendum rather than an
 extension of the results. It is not adopted here, because the licensed run
 has not fixed the exercise-style convention that would trigger it.
 
@@ -470,7 +467,7 @@ The fit is a quadratic in log-moneyness, per expiry slice, on the CPIV
 surface. The comparison is descriptive: the paper does not claim that either
 surface is better specified, better behaved or more profitable. This outcome
 is declared in the addendum as the bridge to the journal's computational
-focus: the one place where the protocol's behaviour has a consequence for a
+focus: the one place where the protocol's behavior has a consequence for a
 downstream numerical procedure.
 
 ## 4. A synthetic instrument with a known truth
@@ -496,7 +493,7 @@ exactly. What it cannot do is support a claim about any real security, index
 or option (Section 7.2).
 
 ### 4.2 The generator
-The base specification, declared in the pre-registration addendum, is listed in
+The base specification, declared in the design addendum, is listed in
 Supplementary Appendix A. In outline: two underlyings at spot 100 and 250,
 30 trading days each, maturities of 14, 30 and 60 days, five strikes from
 90 % to 110 % of spot, a continuously compounded rate of 5 % with no
@@ -529,7 +526,7 @@ same size. It is also the regime in which a protocol that reports a number
 without saying whether the number is determined is most likely to mislead.
 
 ### 4.4 What the instrument is not
-The synthetic instrument is a *model artefact*, and three things follow.
+The synthetic instrument is a *model artifact*, and three things follow.
 It does not license an external-validity claim. A protocol that behaves well
 on this instrument may behave differently on a real market, for the reasons
 in Section 2.6: coverage is determined by the microstructure of the market
@@ -540,13 +537,13 @@ It does not license a claim about the optimal tolerance: the specification
 sweep varies the tolerance on a synthetic market, which says nothing about
 which tolerance an analyst should use on a real one.
 
-## 5. Design and pre-registration
+## 5. Design and the design addendum
 
-### 5.1 The status of the pre-registration
-The project's main pre-registration cannot be frozen, because the data gate
+### 5.1 The status of the design addendum
+The main protocol cannot be frozen yet, because the data gate
 is closed and the universe, the sampling rule and the tick convention all
 depend on a vendor's schema that does not yet exist. What *can* be frozen
-without a licence is everything about the protocol and the instrument, and
+without a license is everything about the protocol and the instrument, and
 that is what a separate addendum freezes: the generator specification, the
 protocol settings, the seed list, the specification grid, the nulls, the
 number of trials and the decision rules.
@@ -571,7 +568,7 @@ study.
 ### 5.2 The declared settings
 Every setting the protocol uses is a declared quantity, frozen in the
 addendum and listed in Supplementary Table S2: the inversion map, the root
-bracket, the near-bound guard, the resolution scale, the synchronisation
+bracket, the near-bound guard, the resolution scale, the synchronization
 tolerance, the tolerance grid and primary tolerance, the sign band, the
 perturbation set, the period split and the inference unit. No setting is a
 free parameter of the analysis.
@@ -610,7 +607,7 @@ rather than an arbitrary stress: every quote widened by half a tick; the
 spot used for inversion shifted up by one basis point; the continuously
 compounded rate shifted up by five basis points; the underlying's timestamp
 moved three seconds behind the quotes; the resolution scale halved; and the
-synchronisation tolerance relaxed to five seconds. Table 7 reports the
+synchronization tolerance relaxed to five seconds. Table 7 reports the
 response of each, and Section 6.7 says what it means.
 The perturbations are diagnostics rather than confidence bounds. They answer
 "which parts of the result are load-bearing?", and the answer determines
@@ -785,9 +782,9 @@ certified error at the primary tolerance. (b) Certified coverage across the ten 
 at the primary tolerance. Benchmark only; development draw
 throughout.](figures/figure_1.png)
 
-Two readings are possible. The favourable one: the rule is picking out pairs
+Two readings are possible. The favorable one: the rule is picking out pairs
 that are genuinely easier to measure, which a random selection would not.
-The sceptical one: the certified subset is small, and a small subset of a
+The skeptical one: the certified subset is small, and a small subset of a
 noisy population tends to have a smaller error even when the selection is
 random. The size-matched nulls address the second reading, and the certified
 set beats both by a wide margin — in this draw. Section 6.6 reports the same
@@ -805,15 +802,15 @@ headline quantities are reported as distributions (Table 4).
 | Certified MAE | {{sweep.mae_certified.median}} pp | {{sweep.mae_certified.q25}} – {{sweep.mae_certified.q75}} | {{sweep.mae_certified.min}} – {{sweep.mae_certified.max}} |
 | Raw midpoint MAE | {{sweep.mae_raw.median}} pp | {{sweep.mae_raw.q25}} – {{sweep.mae_raw.q75}} | {{sweep.mae_raw.min}} – {{sweep.mae_raw.max}} |
 
-*Note: each draw is a complete re-draw of the instrument and a complete re-run of the protocol. The development draw is excluded from this table, as the pre-registration requires.*
+*Note: each draw is a complete re-draw of the instrument and a complete re-run of the protocol. The development draw is excluded from this table, as the design addendum requires.*
 
 Median certified coverage is {{sweep.coverage_certified.median}} %, with a full range of {{sweep.coverage_certified.min}} % to {{sweep.coverage_certified.max}} % across the draws: a low yield. The day-block null p-value has a maximum of {{sweep.p_block.max}}, which is the floor of the test — with {{sweep.frontier_trials}} trials the add-one estimator cannot report less than {{sweep.frontier_p_floor}} — so the reading is that the selection effect is outside the null in every draw, not that its tail probability is known to five decimal places.
 
-### 6.6 The pre-registered tally
+### 6.6 The declared tally
 
 The tally (Table 5) is the output of `verdict.py`, which applies the addendum's rules to the replication-seed records only. The development draw is excluded. All six rules are evaluated on the 23 replication draws: five pass and R3 fails. 
 
-**Table 5. The pre-registered rule tally, 23 replication draws**
+**Table 5. The declared rule tally, 23 replication draws**
 
 | Rule | Statement | Outcome |
 |:--|:--|:--|
@@ -903,13 +900,13 @@ perturbations, which are excluded from the tally and are descriptive. Section
 | Rate +5 bp | {{study.perturbation.rate_shift_5bp.coverage_change}} pp | {{study.perturbation.rate_shift_5bp.mae}} | {{study.perturbation.rate_shift_5bp.cpiv_change}} |
 | Spot timestamp −3 s | {{study.perturbation.stale_spot_3s.coverage_change}} pp | {{study.perturbation.stale_spot_3s.mae}} | {{study.perturbation.stale_spot_3s.cpiv_change}} |
 | Resolution scale halved | {{study.perturbation.half_tick_resolution.coverage_change}} pp | {{study.perturbation.half_tick_resolution.mae}} | {{study.perturbation.half_tick_resolution.cpiv_change}} |
-| Synchronisation tolerance relaxed to 5 s | {{study.perturbation.relaxed_sync_5s.coverage_change}} pp | {{study.perturbation.relaxed_sync_5s.mae}} | {{study.perturbation.relaxed_sync_5s.cpiv_change}} |
+| Synchronization tolerance relaxed to 5 s | {{study.perturbation.relaxed_sync_5s.coverage_change}} pp | {{study.perturbation.relaxed_sync_5s.mae}} | {{study.perturbation.relaxed_sync_5s.cpiv_change}} |
 The perturbations divide cleanly into three groups, and the division is
 informative.
 The **timing** perturbation is the largest in coverage terms. Moving the
 spot's timestamp three seconds behind the quote timestamps exceeds the
-synchronisation tolerance, certified coverage falls to zero, and the
-protocol reports no measurement at all. This is correct behaviour and worth
+synchronization tolerance, certified coverage falls to zero, and the
+protocol reports no measurement at all. This is correct behavior and worth
 pausing on: a stale underlying price, a completely routine feed condition,
 does not merely add noise to a CPIV, it destroys the measurement. A pipeline
 that does not check timestamps will still report numbers. Widening every
@@ -953,11 +950,7 @@ market's own smile, spreads and liquidity calendar.
 ### 6.9 The secondary outcome: what abstention costs a surface calibration
 The secondary outcome, calibration of a volatility surface, needs a *set* of
 CPIV values.
-In the development draw, the raw-midpoint input set contains
-{{secondary.raw_contracts}} contracts and the protocol's input set contains
-{{secondary.protocol_contracts}}, so the calibration retains
-{{secondary.coverage_retained}} % of the raw set and forgoes
-{{secondary.contracts_forgone}} contracts. Fitting a quadratic in
+In the development draw the calibration compares the two surfaces on the 60-day slice, the only expiry slice in which both input sets support a fit. There the raw-midpoint input set contains {{secondary.raw_contracts}} pairs and the protocol's input set contains {{secondary.protocol_contracts}}, so the calibration retains {{secondary.coverage_retained}} % of the raw set and forgoes {{secondary.contracts_forgone}} pairs. Fitting a quadratic in
 log-moneyness per expiry slice, the two surfaces differ by at most
 {{secondary.max_slice_surface_change}} percentage points of CPIV, two
 orders of magnitude larger than the certified subset's own measurement
@@ -965,7 +958,7 @@ error of {{study.error.protocol_certified.mae}}. The comparison is
 descriptive only: the paper makes no claim that either surface is better
 specified, better behaved or more profitable.
 The surface difference is the quantity to keep in view. Abstaining on
-{{secondary.coverage_forgone}} % of the contracts moves the fitted surface by
+{{secondary.coverage_forgone}} % of the pairs moves the fitted surface by
 more than the measurement error of either set, and a practitioner who
 silently substituted one for the other would not know it.
 Abstention is not free in calibration, where the unit is a set; for one pair
@@ -989,8 +982,7 @@ method selected better data" is what keeps a method reproducible rather than
 dependent on analyst discretion.
 **The thresholds are declared before any market data is read.** The addendum
 declares the generator, the settings, the seeds, the specifications, the nulls
-and the rules. Its timing relative to the replication outputs is not established
-by the version history (Section 5.1).
+and the rules.
 **What is not established is any market claim.** The benchmark contains no
 market data and supports no statement about any real security, index or
 option.
@@ -1010,7 +1002,7 @@ then applied to a market where accuracy is unobservable has inherited its
 thresholds but none of its evidence about them.
 
 ### 7.3 Threats to validity
-**The truth is a model artefact, and the European map is an approximation
+**The truth is a model artifact, and the European map is an approximation
 for American options.** The benchmark's put leg is American and is inverted
 under a European map, and the protocol recovers the truth anyway — but the
 cancellation that makes this work depends on the exercise premium being a
@@ -1024,7 +1016,7 @@ design predicts; the numbers in Table 6 are specific to this instrument.
 **The inference is on one instrument with two underlyings.** The
 underlying-day block bootstrap treats the underlying-day as the unit, and
 there are {{study.inference.blocks}} such blocks in the development draw.
-The replication across seeds is the paper's defence against the precision
+The replication across seeds is the paper's defense against the precision
 of any one interval. The primary and holdout periods share the generator and
 the underlying paths, so the split tests robustness rather than replication.
 
@@ -1061,11 +1053,11 @@ against size-matched random subsets. Against a null that resamples whole
 underlying-days, and so respects the within-day dependence of the quotes,
 the certified subset is easier to measure in {{verdict.R1.below_block_null}}
 of {{verdict.R1.evaluable}} replication draws in the benchmark.
-One pre-registered rule fails on the replication seeds, and it is the result
+One declared rule fails on the replication seeds, and it is the result
 with the longest reach: certification coverage depends strongly on quote
 microstructure, and three of ten specifications certify nothing in any draw
 (Table 6). The protocol is not a portable rule with a fixed
-yield. It is a labelling device whose coverage is a property of the market it
+yield. It is a labeling device whose coverage is a property of the market it
 meets, and a practitioner who carries a coverage figure from one market into
 another will be wrong.
 The benchmark supports no market claim. What it does
@@ -1111,7 +1103,7 @@ generator before any quote exists. The instrument, the protocol, the
 replication sweep, the decision-rule tally and the manuscript build are
 implemented in code, and run manifests record the configuration, the seed,
 the environment and the output hashes of every run reported here. The code
-and the aggregate run artefacts (the study summary, the per-draw sweep
+and the aggregate run artifacts (the study summary, the per-draw sweep
 outputs, the specification grid and the rule tally) are available from the
 author for review and will be deposited in a public repository on
 acceptance.
@@ -1122,14 +1114,13 @@ depends on one.
 
 ## Use of artificial intelligence
 
-The author used Perplexity for deep research. An AI assistant helped draft
-the phase-0 design record and the pre-registration, wrote and maintained the
+The author used Perplexity for deep research. Claude (Anthropic) and OpenAI Codex agents helped draft the phase-0 design record and the design addendum, wrote and maintained the
 measurement and analysis code and its test suite, the build, rendering and
 submission scripts and the manuscript-limits checker, and assisted with the
 language and structure of this manuscript. No AI system generated a result,
 a number or a table: every number in this paper is produced by the released
-code from the released artefacts, and the manuscript build fails if any
-numeric slot in the text has no corresponding value in those artefacts. The
+code from the released artifacts, and the manuscript build fails if any
+numeric slot in the text has no corresponding value in those artifacts. The
 author reviewed all assisted work and is responsible for the entire content
 of the paper.
 

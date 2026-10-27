@@ -38,15 +38,15 @@ are not typeset with the article; they are published online alongside it.*
 | Root bracket | decimal IV in [10⁻⁸, 5], bisection, ≤ 64 iterations, no clipping |
 | Near-bound guard | prices within 10⁻¹⁰ of a European bound are rejected, not inverted |
 | Resolution scale | 1 tick of out-of-the-money-equivalent time value |
-| Synchronisation tolerance | 2 s for call–put, call–spot and put–spot lags |
+| Synchronization tolerance | 2 s for call–put, call–spot and put–spot lags |
 | Tolerance grid | 0.05 / 0.10 / 0.25 percentage points, all reported |
-| Primary tolerance | 0.10 percentage points, fixed before any result |
+| Primary tolerance | 0.10 percentage points, declared in the design addendum |
 | Sign band | 0.05 percentage points |
-| Perturbation set | endpoint widened by half a tick; spot +1 bp; rate +5 bp; spot timestamp −3 s; resolution scale halved to 0.5 tick; synchronisation tolerance relaxed to 5 s |
+| Perturbation set | endpoint widened by half a tick; spot +1 bp; rate +5 bp; spot timestamp −3 s; resolution scale halved to 0.5 tick; synchronization tolerance relaxed to 5 s |
 | Period split | primary = days 0–14, holdout = days 15–29 |
 | Inference unit | underlying-day block, 2 000 resamples, seed 20261022 |
 
-*Note: every value was fixed in the pre-registration addendum before the replication sweep was run.*
+*Note: every value is declared in the design addendum. The addendum's first version in the repository history is dated after the replication sweep outputs were generated; this paper does not claim that the values were fixed before those outputs were read (Section 5.1).*
 
 ## Appendix A. The protocol and the instrument in one page
 
@@ -103,18 +103,17 @@ axis, not the grid. The grid itself is 0.05, 0.10 and 0.25 percentage points,
 and the 0.50-point evaluation is an additional tolerance specification used
 in the sweep (Section 5.3), not part of the grid. Certification and
 the reported coverages are governed by the grid alone, and the decision
-rules of the pre-registration addendum read the frontier at the primary
+rules of the design addendum read the frontier at the primary
 tolerance only, 0.10 pp. Table 3 shows the grid points that certify plus two
-intermediate points; the other rows are in the released artefact.
+intermediate points; the other rows are in the released artifact.
 
-**B.4 Tally.** `verdict.py` encodes the six rules of the pre-registration
-addendum and reads only the replication-seed records of the sweep outputs. R3
+**B.4 Tally.** `verdict.py` encodes the six rules of the design addendum and reads only the replication-seed records of the sweep outputs. R3
 and R6 are aggregated over the 23 seeds before they are tested: R3 uses each
 market specification's mean certified coverage, and R6 uses each perturbation's
 mean change in certified coverage. The per-draw reading gives the same outcome
 for both. The development draw is excluded from the tally.
 
-**B.5 Artefacts.** The run manifests record the configuration, the seed, the
+**B.5 Artifacts.** The run manifests record the configuration, the seed, the
 environment and the output hashes of every run reported in the article. The
 per-draw sweep outputs, the specification grid and the rule tally are
 released as aggregate CSV and JSON files; no market data is included because

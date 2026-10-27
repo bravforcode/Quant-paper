@@ -24,8 +24,8 @@ measurement at all — it is an artifact of quote width, tick size, maturity and
 moneyness — and that the honest output of a measurement procedure is a label,
 not a number.
 
-The paper contributes a pre-registered synthetic validation of an
-abstention-aware protocol that, for every call–put pair, either certifies a
+The paper contributes a synthetic validation, with its decision rules declared
+in a design addendum, of an abstention-aware protocol that, for every call–put pair, either certifies a
 CPIV at a declared tolerance or declines to answer. Because the generator
 defines a true spread before any quote exists, the study reports **accuracy** —
 not only coverage and stability — which is the part existing approaches cannot
@@ -45,15 +45,13 @@ believe all three are of interest to a computational readership:
    replication draws, with block p below 0.05 in each. The method is general:
    it applies to any selection rule, not only to CPIV.
 
-2. **A pre-registered benchmark, with the rules it could not score.** Six
-   decision rules were declared. Four pass on the replication draws. Two cannot
-   be evaluated in this version, because the replication sweep holds no records
-   for them: the market-specification rule and the perturbation rule. The
-   development draw, which the tally excludes, shows certified coverage falling
-   to zero in four of ten market specifications. I report that as descriptive,
-   because the replication run is what would score the rule. A practitioner
-   needs to know that a protocol's coverage is a property of the market it
-   meets, not a portable rule with a fixed yield.
+2. **A synthetic benchmark with a declared rule tally.** Six decision rules
+   were declared in a design addendum, and all six are scored on the 23
+   replication draws. Five pass. The coverage-stability rule fails: certified
+   coverage is zero in three of ten market specifications in every draw. I
+   report the failure as a result. A practitioner needs to know that a
+   protocol's coverage is a property of the market it meets, not a portable
+   rule with a fixed yield.
 
 3. **Discipline about the protocol's own advantage.** On the common set of
    pairs, the protocol and the raw midpoint are numerically identical. The
@@ -66,7 +64,7 @@ This paper contains no market data. It supports no claim about coverage, error
 or stability in any real market, and it does not license a market statement.
 Section 7.2 states the non-claims, and they bind the abstract and the
 conclusion. I regard this boundary as a feature: thresholds chosen after the
-first look at market data are exactly what pre-registration exists to prevent,
+first look at market data are exactly what a protocol declared in advance exists to prevent,
 and the protocol here is a computational object that can be exercised — and
 falsified — before a licence arrives.
 

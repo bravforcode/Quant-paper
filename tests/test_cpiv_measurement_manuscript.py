@@ -63,9 +63,7 @@ def test_the_abstract_states_the_benchmark_scope_and_the_failed_rule() -> None:
     abstract = rendered.split("## Abstract")[1].split("## Keywords")[0]
     assert "synthetic" in abstract
     assert "Five of the six declared rules pass" in " ".join(abstract.split())
-    assert "R3, coverage stability across market specifications, fails" in " ".join(
-        abstract.split()
-    )
+    assert "The coverage-stability rule fails" in " ".join(abstract.split())
 
 
 def test_the_tally_reports_r3_as_failed_and_r6_as_passed_on_the_replication_seeds() -> None:
