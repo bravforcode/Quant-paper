@@ -1,0 +1,5 @@
+# The title page and the combined check copy carry the author's name and
+# contact details. They are built locally for the journal upload and kept
+# out of the public tree.
+title_page.*
+combined.*

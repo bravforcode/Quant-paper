@@ -11,13 +11,13 @@ supplementary material; each table is also supplied as its own editable file.
 |:--|:--|
 | [manuscript_jcf_draft.pdf](manuscript_jcf_draft.pdf) | The anonymised manuscript, 21 A4 pages, the file to upload |
 | [manuscript_jcf_draft.docx](manuscript_jcf_draft.docx) | The Word source of that PDF (the "source file" the journal asks for on acceptance) |
-| [title_page.pdf](title_page.pdf) / [title_page.docx](title_page.docx) | The separate title page |
 | [manuscript_jcf_supplement.pdf](manuscript_jcf_supplement.pdf) / [.docx](manuscript_jcf_supplement.docx) | Supplementary material: Table S1 (strata), Table S2 (declared settings), Appendices A and B |
-| [combined.pdf](combined.pdf) / [.docx](combined.docx) | Internal check copy: title page, manuscript and supplement in one file. It carries the author's name, so **do not upload it** as the blind manuscript |
 | [tables/](tables) | One CSV per main-text table, for the typesetter |
 | [figures/](figures) | Figure 1 as a 300 dpi PNG and a vector PDF, copied in at build time from [../manuscript/figures/](../manuscript/figures) |
 | [manifest.sha256](manifest.sha256) | SHA-256 of every file in this package |
 | [reference.docx](reference.docx) | The Pandoc reference document used to build the DOCX files (ruled table style) |
+
+The title page (`title_page.docx`, `title_page.pdf`) and the internal check copy (`combined.*`, which holds the title page, manuscript and supplement in one file) carry the author's name and contact details. The build writes them locally for the journal upload. The `.gitignore` in this folder keeps them out of the tree, and `manifest.sha256` does not list them. Do not upload `combined.*` as the blind manuscript.
 
 The markdown sources live one level up in
 [../manuscript/](../manuscript): `manuscript_jcf_draft.template.md`,
@@ -52,8 +52,8 @@ package if the result breaks a stated limit.
 | Table geometry | every table's rows match its header width (a mismatch silently drops the last column) |
 | Figures | one, with a one-sentence legend and a prose citation; in this package as a 300 dpi PNG and a vector PDF, both hashed in the manifest |
 | References | 19, all cited in the text, all with DOIs where one exists, Chicago author-date in text with an APA list |
-| Anonymity | the author's name does not appear in `manuscript_jcf_draft.pdf`, the supplement PDF, or their markdown sources (checked on the extracted PDF text); the title page carries it by design |
-| Rebuilt artefacts | `pytest tests -q`: 147 passed (full suite, run on this tree); `ruff check research/cpiv/measurement scripts`: clean |
+| Anonymity | the author's name does not appear in `manuscript_jcf_draft.pdf`, the supplement PDF, or their markdown sources (checked on the extracted PDF text); the title page, which carries it, is kept out of this tree |
+| Rebuilt artefacts | `pytest tests -q`: 158 passed (full suite, run on this tree); `ruff check research/cpiv/measurement scripts`: clean |
 
 The checks are enforced by
 [manuscript_limits.py](../../../research/cpiv/measurement/manuscript_limits.py)
@@ -62,11 +62,11 @@ cannot quietly break the format.
 
 ## What only the author can do
 
-1. **Title page contact fields are filled** — affiliation [affiliation removed]; postal
-   address [postal address removed]; email and corresponding-author email [email removed].
-   They live in
+1. **Title page contact fields are filled.** They live in
    [build_manuscript.py](../../../research/cpiv/measurement/build_manuscript.py),
-   so a rebuild keeps them; re-check them before submitting.
+   so a rebuild keeps them. That file is tracked, so the values stay in the
+   public tree until they move to an untracked local file. Re-check them before
+   submitting.
 2. **Acknowledgements: none, decided.** There is no funding, collaborator or
    helper to acknowledge, so the heading was removed rather than left as an
    empty slot. If the author later wants to thank someone, restore the
