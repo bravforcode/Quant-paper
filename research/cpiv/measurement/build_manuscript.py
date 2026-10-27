@@ -14,7 +14,8 @@ The package follows the publisher's compilation order and file rules:
 * ``manuscript_jcf_supplement.md`` — the appendices and Table S1, which the
   publisher does not typeset with the article;
 * ``submission/title_page.md`` — the separate title page, carrying the short
-  title, the word count and the figure and table count;
+  title, the word count, the figure and table count and the contact fields
+  from the untracked ``contact.local.json``;
 * ``submission/tables/table_N.csv`` — each table as a separate editable file.
 
 The build refuses to finish if the rendered manuscript breaks one of the
@@ -28,6 +29,7 @@ Usage::
 from __future__ import annotations
 
 import argparse
+import json
 import re
 from pathlib import Path
 
@@ -54,6 +56,12 @@ TITLE = (
 )
 SHORT_TITLE = "When Is a CPIV Measurable?"
 AUTHOR = "Phirawit Jitnarong"
+
+#: The affiliation, postal address and email are read from a local file that
+#: is kept out of the tree, so the tracked code holds no contact details.
+#: Copy ``contact.example.json`` to ``CONTACT_FILE`` and fill it in.
+CONTACT_FILE = HERE / "contact.local.json"
+CONTACT_FIELDS = ("affiliation", "postal_address", "email")
 
 SLOT = re.compile(r"\{\{([A-Za-z0-9_.]+)\}\}")
 
@@ -155,7 +163,21 @@ def _figure_paths(rendered: str) -> list[Path]:
     return [Path(target) for target in re.findall(r"!\[[^\]]*\]\(([^)]+)\)", rendered)]
 
 
-def title_page(rendered: str) -> str:
+def load_contact(path: Path = CONTACT_FILE) -> dict[str, str]:
+    """The title page's contact fields; the build stops if any is missing."""
+    if not path.exists():
+        raise SystemExit(
+            f"{path} is missing; copy contact.example.json to it and fill in "
+            "the affiliation, postal address and email"
+        )
+    data = json.loads(path.read_text(encoding="utf-8"))
+    empty = [field for field in CONTACT_FIELDS if not str(data.get(field, "")).strip()]
+    if empty:
+        raise SystemExit(f"{path} has no value for: {', '.join(empty)}")
+    return {field: str(data[field]).strip() for field in CONTACT_FIELDS}
+
+
+def title_page(rendered: str, contact: dict[str, str]) -> str:
     """The separate title page the publisher requires."""
     tables = _tables(rendered)
     figures = _figure_paths(rendered)
@@ -170,13 +192,13 @@ def title_page(rendered: str) -> str:
 
 **Author.** {AUTHOR}
 
-**Affiliation.** [affiliation removed]
+**Affiliation.** {contact['affiliation']}
 
-**Postal address.** [postal address removed]
+**Postal address.** {contact['postal_address']}
 
-**Email.** [email removed]
+**Email.** {contact['email']}
 
-**Corresponding author.** {AUTHOR}, [email removed]
+**Corresponding author.** {AUTHOR}, {contact['email']}
 
 **Running header (short title).** {SHORT_TITLE}
 
@@ -201,8 +223,11 @@ def build(
     supplement_path: Path = SUPPLEMENT_TEMPLATE,
     supplement_output: Path = SUPPLEMENT_OUTPUT,
     strict: bool = True,
+    contact_path: Path = CONTACT_FILE,
 ) -> str:
     """Render the manuscript and the rest of the package; return the text."""
+    # Read the contact fields first, so a missing file writes nothing.
+    contact = load_contact(contact_path)
     outputs = BenchmarkOutputs.load(
         study_dir or study_dir_default(), sweep_dir or sweep_dir_default()
     )
@@ -235,7 +260,7 @@ def build(
     supplement_output.write_text(supplement, encoding="utf-8")
 
     TITLE_PAGE.parent.mkdir(parents=True, exist_ok=True)
-    TITLE_PAGE.write_text(title_page(rendered), encoding="utf-8")
+    TITLE_PAGE.write_text(title_page(rendered, contact), encoding="utf-8")
     write_table_csvs(rendered, TABLE_DIR)
     return rendered
 

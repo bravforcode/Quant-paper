@@ -44,7 +44,7 @@ package if the result breaks a stated limit.
 
 | Check | Result |
 |:--|:--|
-| Main text length (numbered Section 1 through Section 8, tables included) | 9 959 words — within the 10 000-word guidance; the same figure appears on the title page |
+| Main text length (numbered Section 1 through Section 8, tables included) | 9 979 words — within the 10 000-word guidance; the same figure appears on the title page |
 | Abstract | 194 words, one paragraph — within 150–200 |
 | Keywords | 6 — within 4–6 |
 | Key messages | 4, longest 69 characters — within 3–4 and 85 characters |
@@ -62,11 +62,10 @@ cannot quietly break the format.
 
 ## What only the author can do
 
-1. **Title page contact fields are filled.** They live in
-   [build_manuscript.py](../../../research/cpiv/measurement/build_manuscript.py),
-   so a rebuild keeps them. That file is tracked, so the values stay in the
-   public tree until they move to an untracked local file. Re-check them before
-   submitting.
+1. **Title page contact fields are filled.** They come from
+   `research/cpiv/measurement/contact.local.json`, which is untracked and is
+   copied from `contact.example.json` in the same folder. The build stops
+   without it, so a rebuild keeps them. Re-check them before submitting.
 2. **Acknowledgements: none, decided.** There is no funding, collaborator or
    helper to acknowledge, so the heading was removed rather than left as an
    empty slot. If the author later wants to thank someone, restore the
