@@ -9,6 +9,7 @@ the anonymised document must not carry the author's name.
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -180,6 +181,19 @@ def test_the_supplement_carries_the_two_supplementary_tables() -> None:
     assert "{{" not in supplement
 
 
+CONTACT = {
+    "affiliation": "Test Faculty, Test University, Testland",
+    "postal_address": "1 Test Road, Testville 00000, Testland",
+    "email": "contact@example.invalid",
+}
+
+
+def _contact_file(directory: Path) -> Path:
+    path = directory / "contact.local.json"
+    path.write_text(json.dumps(CONTACT), encoding="utf-8")
+    return path
+
+
 def test_the_package_writes_a_title_page_with_the_required_fields(tmp_path: Path) -> None:
     from research.cpiv.measurement import build_manuscript as builder
 
@@ -195,6 +209,7 @@ def test_the_package_writes_a_title_page_with_the_required_fields(tmp_path: Path
             supplement_output=supplement,
             study_dir=STUDY_DIR,
             sweep_dir=SWEEP_DIR,
+            contact_path=_contact_file(tmp_path),
         )
     finally:
         builder.TITLE_PAGE, builder.TABLE_DIR = originals
@@ -208,3 +223,33 @@ def test_the_package_writes_a_title_page_with_the_required_fields(tmp_path: Path
     assert "One figure; 7 tables" in page
     assert len(list(tables.glob("table_*.csv"))) == 7
     assert words(Path(main).read_text(encoding="utf-8")) > 0
+
+
+def test_the_title_page_takes_its_contact_fields_from_the_local_file(tmp_path: Path) -> None:
+    from research.cpiv.measurement import build_manuscript as builder
+
+    contact = builder.load_contact(_contact_file(tmp_path))
+    page = builder.title_page(_rendered(), contact)
+    assert f"**Affiliation.** {CONTACT['affiliation']}" in page
+    assert f"**Postal address.** {CONTACT['postal_address']}" in page
+    assert f"**Email.** {CONTACT['email']}" in page
+    assert f"**Corresponding author.** {builder.AUTHOR}, {CONTACT['email']}" in page
+
+
+def test_a_missing_or_incomplete_contact_file_stops_the_build(tmp_path: Path) -> None:
+    from research.cpiv.measurement import build_manuscript as builder
+
+    with pytest.raises(SystemExit, match="contact.example.json"):
+        builder.load_contact(tmp_path / "absent.json")
+
+    partial = tmp_path / "partial.json"
+    partial.write_text(json.dumps({"email": CONTACT["email"]}), encoding="utf-8")
+    with pytest.raises(SystemExit, match="affiliation, postal_address"):
+        builder.load_contact(partial)
+
+
+def test_the_build_code_holds_no_email_address() -> None:
+    source = (ROOT / "research" / "cpiv" / "measurement" / "build_manuscript.py").read_text(
+        encoding="utf-8"
+    )
+    assert not re.search(r"[\w.+-]+@[\w-]+\.[\w.]+", source)
