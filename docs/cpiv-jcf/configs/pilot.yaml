@@ -1,0 +1,87 @@
+# Pilot configuration — schema familiarisation and feasibility only.
+# A pilot result is never reported as a main result (PLAN.md §5.4).
+# Every TBD-DATA field must be replaced before the preregistration freeze.
+
+role: pilot
+status: draft-not-frozen
+blocked_on: data-licence
+licence_record: null          # path to the written licence/permission record; required
+report_as_main_result: false
+
+data:
+  vendor: "TBD-DATA"
+  product: "TBD-DATA"
+  window_utc: ["TBD-DATA", "TBD-DATA"]
+  fields_required:
+    - call_bid
+    - call_ask
+    - put_bid
+    - put_ask
+    - quote_timestamp_utc
+    - underlying_price
+    - underlying_timestamp_utc
+    - strike
+    - expiry
+    - multiplier
+    - exercise_style
+
+universe:
+  underlyings: "TBD-DATA"
+  exercise_style: "TBD-DATA"        # U1 European (SPX) or U2 American (SPY/QQQ/IWM)
+  min_pairs_per_cross_section: "TBD-DATA"
+
+sampling:
+  snapshot_grid: "TBD-DATA"          # e.g. every 5 minutes from 09:35 to 15:55 ET
+  quote_sync_tolerance_seconds: "TBD-DATA"
+  spot_sync_tolerance_seconds: "TBD-DATA"
+
+inputs:
+  rate_source: "TBD-DATA"
+  carry_source: "TBD-DATA"
+  day_count: 365
+
+eligibility:
+  moneyness: "K/S"
+  maturity_bands_days: "TBD-DATA"
+  min_time_value_ticks: "TBD-DATA"
+  max_bid_ask_width_ticks: "TBD-DATA"
+
+solver:
+  model: european_bsm
+  iv_bracket: [1.0e-8, 5.0]
+  max_iterations: 64
+  near_bound_guard: 1.0e-10
+  clip_quotes: false
+
+tick:
+  convention: "TBD-DATA"
+  half_tick_variant: false
+
+tolerances_pp: [0.05, 0.10, 0.25]
+primary_tolerance_pp: 0.10           # intended value; changing it after the pilot is a protocol change
+
+outcomes:
+  - coverage
+  - sign_disagreement
+  - spearman_rank
+  - pairwise_inversion_rate
+  - tail_turnover
+  - endpoint_ambiguity
+  - input_sensitivity
+
+secondary_outcome:
+  calibration_fit: "TBD-DATA"   # parametric or nonparametric surface fit; fixed before freeze
+
+baselines:
+  - raw_midpoint
+  - bound_filtered_midpoint
+  - endpoint_interval
+  - parity_residual_dependent
+
+inference:
+  bootstrap_unit: underlying-day
+  resamples: 2000
+  seed: null
+
+holdout:
+  frozen_config: true
