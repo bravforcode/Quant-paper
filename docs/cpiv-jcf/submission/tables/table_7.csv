@@ -1,0 +1,7 @@
+Perturbation,Coverage change,MAE (pp),Mean abs. CPIV change (pp)
+Endpoint widened by half a tick,-7.3 pp,0.016,0.000
+Spot +1 bp,0.0 pp,0.066,0.066
+Rate +5 bp,0.0 pp,0.054,0.054
+Spot timestamp −3 s,-8.1 pp,—,—
+Resolution scale halved,0.0 pp,0.009,0.000
+Synchronization tolerance relaxed to 5 s,0.0 pp,0.009,0.000

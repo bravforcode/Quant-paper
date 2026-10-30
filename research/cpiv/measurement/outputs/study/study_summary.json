@@ -1,0 +1,969 @@
+{
+  "abstained": {
+    "n": 822,
+    "raw_mae_on_abstained_pp": 0.5776178856362293,
+    "raw_sign_disagreement_vs_truth": 0.0,
+    "share_of_attempted": 0.9194630872483222,
+    "terminal_counts": {
+      "contract_mismatch": 2,
+      "identified_outside_tolerance": 719,
+      "invalid_input": 13,
+      "partially_resolved": 77,
+      "timing_mismatch": 11
+    }
+  },
+  "attempted": 894,
+  "common_set": {
+    "bound_filtered_vs_protocol_certified": {
+      "error_reduction_pp": 0.0,
+      "mae_baseline_pp": 0.00872725611209068,
+      "mae_method_pp": 0.00872725611209068,
+      "n": 72,
+      "pairwise_inversion_baseline_vs_method": 0.0,
+      "pairwise_inversion_baseline_vs_truth": 0.15101721439749607,
+      "pairwise_inversion_method_vs_truth": 0.15101721439749607,
+      "sign_disagreement_baseline_vs_method": 0.0,
+      "sign_disagreement_baseline_vs_truth": 0.0,
+      "sign_disagreement_method_vs_truth": 0.0,
+      "spearman_baseline_vs_method": 1.0,
+      "spearman_baseline_vs_truth": 0.8997041610392952,
+      "spearman_method_vs_truth": 0.8997041610392952,
+      "tail_turnover_baseline_vs_method": 0.0,
+      "tail_turnover_baseline_vs_truth": 0.39285714285714285,
+      "tail_turnover_method_vs_truth": 0.39285714285714285
+    },
+    "bound_filtered_vs_protocol_identified": {
+      "error_reduction_pp": 0.0,
+      "mae_baseline_pp": 0.039584137255237996,
+      "mae_method_pp": 0.039584137255237996,
+      "n": 791,
+      "pairwise_inversion_baseline_vs_method": 0.0,
+      "pairwise_inversion_baseline_vs_truth": 0.07051846256757233,
+      "pairwise_inversion_method_vs_truth": 0.07051846256757233,
+      "sign_disagreement_baseline_vs_method": 0.0,
+      "sign_disagreement_baseline_vs_truth": 0.0,
+      "sign_disagreement_method_vs_truth": 0.0,
+      "spearman_baseline_vs_method": 1.0,
+      "spearman_baseline_vs_truth": 0.9661465625967935,
+      "spearman_method_vs_truth": 0.9661465625967935,
+      "tail_turnover_baseline_vs_method": 0.0,
+      "tail_turnover_baseline_vs_truth": 0.12025316455696203,
+      "tail_turnover_method_vs_truth": 0.12025316455696203
+    },
+    "raw_midpoint_vs_bound_filtered": {
+      "error_reduction_pp": 0.0,
+      "mae_baseline_pp": 0.5315435039424857,
+      "mae_method_pp": 0.5315435039424857,
+      "n": 889,
+      "pairwise_inversion_baseline_vs_method": 0.0,
+      "pairwise_inversion_baseline_vs_truth": 0.06671429621015776,
+      "pairwise_inversion_method_vs_truth": 0.06671429621015776,
+      "sign_disagreement_baseline_vs_method": 0.0,
+      "sign_disagreement_baseline_vs_truth": 0.0,
+      "sign_disagreement_method_vs_truth": 0.0,
+      "spearman_baseline_vs_method": 1.0,
+      "spearman_baseline_vs_truth": 0.9718280917129507,
+      "spearman_method_vs_truth": 0.9718280917129507,
+      "tail_turnover_baseline_vs_method": 0.0,
+      "tail_turnover_baseline_vs_truth": 0.07865168539325842,
+      "tail_turnover_method_vs_truth": 0.07865168539325842
+    },
+    "raw_midpoint_vs_protocol_certified": {
+      "error_reduction_pp": 0.0,
+      "mae_baseline_pp": 0.00872725611209068,
+      "mae_method_pp": 0.00872725611209068,
+      "n": 72,
+      "pairwise_inversion_baseline_vs_method": 0.0,
+      "pairwise_inversion_baseline_vs_truth": 0.15101721439749607,
+      "pairwise_inversion_method_vs_truth": 0.15101721439749607,
+      "sign_disagreement_baseline_vs_method": 0.0,
+      "sign_disagreement_baseline_vs_truth": 0.0,
+      "sign_disagreement_method_vs_truth": 0.0,
+      "spearman_baseline_vs_method": 1.0,
+      "spearman_baseline_vs_truth": 0.8997041610392952,
+      "spearman_method_vs_truth": 0.8997041610392952,
+      "tail_turnover_baseline_vs_method": 0.0,
+      "tail_turnover_baseline_vs_truth": 0.39285714285714285,
+      "tail_turnover_method_vs_truth": 0.39285714285714285
+    },
+    "raw_midpoint_vs_protocol_identified": {
+      "error_reduction_pp": 0.0,
+      "mae_baseline_pp": 0.039584137255237996,
+      "mae_method_pp": 0.039584137255237996,
+      "n": 791,
+      "pairwise_inversion_baseline_vs_method": 0.0,
+      "pairwise_inversion_baseline_vs_truth": 0.07051846256757233,
+      "pairwise_inversion_method_vs_truth": 0.07051846256757233,
+      "sign_disagreement_baseline_vs_method": 0.0,
+      "sign_disagreement_baseline_vs_truth": 0.0,
+      "sign_disagreement_method_vs_truth": 0.0,
+      "spearman_baseline_vs_method": 1.0,
+      "spearman_baseline_vs_truth": 0.9661465625967935,
+      "spearman_method_vs_truth": 0.9661465625967935,
+      "tail_turnover_baseline_vs_method": 0.0,
+      "tail_turnover_baseline_vs_truth": 0.12025316455696203,
+      "tail_turnover_method_vs_truth": 0.12025316455696203
+    }
+  },
+  "common_set_note": "The certified value is the midpoint CPIV of the same pair, so on the common set the protocol and the raw midpoint are numerically identical. Every own-set difference is a selection effect, and every common-set difference is zero by construction. The protocol is a labelling and abstention device, not a second estimator.",
+  "coverage_by_tolerance": [
+    {
+      "coverage_of_attempted": 0.0,
+      "coverage_of_identified": 0.0,
+      "resolved": 0,
+      "tolerance_pp": 0.05
+    },
+    {
+      "coverage_of_attempted": 0.08053691275167785,
+      "coverage_of_identified": 0.09102402022756005,
+      "resolved": 72,
+      "tolerance_pp": 0.1
+    },
+    {
+      "coverage_of_attempted": 0.3277404921700224,
+      "coverage_of_identified": 0.37041719342604296,
+      "resolved": 293,
+      "tolerance_pp": 0.25
+    }
+  ],
+  "defect_counts": {
+    "contract_mismatch": 2,
+    "crossed_quote": 8,
+    "missing_leg": 6,
+    "none": 868,
+    "out_of_bounds_quote": 5,
+    "stale_quote": 11
+  },
+  "error_profile": {
+    "bound_filtered": {
+      "max_abs_error_pp": 10.955820039092195,
+      "mean_abs_error_pp": 0.5315435039424857,
+      "mean_signed_error_pp": 0.4915296000765127,
+      "median_abs_error_pp": 0.02457476111243917,
+      "n": 889,
+      "p75_abs_error_pp": 0.06469330896625713,
+      "p90_abs_error_pp": 0.26058897263678127,
+      "p95_abs_error_pp": 5.99025717759128,
+      "p99_abs_error_pp": 8.386800537123591,
+      "share_within_0.05_pp": 0.6940382452193475,
+      "share_within_0.10_pp": 0.8211473565804275,
+      "share_within_0.25_pp": 0.8976377952755905,
+      "share_within_1.00_pp": 0.9336332958380202
+    },
+    "protocol_certified": {
+      "max_abs_error_pp": 0.024120190760357207,
+      "mean_abs_error_pp": 0.00872725611209068,
+      "mean_signed_error_pp": -0.0005005398843104433,
+      "median_abs_error_pp": 0.00736241754632494,
+      "n": 72,
+      "p75_abs_error_pp": 0.011767145123220413,
+      "p90_abs_error_pp": 0.01777038825571675,
+      "p95_abs_error_pp": 0.021411642595028372,
+      "p99_abs_error_pp": 0.023520224617138104,
+      "share_within_0.05_pp": 1.0,
+      "share_within_0.10_pp": 1.0,
+      "share_within_0.25_pp": 1.0,
+      "share_within_1.00_pp": 1.0
+    },
+    "protocol_identified": {
+      "max_abs_error_pp": 0.41507321594674806,
+      "mean_abs_error_pp": 0.039584137255237996,
+      "mean_signed_error_pp": 0.007398419773133031,
+      "median_abs_error_pp": 0.021376284965246573,
+      "n": 791,
+      "p75_abs_error_pp": 0.04843059085808954,
+      "p90_abs_error_pp": 0.09832721989077031,
+      "p95_abs_error_pp": 0.14338625802262706,
+      "p99_abs_error_pp": 0.28830635395517573,
+      "share_within_0.05_pp": 0.7648546144121365,
+      "share_within_0.10_pp": 0.9051833122629582,
+      "share_within_0.25_pp": 0.9835651074589128,
+      "share_within_1.00_pp": 1.0
+    },
+    "raw_midpoint": {
+      "max_abs_error_pp": 10.955820039092195,
+      "mean_abs_error_pp": 0.5315435039424857,
+      "mean_signed_error_pp": 0.4915296000765127,
+      "median_abs_error_pp": 0.02457476111243917,
+      "n": 889,
+      "p75_abs_error_pp": 0.06469330896625713,
+      "p90_abs_error_pp": 0.26058897263678127,
+      "p95_abs_error_pp": 5.99025717759128,
+      "p99_abs_error_pp": 8.386800537123591,
+      "share_within_0.05_pp": 0.6940382452193475,
+      "share_within_0.10_pp": 0.8211473565804275,
+      "share_within_0.25_pp": 0.8976377952755905,
+      "share_within_1.00_pp": 0.9336332958380202
+    }
+  },
+  "frontier_note": "The selection frontier tests whether the abstention rule selects a set that is genuinely easier to measure. For each tolerance it compares the certified subset with two nulls of the same size: pairs drawn uniformly, and whole underlying-days drawn with replacement. The p-values are add-one Monte Carlo estimates over the declared number of trials.",
+  "funnel": [
+    {
+      "count": 892,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9977628635346756,
+      "share_of_prior": 0.9977628635346756,
+      "stage": "contract"
+    },
+    {
+      "count": 881,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9854586129753915,
+      "share_of_prior": 0.9876681614349776,
+      "stage": "timing"
+    },
+    {
+      "count": 873,
+      "dominant_rejection_reason": "quote_invalid",
+      "share_of_attempted": 0.9765100671140939,
+      "share_of_prior": 0.9909194097616345,
+      "stage": "quote"
+    },
+    {
+      "count": 873,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9765100671140939,
+      "share_of_prior": 1.0,
+      "stage": "input"
+    },
+    {
+      "count": 868,
+      "dominant_rejection_reason": "theoretical_bound_violation",
+      "share_of_attempted": 0.970917225950783,
+      "share_of_prior": 0.9942726231386025,
+      "stage": "midpoint"
+    },
+    {
+      "count": 791,
+      "dominant_rejection_reason": "endpoint_incomplete",
+      "share_of_attempted": 0.8847874720357942,
+      "share_of_prior": 0.9112903225806451,
+      "stage": "endpoint"
+    },
+    {
+      "count": 791,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.8847874720357942,
+      "share_of_prior": 1.0,
+      "stage": "time_value"
+    },
+    {
+      "count": 791,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.8847874720357942,
+      "share_of_prior": 1.0,
+      "stage": "finite_shock"
+    },
+    {
+      "count": 791,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.8847874720357942,
+      "share_of_prior": 1.0,
+      "stage": "tolerance"
+    }
+  ],
+  "generator": {
+    "base_vol": 0.22,
+    "dividend_yield": 0.0,
+    "expiries": [
+      14,
+      30,
+      60
+    ],
+    "rate": 0.05,
+    "seed": 20261022,
+    "strike_fractions": [
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1
+    ],
+    "tick": 0.01,
+    "trading_days": 30,
+    "tree_steps": 800,
+    "underlyings": [
+      "SIM-A",
+      "SIM-B"
+    ]
+  },
+  "inference": {
+    "blocks": 60,
+    "coverage_protocol": {
+      "ci_lower": 0.057825367747921234,
+      "ci_upper": 0.10526906491818769,
+      "effective_resamples": 2000,
+      "estimate": 0.08053691275167785,
+      "null_value": 0.0,
+      "p_value": 0.0005,
+      "resamples": 2000,
+      "seed": 20261022,
+      "unit": "underlying-day"
+    },
+    "delta_spearman_vs_truth": {
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "effective_resamples": 2000,
+      "estimate": 0.0,
+      "null_value": 0.0,
+      "p_value": 1.0,
+      "resamples": 2000,
+      "seed": 20261022,
+      "unit": "underlying-day"
+    },
+    "error_avoided_by_abstention_pp": {
+      "ci_lower": 0.5468249745773421,
+      "ci_upper": 0.6060625755414424,
+      "effective_resamples": 2000,
+      "estimate": 0.5776178856362293,
+      "null_value": 0.0,
+      "p_value": 0.0005,
+      "resamples": 2000,
+      "seed": 20261022,
+      "unit": "underlying-day"
+    },
+    "error_reduction_common_set_pp": {
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "effective_resamples": 2000,
+      "estimate": 0.0,
+      "null_value": 0.0,
+      "p_value": 1.0,
+      "resamples": 2000,
+      "seed": 20261022,
+      "unit": "underlying-day"
+    },
+    "note": "The protocol does not re-estimate CPIV; it labels and abstains. The three difference statistics are therefore exactly zero on the common set, where the certified value is the midpoint value. The informative quantities are the coverage, the error avoided by abstention, and the own-set comparison.",
+    "resamples": 2000,
+    "seed": 20261022,
+    "sign_disagreement_reduction_vs_truth": {
+      "ci_lower": 0.0,
+      "ci_upper": 0.0,
+      "effective_resamples": 2000,
+      "estimate": 0.0,
+      "null_value": 0.0,
+      "p_value": 1.0,
+      "resamples": 2000,
+      "seed": 20261022,
+      "unit": "underlying-day"
+    },
+    "unit": "underlying-day"
+  },
+  "market_data_used": false,
+  "network_access_used": false,
+  "own_set": {
+    "bound_filtered": {
+      "bias_vs_truth_pp": 0.4915296000765127,
+      "coverage": 0.9944071588366891,
+      "mae_vs_truth_pp": 0.5315435039424857,
+      "n": 889,
+      "sign_disagreement_vs_truth": 0.0,
+      "spearman_vs_truth": 0.9718280917129507
+    },
+    "protocol_certified": {
+      "bias_vs_truth_pp": -0.0005005398843104433,
+      "coverage": 0.08053691275167785,
+      "mae_vs_truth_pp": 0.00872725611209068,
+      "n": 72,
+      "sign_disagreement_vs_truth": 0.0,
+      "spearman_vs_truth": 0.8997041610392952
+    },
+    "protocol_identified": {
+      "bias_vs_truth_pp": 0.007398419773133031,
+      "coverage": 0.8847874720357942,
+      "mae_vs_truth_pp": 0.039584137255237996,
+      "n": 791,
+      "sign_disagreement_vs_truth": 0.0,
+      "spearman_vs_truth": 0.9661465625967935
+    },
+    "raw_midpoint": {
+      "bias_vs_truth_pp": 0.4915296000765127,
+      "coverage": 0.9944071588366891,
+      "mae_vs_truth_pp": 0.5315435039424857,
+      "n": 889,
+      "sign_disagreement_vs_truth": 0.0,
+      "spearman_vs_truth": 0.9718280917129507
+    }
+  },
+  "perturbations": [
+    {
+      "coverage_protocol": 0.007829977628635347,
+      "coverage_protocol_change": -0.0727069351230425,
+      "description": "Every quote widened by half a tick on both sides.",
+      "mae_vs_truth_pp": 0.016259868631697736,
+      "mean_abs_cpiv_change_vs_base_pp": 0.0,
+      "n": 894,
+      "name": "endpoint_outward",
+      "raw_mae_vs_truth_pp": 0.5315435039424857,
+      "spearman_vs_base_run": 1.0
+    },
+    {
+      "coverage_protocol": 0.08053691275167785,
+      "coverage_protocol_change": 0.0,
+      "description": "Underlying price used for inversion shifted up by one basis point.",
+      "mae_vs_truth_pp": 0.06637419617049481,
+      "mean_abs_cpiv_change_vs_base_pp": 0.06587365628618436,
+      "n": 894,
+      "name": "spot_shift_1bp",
+      "raw_mae_vs_truth_pp": 0.6018279825924163,
+      "spearman_vs_base_run": 0.9999678435912277
+    },
+    {
+      "coverage_protocol": 0.08053691275167785,
+      "coverage_protocol_change": 0.0,
+      "description": "Continuously compounded rate shifted up by five basis points.",
+      "mae_vs_truth_pp": 0.054187261544123844,
+      "mean_abs_cpiv_change_vs_base_pp": 0.0536867216598134,
+      "n": 894,
+      "name": "rate_shift_5bp",
+      "raw_mae_vs_truth_pp": 0.5482687210032565,
+      "spearman_vs_base_run": 0.9999678435912277
+    },
+    {
+      "coverage_protocol": 0.0,
+      "coverage_protocol_change": -0.08053691275167785,
+      "description": "Underlying timestamp moved three seconds behind the quote timestamps.",
+      "mae_vs_truth_pp": null,
+      "mean_abs_cpiv_change_vs_base_pp": null,
+      "n": 894,
+      "name": "stale_spot_3s",
+      "raw_mae_vs_truth_pp": 0.5315435039424857,
+      "spearman_vs_base_run": null
+    },
+    {
+      "coverage_protocol": 0.08053691275167785,
+      "coverage_protocol_change": 0.0,
+      "description": "Resolution scale halved from one tick to half a tick.",
+      "mae_vs_truth_pp": 0.00872725611209068,
+      "mean_abs_cpiv_change_vs_base_pp": 0.0,
+      "n": 894,
+      "name": "half_tick_resolution",
+      "raw_mae_vs_truth_pp": 0.5315435039424857,
+      "spearman_vs_base_run": 1.0
+    },
+    {
+      "coverage_protocol": 0.08053691275167785,
+      "coverage_protocol_change": 0.0,
+      "description": "Quote and spot synchronisation tolerance relaxed to five seconds.",
+      "mae_vs_truth_pp": 0.00872725611209068,
+      "mean_abs_cpiv_change_vs_base_pp": 0.0,
+      "n": 894,
+      "name": "relaxed_sync_5s",
+      "raw_mae_vs_truth_pp": 0.5315435039424857,
+      "spearman_vs_base_run": 1.0
+    }
+  ],
+  "reconciliation": {
+    "attempted": 894,
+    "stage_counts": {
+      "contract": 892,
+      "endpoint": 791,
+      "finite_shock": 791,
+      "input": 873,
+      "midpoint": 868,
+      "quote": 873,
+      "time_value": 791,
+      "timing": 881,
+      "tolerance": 791
+    },
+    "terminal_counts": {
+      "contract_mismatch": 2,
+      "identified_outside_tolerance": 719,
+      "invalid_input": 13,
+      "partially_resolved": 77,
+      "resolved_within_tolerance": 72,
+      "timing_mismatch": 11,
+      "unresolved": 0
+    }
+  },
+  "replication": {
+    "common_set_error_reduction_holdout_pp": 0.0,
+    "common_set_error_reduction_primary_pp": 0.0,
+    "coverage_holdout": 0.08520179372197309,
+    "coverage_primary": 0.07589285714285714,
+    "error_reduction_note": "The own-set error reduction is the selection effect the abstention rule buys; the common-set difference is zero by construction, because the certified value is the midpoint value of the same pair.",
+    "error_reduction_sign_agrees": true,
+    "own_set_error_reduction_holdout_pp": 0.4987786734908253,
+    "own_set_error_reduction_primary_pp": 0.5466473348931883,
+    "periods": {
+      "holdout": {
+        "common_set_raw_vs_protocol": {
+          "error_reduction_pp": 0.0,
+          "mae_baseline_pp": 0.008367054371686599,
+          "mae_method_pp": 0.008367054371686599,
+          "n": 38,
+          "pairwise_inversion_baseline_vs_method": 0.0,
+          "pairwise_inversion_baseline_vs_truth": 0.1422475106685633,
+          "pairwise_inversion_method_vs_truth": 0.1422475106685633,
+          "sign_disagreement_baseline_vs_method": 0.0,
+          "sign_disagreement_baseline_vs_truth": 0.0,
+          "sign_disagreement_method_vs_truth": 0.0,
+          "spearman_baseline_vs_method": 1.0,
+          "spearman_baseline_vs_truth": 0.9056789583105372,
+          "spearman_method_vs_truth": 0.9056789583105372,
+          "tail_turnover_baseline_vs_method": 0.0,
+          "tail_turnover_baseline_vs_truth": 0.375,
+          "tail_turnover_method_vs_truth": 0.375
+        },
+        "n": 446,
+        "own_set": {
+          "bound_filtered": {
+            "bias_vs_truth_pp": 0.46112471824240425,
+            "coverage": 0.9932735426008968,
+            "mae_vs_truth_pp": 0.5071457278625119,
+            "n": 443,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9691064873643549
+          },
+          "protocol_certified": {
+            "bias_vs_truth_pp": -0.0010313693104763739,
+            "coverage": 0.08520179372197309,
+            "mae_vs_truth_pp": 0.008367054371686599,
+            "n": 38,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9056789583105372
+          },
+          "protocol_identified": {
+            "bias_vs_truth_pp": 0.004958000853924146,
+            "coverage": 0.8766816143497758,
+            "mae_vs_truth_pp": 0.03714174446194366,
+            "n": 391,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9625773386277588
+          },
+          "raw_midpoint": {
+            "bias_vs_truth_pp": 0.46112471824240425,
+            "coverage": 0.9932735426008968,
+            "mae_vs_truth_pp": 0.5071457278625119,
+            "n": 443,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9691064873643549
+          }
+        }
+      },
+      "primary": {
+        "common_set_raw_vs_protocol": {
+          "error_reduction_pp": 0.0,
+          "mae_baseline_pp": 0.009129834527836419,
+          "mae_method_pp": 0.009129834527836419,
+          "n": 34,
+          "pairwise_inversion_baseline_vs_method": 0.0,
+          "pairwise_inversion_baseline_vs_truth": 0.15151515151515152,
+          "pairwise_inversion_method_vs_truth": 0.15151515151515152,
+          "sign_disagreement_baseline_vs_method": 0.0,
+          "sign_disagreement_baseline_vs_truth": 0.0,
+          "sign_disagreement_method_vs_truth": 0.0,
+          "spearman_baseline_vs_method": 1.0,
+          "spearman_baseline_vs_truth": 0.893659281894576,
+          "spearman_method_vs_truth": 0.893659281894576,
+          "tail_turnover_baseline_vs_method": 0.0,
+          "tail_turnover_baseline_vs_truth": 0.2857142857142857,
+          "tail_turnover_method_vs_truth": 0.2857142857142857
+        },
+        "n": 448,
+        "own_set": {
+          "bound_filtered": {
+            "bias_vs_truth_pp": 0.5217299647682391,
+            "coverage": 0.9955357142857143,
+            "mae_vs_truth_pp": 0.5557771694210247,
+            "n": 446,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9743927259365801
+          },
+          "protocol_certified": {
+            "bias_vs_truth_pp": 9.274006258089111e-05,
+            "coverage": 0.07589285714285714,
+            "mae_vs_truth_pp": 0.009129834527836419,
+            "n": 34,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.893659281894576
+          },
+          "protocol_identified": {
+            "bias_vs_truth_pp": 0.009783929266659717,
+            "coverage": 0.8928571428571429,
+            "mae_vs_truth_pp": 0.04197157621068321,
+            "n": 400,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9692107109304517
+          },
+          "raw_midpoint": {
+            "bias_vs_truth_pp": 0.5217299647682391,
+            "coverage": 0.9955357142857143,
+            "mae_vs_truth_pp": 0.5557771694210247,
+            "n": 446,
+            "sign_disagreement_vs_truth": 0.0,
+            "spearman_vs_truth": 0.9743927259365801
+          }
+        }
+      }
+    },
+    "primary_day_cut": 15
+  },
+  "secondary_outcome": {
+    "contracts_forgone": 224,
+    "coverage_retained": 0.24324324324324326,
+    "fit": "quadratic in log-moneyness, per expiry slice, on the CPIV surface",
+    "max_slice_surface_change_pp": 2.227071074138808,
+    "protocol_contracts": 72,
+    "raw_contracts": 296,
+    "slices": [
+      {
+        "contracts_forgone": 224,
+        "max_surface_change_pp": 2.227071074138808,
+        "mean_surface_change_pp": 0.7729562959718419,
+        "protocol_contracts": 72,
+        "raw_contracts": 296,
+        "slice": "60d"
+      }
+    ]
+  },
+  "selection_frontier": [
+    {
+      "abstained_mae_pp": 0.5315435039424857,
+      "block_null_mean_pp": null,
+      "coverage": 0.0,
+      "mae_certified_pp": null,
+      "n_certified": 0,
+      "null_mean_pp": null,
+      "null_q05_pp": null,
+      "null_q95_pp": null,
+      "null_sd_pp": null,
+      "p_value_block_null": null,
+      "p_value_pair_null": null,
+      "tolerance_pp": 0.05,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 0.5350997160061316,
+      "block_null_mean_pp": 0.5311919561273734,
+      "coverage": 0.006749156355455568,
+      "mae_certified_pp": 0.008187628575937836,
+      "n_certified": 6,
+      "null_mean_pp": 0.5417292634500739,
+      "null_q05_pp": 0.016982404580914153,
+      "null_q95_pp": 2.2019488459263052,
+      "null_sd_pp": 0.7714995708739065,
+      "p_value_block_null": 0.004497751124437781,
+      "p_value_pair_null": 0.0034982508745627187,
+      "tolerance_pp": 0.075,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 0.5776178856362293,
+      "block_null_mean_pp": 0.5338278652585654,
+      "coverage": 0.08098987626546682,
+      "mae_certified_pp": 0.00872725611209068,
+      "n_certified": 72,
+      "null_mean_pp": 0.5244333403423529,
+      "null_q05_pp": 0.1964546229903089,
+      "null_q95_pp": 0.8777819055946358,
+      "null_sd_pp": 0.20731235745749463,
+      "p_value_block_null": 0.0004997501249375312,
+      "p_value_pair_null": 0.0004997501249375312,
+      "tolerance_pp": 0.1,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 0.6433783912455445,
+      "block_null_mean_pp": 0.5320208138047134,
+      "coverage": 0.1766029246344207,
+      "mae_certified_pp": 0.010122245943511016,
+      "n_certified": 157,
+      "null_mean_pp": 0.5298294455526015,
+      "null_q05_pp": 0.3171889023594478,
+      "null_q95_pp": 0.7624920531919885,
+      "null_sd_pp": 0.13491871646896328,
+      "p_value_block_null": 0.0004997501249375312,
+      "p_value_pair_null": 0.0004997501249375312,
+      "tolerance_pp": 0.15,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 0.7158531370894942,
+      "block_null_mean_pp": 0.5326457202894238,
+      "coverage": 0.26209223847019125,
+      "mae_certified_pp": 0.012628828644470333,
+      "n_certified": 233,
+      "null_mean_pp": 0.5283455954098906,
+      "null_q05_pp": 0.35905718003649534,
+      "null_q95_pp": 0.7091071635669218,
+      "null_sd_pp": 0.10441955152383585,
+      "p_value_block_null": 0.0004997501249375312,
+      "p_value_pair_null": 0.0004997501249375312,
+      "tolerance_pp": 0.2,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 0.7860225009967078,
+      "block_null_mean_pp": 0.530298631194899,
+      "coverage": 0.3295838020247469,
+      "mae_certified_pp": 0.013900219832190995,
+      "n_certified": 293,
+      "null_mean_pp": 0.5335524361671798,
+      "null_q05_pp": 0.3854777300944764,
+      "null_q95_pp": 0.6828267163134031,
+      "null_sd_pp": 0.08969685804203593,
+      "p_value_block_null": 0.0004997501249375312,
+      "p_value_pair_null": 0.0004997501249375312,
+      "tolerance_pp": 0.25,
+      "trials": 2000
+    },
+    {
+      "abstained_mae_pp": 1.1869396221498574,
+      "block_null_mean_pp": 0.531783792146135,
+      "coverage": 0.5613048368953881,
+      "mae_certified_pp": 0.01931006486257609,
+      "n_certified": 499,
+      "null_mean_pp": 0.5304464121472394,
+      "null_q05_pp": 0.43573807101518436,
+      "null_q95_pp": 0.6254601630164917,
+      "null_sd_pp": 0.05636512346631452,
+      "p_value_block_null": 0.0004997501249375312,
+      "p_value_pair_null": 0.0004997501249375312,
+      "tolerance_pp": 0.5,
+      "trials": 2000
+    }
+  ],
+  "settings": {
+    "frontier_tolerances_pp": [
+      0.05,
+      0.075,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.5
+    ],
+    "frontier_trials": 2000,
+    "primary_tolerance_pp": 0.1,
+    "quote_sync_tolerance_seconds": 2.0,
+    "resolution_ticks": 1.0,
+    "sign_band_pp": 0.05,
+    "tolerances_pp": [
+      0.05,
+      0.1,
+      0.25
+    ]
+  },
+  "status": "synthetic_ground_truth_study_only",
+  "strata": {
+    "maturity": [
+      {
+        "bucket": "14d",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 0.9966442953020134,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 1.5041383234855183,
+        "n": 298,
+        "raw_mae_on_abstained_pp": 1.5041383234855183,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "30d",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 0.9932885906040269,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 0.06835385648601618,
+        "n": 298,
+        "raw_mae_on_abstained_pp": 0.06835385648601618,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "60d",
+        "coverage_protocol": 0.24161073825503357,
+        "coverage_raw": 0.9932885906040269,
+        "mae_protocol_pp": 0.00872725611209068,
+        "mae_raw_pp": 0.018852538546655667,
+        "n": 298,
+        "raw_mae_on_abstained_pp": 0.0221070936149087,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      }
+    ],
+    "moneyness": [
+      {
+        "bucket": "K/S=0.90",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 1.0,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 0.05358806624756901,
+        "n": 179,
+        "raw_mae_on_abstained_pp": 0.05358806624756901,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "K/S=0.95",
+        "coverage_protocol": 0.1340782122905028,
+        "coverage_raw": 0.994413407821229,
+        "mae_protocol_pp": 0.010011345716931056,
+        "mae_raw_pp": 0.02758148392429208,
+        "n": 179,
+        "raw_mae_on_abstained_pp": 0.030319687281283408,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "K/S=1.00",
+        "coverage_protocol": 0.1340782122905028,
+        "coverage_raw": 0.9832402234636871,
+        "mae_protocol_pp": 0.00918418259030542,
+        "mae_raw_pp": 0.02438197123061824,
+        "n": 179,
+        "raw_mae_on_abstained_pp": 0.026781622068562373,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "K/S=1.05",
+        "coverage_protocol": 0.1348314606741573,
+        "coverage_raw": 1.0,
+        "mae_protocol_pp": 0.006986240029035566,
+        "mae_raw_pp": 0.04149578575343648,
+        "n": 178,
+        "raw_mae_on_abstained_pp": 0.04687389677542104,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "K/S=1.10",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 0.994413407821229,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 2.5076569112771376,
+        "n": 179,
+        "raw_mae_on_abstained_pp": 2.5076569112771376,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      }
+    ],
+    "spread": [
+      {
+        "bucket": "1 tick half-spread",
+        "coverage_protocol": 0.2408026755852843,
+        "coverage_raw": 0.9866220735785953,
+        "mae_protocol_pp": 0.00872725611209068,
+        "mae_raw_pp": 0.019837453927242787,
+        "n": 299,
+        "raw_mae_on_abstained_pp": 0.0234246029976058,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "2 tick half-spread",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 1.0,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 0.06239900554986758,
+        "n": 348,
+        "raw_mae_on_abstained_pp": 0.06239900554986758,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "3 tick half-spread",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 0.98989898989899,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 3.568128897277474,
+        "n": 99,
+        "raw_mae_on_abstained_pp": 3.568128897277474,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "wide session",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 1.0,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 0.6439097312958572,
+        "n": 148,
+        "raw_mae_on_abstained_pp": 0.6439097312958572,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      }
+    ],
+    "truth_magnitude": [
+      {
+        "bucket": "0.1-1 pp",
+        "coverage_protocol": 0.1605351170568562,
+        "coverage_raw": 0.9866220735785953,
+        "mae_protocol_pp": 0.009597764153618238,
+        "mae_raw_pp": 0.022010606059080652,
+        "n": 299,
+        "raw_mae_on_abstained_pp": 0.024422818251235292,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": "<0.1 pp",
+        "coverage_protocol": 0.0,
+        "coverage_raw": 1.0,
+        "mae_protocol_pp": null,
+        "mae_raw_pp": 0.05168010985713807,
+        "n": 238,
+        "raw_mae_on_abstained_pp": 0.05168010985713807,
+        "sign_disagreement_protocol_vs_truth": null,
+        "sign_disagreement_raw_vs_truth": 0.0
+      },
+      {
+        "bucket": ">=1 pp",
+        "coverage_protocol": 0.06722689075630252,
+        "coverage_raw": 0.9971988795518207,
+        "mae_protocol_pp": 0.006986240029035566,
+        "mae_raw_pp": 1.274576348515287,
+        "n": 357,
+        "raw_mae_on_abstained_pp": 1.3662093684058594,
+        "sign_disagreement_protocol_vs_truth": 0.0,
+        "sign_disagreement_raw_vs_truth": 0.0
+      }
+    ]
+  },
+  "truth": {
+    "by_moneyness": [
+      {
+        "bucket": "K/S=0.90",
+        "max_true_cpiv_pp": -0.020916842792084722,
+        "median_true_cpiv_pp": -0.044158676463090796,
+        "min_true_cpiv_pp": -0.12774448954296913,
+        "n": 179
+      },
+      {
+        "bucket": "K/S=0.95",
+        "max_true_cpiv_pp": -0.04638560615304321,
+        "median_true_cpiv_pp": -0.09756771253276453,
+        "min_true_cpiv_pp": -0.21242459820033366,
+        "n": 179
+      },
+      {
+        "bucket": "K/S=1.00",
+        "max_true_cpiv_pp": -0.1525212541405918,
+        "median_true_cpiv_pp": -0.24784574654128644,
+        "min_true_cpiv_pp": -0.38506460913754204,
+        "n": 179
+      },
+      {
+        "bucket": "K/S=1.05",
+        "max_true_cpiv_pp": -1.0007687255627284,
+        "median_true_cpiv_pp": -1.2738194769372768,
+        "min_true_cpiv_pp": -2.3956528124173704,
+        "n": 178
+      },
+      {
+        "bucket": "K/S=1.10",
+        "max_true_cpiv_pp": -4.592496902725535,
+        "median_true_cpiv_pp": -11.47918982670229,
+        "min_true_cpiv_pp": -19.330590898674377,
+        "n": 179
+      }
+    ],
+    "max_true_cpiv_pp": -0.020916842792084722,
+    "median_true_cpiv_pp": -0.24783709967132195,
+    "min_true_cpiv_pp": -19.330590898674377,
+    "n_defined": 894,
+    "n_undefined": 0
+  },
+  "warning": "Synthetic benchmark with a known truth. It is not a market estimate, not a confidence statement about any real security, and not evidence of trading profitability."
+}

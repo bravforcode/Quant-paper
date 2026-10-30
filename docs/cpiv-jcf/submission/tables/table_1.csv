@@ -1,0 +1,10 @@
+Stage,Count,Share of attempted,Share of prior stage,Dominant rejection reason
+Contract,892,99.8 %,99.8 %,—
+Timing,881,98.5 %,98.8 %,—
+Quote,873,97.7 %,99.1 %,quote invalid
+Input,873,97.7 %,100.0 %,—
+Midpoint,868,97.1 %,99.4 %,theoretical bound violation
+Endpoint,791,88.5 %,91.1 %,endpoint incomplete
+Time value,791,88.5 %,100.0 %,—
+Finite shock,791,88.5 %,100.0 %,—
+Tolerance,791,88.5 %,100.0 %,—

@@ -1,0 +1,5 @@
+Quantity,Median,IQR,Range
+Certified coverage,8.2 %,8.1 – 8.5 %,7.9 – 10.1 %
+Certified MAE,0.009 pp,0.008 – 0.010,0.008 – 0.010
+Raw midpoint MAE,0.538 pp,0.530 – 0.542,0.516 – 0.550
+Day-block null p-value (add-one),0.0005,0.0005 – 0.0005,0.0005 – 0.0005
