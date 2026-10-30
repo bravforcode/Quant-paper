@@ -232,38 +232,6 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def make_combined_markdown() -> Path:
-    """Create a combined markdown file with title page, manuscript, and supplement."""
-    combined = SUBMISSION / "combined.md"
-    title_page_text = (SUBMISSION / "title_page.md").read_text(encoding="utf-8")
-    manuscript_text = (MANUSCRIPT_DIR / "manuscript_jcf_draft.md").read_text(encoding="utf-8")
-    # The *rendered* supplement, not the template: the template still carries
-    # the `{{supplementary.strata_table}}` slot, so reading it shipped an
-    # unfilled Table S1 into the combined document.
-    supplement_text = (
-        MANUSCRIPT_DIR / "manuscript_jcf_supplement.md"
-    ).read_text(encoding="utf-8")
-    # Concatenate: title page first, then manuscript, then supplement.
-    # A raw OpenXML page break separates them. A bare "DIVIDER" line was used
-    # before to keep pandoc from reading a leading "---" as YAML front matter,
-    # but pandoc renders the word itself as visible body text; the page break
-    # splits the sections without printing anything.
-    page_break = (
-        "\n```{=openxml}\n"
-        '<w:p><w:r><w:br w:type="page"/></w:r></w:p>\n'
-        "```\n"
-    )
-    combined.write_text(
-        title_page_text
-        + page_break
-        + manuscript_text
-        + page_break
-        + supplement_text,
-        encoding="utf-8",
-    )
-    return combined
-
-
 def main() -> int:
     reference = make_reference_document()
     print(f"reference document: {reference.relative_to(ROOT)}")
@@ -280,17 +248,6 @@ def main() -> int:
             f"pdf {page_count(pdf)} pages, {table_count(docx)} tables"
         )
 
-    # Create combined markdown and PDF
-    combined_md = make_combined_markdown()
-    combined_docx = SUBMISSION / "combined.docx"
-    combined_pdf = SUBMISSION / "combined.pdf"
-    to_docx(combined_md, combined_docx, reference)
-    to_pdf(combined_docx, combined_pdf)
-    print(
-        f"combined: docx {combined_docx.stat().st_size // 1024} KiB, "
-        f"pdf {page_count(combined_pdf)} pages"
-    )
-
     # Figures are also submitted as separate editable files, named by figure
     # number, and the manifest has to cover them.
     figure_dir = SUBMISSION / "figures"
@@ -300,29 +257,20 @@ def main() -> int:
 
     # A package-wide check that the renderer left nothing behind. This runs
     # before the manifest is written so a failure cannot leave a manifest
-    # hashing a known-bad file. `combined.md` and the supplement are included
-    # deliberately: an earlier version checked only the draft and title page,
-    # and the combined document shipped with an unfilled Table S1 slot as a
-    # result, because `make_combined_markdown` used to read the supplement
-    # *template* rather than the rendered supplement.
+    # hashing a known-bad file. The supplement is included because it was
+    # once checked only through its template, which still carries slots.
+    # The combined title-page-plus-manuscript file is not built: it would carry
+    # the author's identity into the anonymised package.
     _SLOT = re.compile(r"\{\{[^}]+\}\}")
-    _LEAKED = re.compile(r"^DIVIDER$", re.MULTILINE)
     for markdown in (
         MANUSCRIPT_DIR / "manuscript_jcf_draft.md",
         MANUSCRIPT_DIR / "manuscript_jcf_supplement.md",
         SUBMISSION / "title_page.md",
-        SUBMISSION / "combined.md",
     ):
         text = markdown.read_text(encoding="utf-8")
         if match := _SLOT.search(text):
             line = text[: match.start()].count("\n") + 1
             raise SystemExit(f"{markdown}:{line} still contains an unfilled slot")
-        if match := _LEAKED.search(text):
-            line = text[: match.start()].count("\n") + 1
-            raise SystemExit(
-                f"{markdown}:{line} contains a leaked DIVIDER marker; "
-                "the combined build should emit a page break, not this text"
-            )
 
     files = sorted(SUBMISSION.glob("*.docx")) + sorted(SUBMISSION.glob("*.pdf"))
     files += sorted((SUBMISSION / "tables").glob("*.csv"))
