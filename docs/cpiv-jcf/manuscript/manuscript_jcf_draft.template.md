@@ -54,7 +54,7 @@ dropped. The protocol does not re-estimate the spread: where it and the raw
 midpoint are both defined they are numerically identical, so every own-set
 improvement is a selection effect. The abstention rule is tested against
 size-matched random subsets, under a pair null and a day-block null that
-preserves within-day dependence. Because the study uses no market data, the protocol is validated on a synthetic instrument whose true spread is defined before any quote exists, under an addendum dated before the sweep. In the
+preserves within-day dependence. With no market data, the protocol is validated on a synthetic instrument whose true spread is defined before any quote exists, under an addendum dated 22 October 2026 (the sweep's date). In the
 benchmark the certified subset beats size-matched random subsets in every
 draw. One declared rule fails: certification coverage depends strongly
 on quote microstructure, falling towards zero on coarse markets. It is a
@@ -72,7 +72,7 @@ numerical validation
 - Certified coverage falls towards zero on coarse-quote markets
 - Abstention selects a genuinely easier set, not merely a smaller one
 - On the common set the protocol is identical to the raw midpoint
-- Thresholds were declared in an addendum dated before the sweep
+- Thresholds were declared in an addendum dated the same day as the sweep
 
 # When Is a Call–Put Implied-Volatility Spread Measurable? An Abstention-Aware Protocol Validated Against a Known Truth
 
@@ -123,8 +123,8 @@ residual cross-checks the algebra, though one that is algebraically
 dependent on the CPIV itself and therefore not an independent validation.
 Parity deviations are also studied in their own right, as evidence of
 short-sale constraints and segmented markets (Ofek et al., 2004).
-Each is a genuine improvement on the raw midpoint, and each is reported here
-as a declared baseline.
+Each is declared here as a baseline. Section 6 scores only the bound-filtered
+midpoint of these; the endpoint interval and the parity residual are described, not scored.
 What none of them does is decline to answer. A bound-filtered midpoint is
 still a point estimate of a quantity the quotes may not determine. An
 endpoint interval is honest about its own width, but the width is usually
@@ -136,7 +136,7 @@ The protocol produces a CPIV by taking the midpoint of the same interval the
 raw baseline takes the midpoint of. It does not improve the estimator. It
 labels pairs.
 
-That has a consequence that is easy to state and easy to avoid stating: on
+The consequence is easy to state and easy to avoid stating: on
 the set of pairs where the protocol certifies a value and the raw midpoint
 also produces one, the two values are *numerically identical*. Every
 difference in error between the two methods on that set is exactly zero, by
@@ -193,7 +193,7 @@ bind the abstract and the conclusion.
 4. **A declared synthetic ground-truth benchmark with a rule tally in
    which one rule fails.** The generator, settings, seeds, specification grid,
    null construction and decision rules were fixed in an addendum
-   addendum written before the replication sweep was run, and the tally reports
+   dated 22 October 2026, the same day as the sweep manifest, and the tally reports
    which rules passed and which did not, with the same prominence.
 
 ## 2. The measurement problem
@@ -257,7 +257,7 @@ therefore be tested against a counterfactual, because the common-set
 comparison is vacuous by construction (Section 2.5).
 
 ### 2.4 Declared baselines and the comparison that matters
-Five baselines are declared in the addendum, and each is reported:
+Five baselines are declared in the addendum. Section 6 scores three of them, the raw midpoint, the bound-filtered midpoint and the protocol; the endpoint interval and the parity residual are described only:
 the raw midpoint CPIV, with no filter beyond the existence of a finite root;
 the bound-filtered midpoint CPIV; the bid–ask endpoint interval, reported as
 an interval rather than a point; the parity residual, labeled throughout as
@@ -287,8 +287,7 @@ independent.
 The **day-block null** draws whole underlying-days with replacement until
 *k* pairs have been selected, so every draw respects the within-day
 dependence of the quotes. It asks the harder question: is the certified set
-better than a random selection that respects the same dependence structure
-the study's own confidence intervals respect? A protocol that beats a pair
+better than a random selection that respects the same dependence? A protocol that beats a pair
 null but not a day-block null has selected a set whose advantage comes from
 its correlation with the day's overall quote quality rather than from its
 own per-pair criteria.
@@ -301,8 +300,7 @@ Hinkley, 1997). The
 day-block null is the primary test, because it is the conservative one and
 because the block resampling is the same device used for the study's own
 confidence intervals.
-One implementation detail matters, and is stated because it affects the
-result. A block draw must match the certified subset exactly in size, so the
+One implementation detail affects the result. A block draw must match the certified subset exactly in size, so the
 final block of a draw may be taken in part, its members chosen at random.
 Taking them systematically — always the first *m* members, say — would bias
 the null towards the earliest pairs of a day, which are not exchangeable
@@ -532,7 +530,7 @@ same size. It is also the regime in which a protocol that reports a number
 without saying whether the number is determined is most likely to mislead.
 
 ### 4.4 What the instrument is not
-The synthetic instrument is a *model artefact*, and three things follow.
+The synthetic instrument is a *model artifact*, and three things follow.
 It does not license an external-validity claim. A protocol that behaves well
 on this instrument may behave differently on a real market, for the reasons
 in Section 2.6: coverage is determined by the microstructure of the market
@@ -629,8 +627,7 @@ renegotiated afterwards.
 ## 6. Results
 
 ### 6.1 The funnel
-The funnel of the development draw (Table 1) is the first result, because it
-establishes what the protocol is actually rejecting.
+The funnel of the development draw (Table 1) shows what the protocol rejects.
 
 **Table 1. Attrition funnel, development draw (seed 20261022)**
 
@@ -746,8 +743,7 @@ protocol declines to certify the pairs that would have been wrong by close
 to six tenths of a percentage point on average.
 
 ### 6.4 The selection frontier
-The frontier (Table 3) is the paper's central result, because it is the only
-result that speaks to the question the protocol poses.
+The frontier (Table 3) is the paper's central result.
 At the primary tolerance of 0.10 percentage points, the certified subset in
 the development draw has a mean absolute error of
 {{study.frontier.0_10.mae}} percentage points, while a pair-null draw of
@@ -820,14 +816,12 @@ R3 and R6 are not computed over the replication draws; the sweep ran them on the
 day-block null mean in {{verdict.R1.below_block_null}} of
 {{verdict.R1.evaluable}} draws, and the day-block null p-value was below
 0.05 in {{verdict.R1.block_null_p_below}} of them; the rule required 16.
-That is the substantive result: against the null that respects the within-day
-dependence of the quotes, the certified set is better, not merely smaller.
+That is the substantive result: the certified set is better, not merely smaller.
 **R2 passed too**, and it is the weaker, partly redundant companion: the
 certified set's own-set error was
 below the raw midpoint's in {{verdict.R2.better}} of
 {{verdict.R2.evaluable}} draws, against a required 16.
-**R3 failed.** This is the paper's most important negative result and it is
-reported as prominently as the passes. The rule required the minimum
+**R3 failed.** It is reported as prominently as the passes. The rule required the minimum
 certified coverage across the ten market specifications to be at least half
 the median coverage. The observed ratio is
 {{verdict.R3.minimum_over_median}}, with a minimum coverage of
@@ -983,9 +977,8 @@ small number, and the frontier p-values sit beside every own-set comparison.
 The distinction between "this method is better" and "this method selected
 better data" is the difference between a reproducible method and a result
 that depends on the analyst's discretion.
-**The thresholds can be fixed before any market data is read.** The addendum
-froze the generator, the settings, the seeds, the specifications, the nulls
-and the rules before the replication outputs were read.
+**The thresholds can be fixed before any market data is read.** The addendum,
+dated 22 October 2026, the same day as the sweep manifest, fixes the generator, the settings, the seeds, the specifications, the nulls and the rules; Section 5.1 gives the provenance.
 **What is not established is any market claim.** The benchmark contains no
 market data and supports no statement about any real security, index or
 option.
@@ -1004,7 +997,7 @@ then applied to a market where accuracy is unobservable has inherited its
 thresholds but none of its evidence about them.
 
 ### 7.3 Threats to validity
-**The truth is a model artefact, and the European map is an approximation
+**The truth is a model artifact, and the European map is an approximation
 for American options.** The benchmark's put leg is American and is inverted
 under a European map, and the protocol recovers the truth anyway — but the
 cancellation that makes this work depends on the exercise premium being a
@@ -1064,7 +1057,7 @@ The benchmark supports no market claim, and none is made. What it does
 establish is that the machinery behaves as specified, that the abstention
 rule has a quantifiable selection effect, and that the thresholds can be
 fixed before any market data is read.
-The research that follows has three kinds. **A market study**, if data become available under a written license that covers publication of the outputs, with schema, sampling rule and tick convention frozen first; its primary result would be coverage and stability rather than accuracy. **An American fallback for the
+**A market study**, if data become available under a written license that covers publication of the outputs, with schema, sampling rule and tick convention frozen first; its primary result would be coverage and stability rather than accuracy. **An American fallback for the
 put leg**, which the benchmark shows the European map survives in the tested
 regime, to be adopted on the strength of that market data's exercise convention rather than a synthetic one. And **an independent reimplementation**
 of the inversion and the resolution rules, which no single-authored pipeline
@@ -1091,7 +1084,7 @@ generator before any quote exists. The instrument, the protocol, the
 replication sweep, the decision-rule tally and the manuscript build are
 implemented in code, and run manifests record the configuration, the seed,
 the environment and the output hashes of every run reported here. The code
-and the aggregate run artefacts (the study summary, the per-draw sweep
+and the aggregate run artifacts (the study summary, the per-draw sweep
 outputs, the specification grid and the rule tally) are available from the
 author for review and will be deposited in a public repository on
 acceptance.
@@ -1100,12 +1093,13 @@ No market data was used, licensed or otherwise. A market study is outside this p
 
 ## Use of artificial intelligence
 
-The author used Perplexity for deep research and Claude (Anthropic) as an editing
-aid for the language of this manuscript. No AI system generated a result, a
-number or a table: every number in this paper is produced by the released code
-from the released artefacts, and the manuscript build fails if any numeric slot in
-the text has no corresponding value in those artefacts. The author reviewed all
-assisted work and is responsible for the entire content of the paper.
+The author used Perplexity for deep research, and Claude (Anthropic) as an editing
+aid for the language of this manuscript and as a coding aid for the analysis code.
+No AI system generated a result, a number or a table: every number in this paper is
+produced by the released code from the released artifacts, and the manuscript build
+fails if any numeric slot in the text has no corresponding value in those artifacts.
+The author reviewed all assisted text and code, ran the test suite, and is
+responsible for the entire content of the paper.
 
 ## Author contributions
 

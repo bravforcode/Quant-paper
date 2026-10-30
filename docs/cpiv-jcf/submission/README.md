@@ -71,7 +71,7 @@ cannot quietly break the format.
    empty slot. If the author later wants to thank someone, restore the
    `## Acknowledgements` heading in the template above the declarations and
    rebuild.
-3. **AI-use statement: edited 2026-10-29 on the author's instruction.** It names each tool and its use: Perplexity for deep research, and Claude (Anthropic) as an editing aid for language. This matches the JCF Use of Artificial Intelligence section. It does not disclose code-authorship assistance, which is the author's decision.
+3. **AI-use statement: edited 2026-10-29, extended to code assistance on the author's instruction.** It names each tool and its use: Perplexity for deep research, and Claude (Anthropic) as an editing aid for language and a coding aid for the analysis code. This matches the JCF Use of Artificial Intelligence section.
 4. **Submit.** Nothing in this directory has been uploaded. The paper uses no market data, so no licence is needed. The vendor letters of 2026-10-29 are not part of this submission; their records are kept in [../licence_correspondence/](../licence_correspondence/).
 
 ## Rebuilding
