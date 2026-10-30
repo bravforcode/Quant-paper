@@ -1,8 +1,8 @@
 # Claim–evidence matrix — JCF submission
 
-Checked against the rebuilt manuscript (`manuscript_jcf_draft.md`, 9,995 main-text words) on 2026-10-30. Paths are relative to `research/cpiv/measurement/outputs/` unless stated.
+Checked against the rebuilt manuscript (`manuscript_jcf_draft.md`, 9,973 main-text words) on 2026-10-31. Paths are relative to `research/cpiv/measurement/outputs/` unless stated.
 
-Status key: **Supported** = the named artefact shows it. **Open** = a provenance or verification step is still needed before the sentence is safe to submit.
+Status key: **Supported** = the named artifact shows it. **Open** = a provenance or verification step is still needed before the sentence is safe to submit.
 
 | # | Claim (manuscript location) | Evidence | Status |
 |:--|:--|:--|:--|
@@ -16,13 +16,13 @@ Status key: **Supported** = the named artefact shows it. **Open** = a provenance
 | 8 | Six declared rules were evaluated, one fails (§6.6). R3 and R6 run on the development seed (20261022) only; R1, R2, R4 and R5 span the 23 draws | `sweep/verdict.json`: R1, R2, R4, R5, R6 pass; R3 fails; `all_rules_passed: false`; `specifications.csv` and `study/manifest.json` seed 20261022 | Supported; R3 and R6 are single-seed results, stated as such in §6.6 |
 | 9 | The perturbation set does not dominate the result (§6.7; R6) | `sweep/verdict.json` rule R6 = PASS; `study/perturbations.csv` | Supported |
 | 10 | Funnel and abstention split: 894 attempted; 822 abstained (719 + 77 + 26); 72 certified; coverage about 8 per cent (§6.1, §6.3) | `study/funnel.md`: 894 attempted, 791 reach the tolerance stage; 72 = 894 − 822 (8.05 per cent) | Supported |
-| 11 | Spot and rate sensitivities are 8 and 6 times the certified error (§6.7) | `study/perturbations.csv` `mae_vs_truth_pp`: spot 0.0664, rate 0.0542; `study/study_summary.json` `error_profile.protocol_certified.mean_abs_error_pp` 0.00873. Ratios 7.6 and 6.2, reported as 8 and 6 | Supported (ratios recomputed; §6.7 wording not re-read) |
-| 12 | Surface-calibration secondary outcome (§6.9) | `study/study_summary.json` `secondary_outcome`: 296 raw contracts, 72 protocol contracts, 224 forgone, coverage retained 0.243; max slice surface change 2.23 pp | Supported (numbers read; §6.9 wording not re-read) |
+| 11 | Spot and rate sensitivities are 8 and 6 times the certified error (§6.7) | `study/perturbations.csv` `mae_vs_truth_pp`: spot 0.0664, rate 0.0542; `study/study_summary.json` `error_profile.protocol_certified.mean_abs_error_pp` 0.00873. Ratios 7.6 and 6.2, reported as 8 and 6 | Supported. Ratios 7.6 and 6.2 are rounded to 8 and 6 in §6.7; §6.7 wording checked against the perturbation table |
+| 12 | Surface-calibration secondary outcome (§6.9) | `study/study_summary.json` `secondary_outcome`: 296 raw contracts, 72 protocol contracts, 224 forgone, coverage retained 0.243; max slice surface change 2.23 pp | Supported. Numbers and §6.9 wording checked: 296 / 72 / 224 contracts, retained 0.243, slice change 2.23 pp against error 0.009 pp (about 255 times, so "more than two orders of magnitude" holds) |
 | 13 | Time-value and finite-shock refusals are exploratory only (§6.10) | `ablation/ablation_summary.json`, `ablation/ablation.csv`; labelled exploratory in the text | Supported (label); numbers not re-read |
-| 14 | The benchmark makes no market claim (§7.2 non-claims) | Text review; no market artefact is cited anywhere in the manuscript | Supported |
+| 14 | The benchmark makes no market claim (§7.2 non-claims) | Text review; no market artifact is cited anywhere in the manuscript | Supported |
 
 ## Open items before submission
 
 1. **Row 5 — provenance of the freeze.** Disclosed in §5.1 (provenance sentence added 2026-10-30). Repository history cannot show the pre-sweep order; only an external timestamp of the 2026-10-22 state could. Not a blocker for submission, but a reviewer can check it only from the stated dates.
 2. **Row 4 — common-set identity test.** Done: `test_certified_value_equals_raw_midpoint_on_common_set` passes.
-3. **Rows 11 and 12 — wording.** The numbers match. Read the §6.7 and §6.9 sentences once against the figures above.
+3. **Rows 11 and 12 — wording.** Checked on 2026-10-31: the numbers match, and §6.7 now separates the quote-side widening from the timing perturbation.

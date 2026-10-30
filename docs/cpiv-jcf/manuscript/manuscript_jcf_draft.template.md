@@ -887,8 +887,8 @@ synchronization tolerance, certified coverage falls to zero, and the
 protocol reports no measurement at all. This is correct behavior and worth
 pausing on: a stale underlying price, a completely routine feed condition,
 does not merely add noise to a CPIV, it destroys the measurement. A pipeline
-that does not check timestamps will still report numbers. Widening every
-quote by half a tick does comparable but smaller damage: certified coverage
+that does not check timestamps will still report numbers. The quote-side widening,
+every quote by half a tick, does comparable but smaller damage: certified coverage
 moves by {{study.perturbation.endpoint_outward.coverage_change_abs}}
 percentage points, because the endpoint range widens and the tolerance rule
 tightens.

@@ -43,16 +43,16 @@ package if the result breaks a stated limit.
 
 | Check | Result |
 |:--|:--|
-| Main text length (numbered Section 1 through Section 8, tables included) | 9 995 words — within the 10 000-word guidance; the same figure appears on the title page |
+| Main text length (numbered Section 1 through Section 8, tables included) | 9 973 words — within the 10 000-word guidance; the same figure appears on the title page |
 | Abstract | 198 words, one paragraph — within 150–200 |
 | Keywords | 6 — within 4–6 |
-| Key messages | 4, longest 67 characters — within 3–4 and 85 characters |
+| Key messages | 4, longest 71 characters — within 3–4 and 85 characters |
 | Tables | 7 in the main text, each with a one-sentence legend and a prose citation; 2 in the supplement |
 | Table geometry | every table's rows match its header width (a mismatch silently drops the last column) |
 | Figures | one, with a one-sentence legend and a prose citation; in this package as a 300 dpi PNG and a vector PDF, both hashed in the manifest |
 | References | 21, all cited in the text, all with DOIs where one exists, Chicago author-date in text with an APA list |
 | Anonymity | the author's name does not appear in the manuscript |
-| Rebuilt artefacts | `pytest tests -q` (full suite, run in the worktree on 2026-10-30): 269 passed; `ruff check research/cpiv/measurement scripts`: clean |
+| Rebuilt artifacts | `pytest tests -q` (full suite, run in the worktree on 2026-10-31): 269 passed; `ruff check research/cpiv/measurement scripts`: clean after the line-length fixes in `exploratory_seeds.py` |
 
 The checks are enforced by
 [manuscript_limits.py](../../../research/cpiv/measurement/manuscript_limits.py)

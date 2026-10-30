@@ -79,7 +79,8 @@ def run(seeds: tuple[int, ...]) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     for seed in seeds:
         coverages = _market_coverages(seed)
-        record: dict[str, Any] = {"seed": seed, "role": "development" if seed == verdict.DEVELOPMENT_SEED else "replication"}
+        role = "development" if seed == verdict.DEVELOPMENT_SEED else "replication"
+        record: dict[str, Any] = {"seed": seed, "role": role}
         record.update({f"R3_{key}": value for key, value in _r3(coverages).items()})
         record["R3_coverage_by_specification"] = coverages
         record.update({f"R6_{key}": value for key, value in _r6(seed).items()})
@@ -109,10 +110,14 @@ def _summary(records: list[dict[str, Any]]) -> dict[str, Any]:
         "R6_worst_change_max": max(worst),
         "development_seed_reproduces_declared": {
             "R3_minimum_over_median": next(
-                record["R3_minimum_over_median"] for record in records if record["role"] == "development"
+                record["R3_minimum_over_median"]
+                for record in records
+                if record["role"] == "development"
             ),
             "R6_worst_absolute_coverage_change": next(
-                record["R6_worst_absolute_coverage_change"] for record in records if record["role"] == "development"
+                record["R6_worst_absolute_coverage_change"]
+                for record in records
+                if record["role"] == "development"
             ),
         },
         "declared_tally_changed": False,
@@ -139,7 +144,8 @@ def main(argv: list[str] | None = None) -> None:
         }
         for record in records
     ]
-    with (output_dir / "exploratory_seed_draws.csv").open("w", newline="", encoding="utf-8") as handle:
+    draws_path = output_dir / "exploratory_seed_draws.csv"
+    with draws_path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=list(flat[0]))
         writer.writeheader()
         writer.writerows(flat)
