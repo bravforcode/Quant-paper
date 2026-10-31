@@ -257,13 +257,7 @@ therefore be tested against a counterfactual, because the common-set
 comparison is vacuous by construction (Section 2.5).
 
 ### 2.4 Declared baselines and the comparison that matters
-Five baselines are declared in the addendum. Section 6 scores three of them, the raw midpoint, the bound-filtered midpoint and the protocol; the endpoint interval and the parity residual are described only:
-the raw midpoint CPIV, with no filter beyond the existence of a finite root;
-the bound-filtered midpoint CPIV; the bid–ask endpoint interval, reported as
-an interval rather than a point; the parity residual, labeled throughout as
-algebraically dependent on the CPIV and so not an independent validation;
-and the abstention-aware protocol itself, with its certified subset, its
-abstentions and its funnel.
+Five baselines are declared in the addendum: the raw midpoint CPIV, with no filter beyond the existence of a finite root; the bound-filtered midpoint CPIV; the bid–ask endpoint interval, reported as an interval rather than a point; the parity residual, labeled throughout as algebraically dependent on the CPIV and so not an independent validation; and the abstention-aware protocol itself, with its certified subset, its abstentions and its funnel. Section 6 scores three of them: the raw midpoint, the bound-filtered midpoint and the protocol. The endpoint interval and the parity residual are described only.
 The comparison the paper is built around is between the fifth and the first,
 reported in two forms that must not be confused. On the **own set**, each
 method is evaluated on the pairs it can use: the protocol's own set is small
@@ -378,7 +372,7 @@ leg is computed and compared with the declared resolution scale, one tick by
 default. The rule separates "the option is too cheap to say anything about"
 from "the option says something, and the inversion recovers it".
 **The finite-shock rule.** A declared positive shock and a declared negative
-shock are applied to the midpoint of each leg, and every shocked price must
+shock, each one tick of the quote grid (0.01 in the base market, 0.05 in the coarse-tick specification), are applied to the midpoint of each leg, and every shocked price must
 produce a valid root. A pair failing under either sign has not been shown to
 be locally invertible, and is treated as unresolved.
 **The endpoint rule.** The CPIV implied by the four combinations of bid and
@@ -560,7 +554,7 @@ Harvey et al., 2016; Nosek et al., 2018), applied to one study.
 Every setting the protocol uses is a declared quantity, set out in the
 addendum and listed in Supplementary Table S2: the inversion map, the root
 bracket, the near-bound guard, the resolution scale, the synchronization
-tolerance, the tolerance grid and primary tolerance, the sign band, the
+tolerance, the tolerance grid and primary tolerance, the sign band (0.05 percentage points, below which a sign disagreement is not counted), the
 perturbation set, the period split and the inference unit. No setting is a
 free parameter of the analysis.
 
@@ -808,7 +802,7 @@ The tally (Table 5) is the output of `verdict.py`, which applies the rules of th
 | R4 | Coverage is non-decreasing in the certification tolerance | PASS |
 | R5 | The primary and holdout periods agree | PASS |
 | R6 | The perturbation set does not dominate the result | PASS |
-R3 and R6 are not computed over the replication draws; the sweep ran them on the development seed alone. An exploratory check outside the tally repeats both on all 23 replication seeds. R3 fails on every seed, because coarse tick, wide quotes and very wide quotes certify no pairs anywhere. R6 passes on every seed, with a worst shift of 0.08 to 0.10. The R3 failure belongs to the specification set, not to the development draw.
+R3 and R6 are not computed over the replication draws; the sweep ran them on the development seed alone. An exploratory check outside the tally repeats both on all 23 replication seeds. R3 fails on every seed, because coarse tick, wide quotes and very wide quotes certify no pairs anywhere. R6 passes on every seed, with a worst shift of 7.9 to 10.1 percentage points against a threshold of 15. The R3 failure belongs to the specification set, not to the development draw.
 
 **R1 passed.** The certified set's mean absolute error was below the
 day-block null mean in 23 of
@@ -924,7 +918,7 @@ certification would concentrate in a real market, which depends on that
 market's own smile, spreads and liquidity calendar.
 
 ### 6.9 The secondary outcome: what abstention costs a surface calibration
-In the development draw, the raw-midpoint input set contains
+Of the 889 pairs scored in the development draw, only the 60-day expiry slice supports a surface fit for both input sets. There the raw-midpoint input set contains
 296 contracts and the protocol's input set contains
 72, so the calibration retains
 24.3 % of the raw set and forgoes
@@ -1090,8 +1084,7 @@ No market data was used, licensed or otherwise. A market study is outside this p
 
 ## Use of artificial intelligence
 
-The author used Perplexity for deep research, and Claude (Anthropic) as an editing
-aid for the language of this manuscript and as a coding aid for the analysis code.
+The author used Perplexity for deep research, and Claude (Anthropic, model Haiku 5.5, October 2026) as an editing aid for the language of this manuscript and as a coding aid for the analysis code, the test suite and the manuscript build scripts. The pre-registration addendum was written by the author without AI assistance.
 No AI system generated a result, a number or a table: every number in this paper is
 produced by the released code from the released artifacts, and the manuscript build
 fails if any numeric slot in the text has no corresponding value in those artifacts.
