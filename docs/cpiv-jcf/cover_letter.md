@@ -77,5 +77,5 @@ I am happy to provide any further material the Journal requires.
 Sincerely,
 
 Phirawit Jitnarong
-[affiliation removed]
+Independent researcher
 [email removed]

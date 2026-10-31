@@ -541,7 +541,7 @@ which tolerance an analyst should use on a real one.
 No market-data pre-registration is part of this paper: its universe, sampling rule and tick convention depend on a vendor schema the study lacks. Without market data the paper can freeze the protocol and the instrument, which a separate addendum does: the generator specification, the
 protocol settings, the seed list, the specification grid, the nulls, the
 number of trials and the decision rules.
-The addendum and the sweep manifest are both dated 22 October 2026. The repository cannot confirm that order: the first commit on this paper's branch that records the addendum is dated 30 October, and an earlier commit dated 26 October adds the same file on another branch. Both git records postdate the manifest. The protocol is therefore *declared* in a dated addendum, not verified as pre-registered. The base-market study already run is the declared *development draw*, reported in full and excluded from the tally in Section 6.6 except for R3 and R6, which are computed on its seed. A later edit, dated 24 October, corrected a specification count (18 to 17) and changed no rule, seed or threshold.
+The addendum and the sweep manifest are both dated 22 October 2026. The repository cannot confirm that order: the first commit on this paper's branch that records the addendum is dated 30 October UTC, and an earlier commit dated 25 October UTC adds the same file on another branch. Both git records postdate the manifest. The protocol is therefore *declared* in a dated addendum, not verified as pre-registered. The base-market study already run is the declared *development draw*, reported in full and excluded from the tally in Section 6.6 except for R3 and R6, which are computed on its seed. A later edit, dated 24 October, corrected a specification count (18 to 17) and changed no rule, seed or threshold.
 `verdict.py` encodes the six
 rules and reads only the sweep outputs; the tally in Section 6.6 is its
 output. A code defect may be fixed after the declaration; a change to a rule, a
@@ -552,7 +552,7 @@ Harvey et al., 2016; Nosek et al., 2018), applied to one study.
 
 ### 5.2 The declared settings
 Every setting the protocol uses is a declared quantity, set out in the
-addendum and listed in Supplementary Table S2, which notes the two exceptions: the inversion map, the root
+addendum and listed in Supplementary Table S2, (the finite-shock size and the displacement definition are not in the addendum): the inversion map, the root
 bracket, the near-bound guard, the resolution scale, the synchronization
 tolerance, the tolerance grid and primary tolerance, the sign band (0.05 percentage points, below which a sign disagreement is not counted), the
 perturbation set, the period split and the inference unit. No setting is a
