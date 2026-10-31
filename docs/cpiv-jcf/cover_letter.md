@@ -78,4 +78,4 @@ Sincerely,
 
 Phirawit Jitnarong
 Independent researcher
-[email removed]
+nxme176@gmail.com
