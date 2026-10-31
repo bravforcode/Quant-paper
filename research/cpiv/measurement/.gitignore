@@ -1,0 +1,3 @@
+# The title page's contact fields live in contact.local.json, which is copied
+# from contact.example.json and kept out of the tree.
+contact.local.json

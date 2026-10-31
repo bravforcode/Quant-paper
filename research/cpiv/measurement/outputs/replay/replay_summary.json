@@ -1,0 +1,114 @@
+{
+  "attempted": 808,
+  "certified": 41,
+  "coverage_certified": 0.050742574257425746,
+  "coverage_identified": 0.7103960396039604,
+  "funnel": [
+    {
+      "count": 793,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9814356435643564,
+      "share_of_prior": 0.9814356435643564,
+      "stage": "contract"
+    },
+    {
+      "count": 778,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9628712871287128,
+      "share_of_prior": 0.9810844892812106,
+      "stage": "timing"
+    },
+    {
+      "count": 757,
+      "dominant_rejection_reason": "quote_invalid",
+      "share_of_attempted": 0.9368811881188119,
+      "share_of_prior": 0.9730077120822622,
+      "stage": "quote"
+    },
+    {
+      "count": 757,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.9368811881188119,
+      "share_of_prior": 1.0,
+      "stage": "input"
+    },
+    {
+      "count": 617,
+      "dominant_rejection_reason": "quote_invalid",
+      "share_of_attempted": 0.7636138613861386,
+      "share_of_prior": 0.8150594451783355,
+      "stage": "midpoint"
+    },
+    {
+      "count": 574,
+      "dominant_rejection_reason": "endpoint_incomplete",
+      "share_of_attempted": 0.7103960396039604,
+      "share_of_prior": 0.9303079416531604,
+      "stage": "endpoint"
+    },
+    {
+      "count": 574,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.7103960396039604,
+      "share_of_prior": 1.0,
+      "stage": "time_value"
+    },
+    {
+      "count": 574,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.7103960396039604,
+      "share_of_prior": 1.0,
+      "stage": "finite_shock"
+    },
+    {
+      "count": 574,
+      "dominant_rejection_reason": null,
+      "share_of_attempted": 0.7103960396039604,
+      "share_of_prior": 1.0,
+      "stage": "tolerance"
+    }
+  ],
+  "identified": 574,
+  "licence_mode": "synthetic-no-market-data",
+  "market_data_used": false,
+  "pairs_formed": 808,
+  "reconciliation": {
+    "attempted": 808,
+    "stage_counts": {
+      "contract": 793,
+      "endpoint": 574,
+      "finite_shock": 574,
+      "input": 757,
+      "midpoint": 617,
+      "quote": 757,
+      "time_value": 574,
+      "timing": 778,
+      "tolerance": 574
+    },
+    "terminal_counts": {
+      "contract_mismatch": 15,
+      "identified_outside_tolerance": 533,
+      "invalid_input": 161,
+      "partially_resolved": 40,
+      "resolved_within_tolerance": 41,
+      "timing_mismatch": 15,
+      "unresolved": 3
+    }
+  },
+  "rejections": {
+    "duplicate_key": 8,
+    "leg_not_quoted": 9,
+    "missing_required_field": 10,
+    "underlying_disagreement": 8,
+    "unknown_option_type": 11,
+    "unpaired_leg": 87,
+    "unparseable_number": 17,
+    "unparseable_timestamp": 10
+  },
+  "rows_parsed": 1719,
+  "rows_read": 1784,
+  "rows_rejected": 160,
+  "status": "vendor_shape_replay_only",
+  "vendor": "SYNTHETIC-SHAPE-0",
+  "warning": "Replay of a synthetic file shaped like a vendor feed. It tests the ingestion path, not the market, and it supports no market claim."
+}

@@ -1,0 +1,11 @@
+Specification,Certified coverage,Certified MAE (pp),Raw midpoint MAE (pp)
+base,8.1 %,0.009,0.532
+low_vol,8.1 %,0.008,0.441
+high_vol,8.1 %,0.009,0.038
+wide_quotes,0.0 %,—,0.622
+very_wide_quotes,0.0 %,—,0.710
+coarse_tick,0.0 %,—,1.161
+no_wide_sessions,9.6 %,0.008,0.512
+wide_strike_grid,8.1 %,0.010,0.731
+short_dated,0.0 %,—,1.771
+long_dated,16.0 %,0.008,0.037

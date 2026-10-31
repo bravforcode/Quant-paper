@@ -1,0 +1,154 @@
+{
+  "exploratory": true,
+  "licence_mode": "synthetic-no-market-data",
+  "pre_registered": false,
+  "refused_at_full_protocol": {
+    "contract": 2,
+    "endpoint": 77,
+    "midpoint": 5,
+    "quote": 8,
+    "timing": 11
+  },
+  "tolerance_pp": 0.1,
+  "variants": {
+    "full_protocol": {
+      "added_over_full": 0,
+      "attempted": 894,
+      "certified": 72,
+      "certified_share": 0.08053691275167785,
+      "error_added_pp": {
+        "n": 0
+      },
+      "error_certified_pp": {
+        "max_abs_error_pp": 0.024120190760357207,
+        "mean_abs_error_pp": 0.00872725611209068,
+        "mean_signed_error_pp": -0.0005005398843104433,
+        "median_abs_error_pp": 0.00736241754632494,
+        "n": 72,
+        "p75_abs_error_pp": 0.011767145123220413,
+        "p90_abs_error_pp": 0.01777038825571675,
+        "p95_abs_error_pp": 0.021411642595028372,
+        "p99_abs_error_pp": 0.023520224617138104,
+        "share_within_0.05_pp": 1.0,
+        "share_within_0.10_pp": 1.0,
+        "share_within_0.25_pp": 1.0,
+        "share_within_1.00_pp": 1.0
+      },
+      "skipped_stages": [],
+      "terminal_counts": {
+        "contract_mismatch": 2,
+        "identified_outside_tolerance": 719,
+        "invalid_input": 13,
+        "partially_resolved": 77,
+        "resolved_within_tolerance": 72,
+        "timing_mismatch": 11
+      }
+    },
+    "interval_only": {
+      "added_over_full": 0,
+      "attempted": 894,
+      "certified": 72,
+      "certified_share": 0.08053691275167785,
+      "error_added_pp": {
+        "n": 0
+      },
+      "error_certified_pp": {
+        "max_abs_error_pp": 0.024120190760357207,
+        "mean_abs_error_pp": 0.00872725611209068,
+        "mean_signed_error_pp": -0.0005005398843104433,
+        "median_abs_error_pp": 0.00736241754632494,
+        "n": 72,
+        "p75_abs_error_pp": 0.011767145123220413,
+        "p90_abs_error_pp": 0.01777038825571675,
+        "p95_abs_error_pp": 0.021411642595028372,
+        "p99_abs_error_pp": 0.023520224617138104,
+        "share_within_0.05_pp": 1.0,
+        "share_within_0.10_pp": 1.0,
+        "share_within_0.25_pp": 1.0,
+        "share_within_1.00_pp": 1.0
+      },
+      "skipped_stages": [
+        "FINITE_SHOCK",
+        "TIME_VALUE"
+      ],
+      "terminal_counts": {
+        "contract_mismatch": 2,
+        "identified_outside_tolerance": 719,
+        "invalid_input": 13,
+        "partially_resolved": 77,
+        "resolved_within_tolerance": 72,
+        "timing_mismatch": 11
+      }
+    },
+    "without_finite_shock": {
+      "added_over_full": 0,
+      "attempted": 894,
+      "certified": 72,
+      "certified_share": 0.08053691275167785,
+      "error_added_pp": {
+        "n": 0
+      },
+      "error_certified_pp": {
+        "max_abs_error_pp": 0.024120190760357207,
+        "mean_abs_error_pp": 0.00872725611209068,
+        "mean_signed_error_pp": -0.0005005398843104433,
+        "median_abs_error_pp": 0.00736241754632494,
+        "n": 72,
+        "p75_abs_error_pp": 0.011767145123220413,
+        "p90_abs_error_pp": 0.01777038825571675,
+        "p95_abs_error_pp": 0.021411642595028372,
+        "p99_abs_error_pp": 0.023520224617138104,
+        "share_within_0.05_pp": 1.0,
+        "share_within_0.10_pp": 1.0,
+        "share_within_0.25_pp": 1.0,
+        "share_within_1.00_pp": 1.0
+      },
+      "skipped_stages": [
+        "FINITE_SHOCK"
+      ],
+      "terminal_counts": {
+        "contract_mismatch": 2,
+        "identified_outside_tolerance": 719,
+        "invalid_input": 13,
+        "partially_resolved": 77,
+        "resolved_within_tolerance": 72,
+        "timing_mismatch": 11
+      }
+    },
+    "without_time_value": {
+      "added_over_full": 0,
+      "attempted": 894,
+      "certified": 72,
+      "certified_share": 0.08053691275167785,
+      "error_added_pp": {
+        "n": 0
+      },
+      "error_certified_pp": {
+        "max_abs_error_pp": 0.024120190760357207,
+        "mean_abs_error_pp": 0.00872725611209068,
+        "mean_signed_error_pp": -0.0005005398843104433,
+        "median_abs_error_pp": 0.00736241754632494,
+        "n": 72,
+        "p75_abs_error_pp": 0.011767145123220413,
+        "p90_abs_error_pp": 0.01777038825571675,
+        "p95_abs_error_pp": 0.021411642595028372,
+        "p99_abs_error_pp": 0.023520224617138104,
+        "share_within_0.05_pp": 1.0,
+        "share_within_0.10_pp": 1.0,
+        "share_within_0.25_pp": 1.0,
+        "share_within_1.00_pp": 1.0
+      },
+      "skipped_stages": [
+        "TIME_VALUE"
+      ],
+      "terminal_counts": {
+        "contract_mismatch": 2,
+        "identified_outside_tolerance": 719,
+        "invalid_input": 13,
+        "partially_resolved": 77,
+        "resolved_within_tolerance": 72,
+        "timing_mismatch": 11
+      }
+    }
+  }
+}

@@ -1,0 +1,763 @@
+{
+  "draws": [
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08053691275167785,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08053691275167785,
+        "long_dated": 0.1599552572706935,
+        "low_vol": 0.08053691275167785,
+        "no_wide_sessions": 0.09619686800894854,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08053691275167785
+      },
+      "R3_median_coverage": 0.08053691275167785,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.0727069351230425,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08053691275167785
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08053691275167785,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "development",
+      "seed": 20261022
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08361204013377926,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08361204013377926,
+        "long_dated": 0.16387959866220736,
+        "low_vol": 0.08361204013377926,
+        "no_wide_sessions": 0.10033444816053512,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08361204013377926
+      },
+      "R3_median_coverage": 0.08361204013377926,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06577480490523968,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08361204013377926
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08361204013377926,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20268941
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.07915273132664437,
+        "coarse_tick": 0.0,
+        "high_vol": 0.07915273132664437,
+        "long_dated": 0.15830546265328874,
+        "low_vol": 0.07915273132664437,
+        "no_wide_sessions": 0.09587513935340022,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.07915273132664437
+      },
+      "R3_median_coverage": 0.07915273132664437,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06577480490523968,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0011148272017837274,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.07915273132664437
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.07915273132664437,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20276860
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08685968819599109,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08685968819599109,
+        "long_dated": 0.1759465478841871,
+        "low_vol": 0.08685968819599109,
+        "no_wide_sessions": 0.10467706013363029,
+        "short_dated": 0.005567928730512249,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08685968819599109
+      },
+      "R3_median_coverage": 0.08685968819599109,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.05567928730512249,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08685968819599109
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08685968819599109,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20284779
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08156424581005586,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08156424581005586,
+        "long_dated": 0.15977653631284916,
+        "low_vol": 0.08156424581005586,
+        "no_wide_sessions": 0.09720670391061452,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08044692737430167
+      },
+      "R3_median_coverage": 0.08156424581005586,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.08044692737430167,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08156424581005586
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08156424581005586,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20292698
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08351893095768374,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08351893095768374,
+        "long_dated": 0.16481069042316257,
+        "low_vol": 0.08351893095768374,
+        "no_wide_sessions": 0.09910913140311804,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08240534521158129
+      },
+      "R3_median_coverage": 0.08351893095768374,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.08351893095768374,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08351893095768374
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08351893095768374,
+      "R6_worst_perturbation": "endpoint_outward",
+      "role": "replication",
+      "seed": 20300617
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08501118568232663,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08501118568232663,
+        "long_dated": 0.16890380313199105,
+        "low_vol": 0.08501118568232663,
+        "no_wide_sessions": 0.10067114093959731,
+        "short_dated": 0.0011185682326621924,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08501118568232663
+      },
+      "R3_median_coverage": 0.08501118568232663,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.0604026845637584,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08501118568232663
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08501118568232663,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20308536
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.07924107142857142,
+        "coarse_tick": 0.0,
+        "high_vol": 0.07924107142857142,
+        "long_dated": 0.16183035714285715,
+        "low_vol": 0.07924107142857142,
+        "no_wide_sessions": 0.09598214285714286,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.07924107142857142
+      },
+      "R3_median_coverage": 0.07924107142857142,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.05915178571428571,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0011160714285714385,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.07924107142857142
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.07924107142857142,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20316455
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08120133481646273,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08120133481646273,
+        "long_dated": 0.1635150166852058,
+        "low_vol": 0.08120133481646273,
+        "no_wide_sessions": 0.09788654060066741,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08120133481646273
+      },
+      "R3_median_coverage": 0.08120133481646273,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.07230255839822024,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08120133481646273
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08120133481646273,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20324374
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.07950727883538634,
+        "coarse_tick": 0.0,
+        "high_vol": 0.07950727883538634,
+        "long_dated": 0.1601343784994401,
+        "low_vol": 0.07950727883538634,
+        "no_wide_sessions": 0.09630459126539753,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.06942889137737962
+      },
+      "R3_median_coverage": 0.07950727883538634,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.07390817469204927,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.07950727883538634
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.07950727883538634,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20332293
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08240534521158129,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08240534521158129,
+        "long_dated": 0.1603563474387528,
+        "low_vol": 0.08240534521158129,
+        "no_wide_sessions": 0.09799554565701558,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08240534521158129
+      },
+      "R3_median_coverage": 0.08240534521158129,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06792873051224943,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08240534521158129
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08240534521158129,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20340212
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.07906458797327394,
+        "coarse_tick": 0.0,
+        "high_vol": 0.07906458797327394,
+        "long_dated": 0.15924276169265034,
+        "low_vol": 0.07906458797327394,
+        "no_wide_sessions": 0.0957683741648107,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.07906458797327394
+      },
+      "R3_median_coverage": 0.07906458797327394,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.0757238307349666,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.07906458797327394
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.07906458797327394,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20348131
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08491620111731843,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08491620111731843,
+        "long_dated": 0.16312849162011173,
+        "low_vol": 0.08491620111731843,
+        "no_wide_sessions": 0.10167597765363129,
+        "short_dated": 0.0011173184357541898,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08491620111731843
+      },
+      "R3_median_coverage": 0.08491620111731843,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06368715083798882,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08491620111731843
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08491620111731843,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20356050
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08120133481646273,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08120133481646273,
+        "long_dated": 0.1635150166852058,
+        "low_vol": 0.08120133481646273,
+        "no_wide_sessions": 0.09788654060066741,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.07341490545050056
+      },
+      "R3_median_coverage": 0.08120133481646273,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.08008898776418243,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08120133481646273
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08120133481646273,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20363969
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.09810479375696766,
+        "coarse_tick": 0.0,
+        "high_vol": 0.10033444816053512,
+        "long_dated": 0.18729096989966554,
+        "low_vol": 0.09810479375696766,
+        "no_wide_sessions": 0.11817168338907469,
+        "short_dated": 0.014492753623188406,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.09810479375696766
+      },
+      "R3_median_coverage": 0.09810479375696766,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.04570791527313266,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.09810479375696766
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.09810479375696766,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20371888
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08138238573021182,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08138238573021182,
+        "long_dated": 0.1605351170568562,
+        "low_vol": 0.08138238573021182,
+        "no_wide_sessions": 0.09698996655518395,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08138238573021182
+      },
+      "R3_median_coverage": 0.08138238573021182,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.07692307692307693,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08138238573021182
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08138238573021182,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20379807
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08240534521158129,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08240534521158129,
+        "long_dated": 0.16258351893095768,
+        "low_vol": 0.08240534521158129,
+        "no_wide_sessions": 0.09799554565701558,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.07683741648106904
+      },
+      "R3_median_coverage": 0.08240534521158129,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.08129175946547884,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08240534521158129
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08240534521158129,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20387726
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.10133630289532294,
+        "coarse_tick": 0.0,
+        "high_vol": 0.10133630289532294,
+        "long_dated": 0.18930957683741648,
+        "low_vol": 0.10133630289532294,
+        "no_wide_sessions": 0.12249443207126949,
+        "short_dated": 0.01893095768374165,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.10133630289532294
+      },
+      "R3_median_coverage": 0.10133630289532294,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.05456570155902005,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.10133630289532294
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.10133630289532294,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20395645
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08129175946547884,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08129175946547884,
+        "long_dated": 0.1603563474387528,
+        "low_vol": 0.08129175946547884,
+        "no_wide_sessions": 0.09688195991091314,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08129175946547884
+      },
+      "R3_median_coverage": 0.08129175946547884,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06904231625835189,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08129175946547884
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08129175946547884,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20403564
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08734602463605823,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08734602463605823,
+        "long_dated": 0.16685330347144456,
+        "low_vol": 0.08734602463605823,
+        "no_wide_sessions": 0.10302351623740201,
+        "short_dated": 0.007838745800671893,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08734602463605823
+      },
+      "R3_median_coverage": 0.08734602463605823,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.05263157894736842,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08734602463605823
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08734602463605823,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20411483
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08138238573021182,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08138238573021182,
+        "long_dated": 0.1616499442586399,
+        "low_vol": 0.08138238573021182,
+        "no_wide_sessions": 0.09810479375696766,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08138238573021182
+      },
+      "R3_median_coverage": 0.08138238573021182,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06911928651059086,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08138238573021182
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08138238573021182,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20419402
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.0802675585284281,
+        "coarse_tick": 0.0,
+        "high_vol": 0.0802675585284281,
+        "long_dated": 0.16276477146042365,
+        "low_vol": 0.0802675585284281,
+        "no_wide_sessions": 0.09698996655518395,
+        "short_dated": 0.0,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.0802675585284281
+      },
+      "R3_median_coverage": 0.0802675585284281,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.06800445930880714,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0011148272017837274,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.0802675585284281
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.0802675585284281,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20427321
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.10044642857142858,
+        "coarse_tick": 0.0,
+        "high_vol": 0.10491071428571429,
+        "long_dated": 0.19419642857142858,
+        "low_vol": 0.10044642857142858,
+        "no_wide_sessions": 0.11941964285714286,
+        "short_dated": 0.018973214285714284,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.10044642857142858
+      },
+      "R3_median_coverage": 0.10044642857142858,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.03906250000000001,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.10044642857142858
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.10044642857142858,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20435240
+    },
+    {
+      "R3_coverage_by_specification": {
+        "base": 0.08268156424581005,
+        "coarse_tick": 0.0,
+        "high_vol": 0.08268156424581005,
+        "long_dated": 0.16312849162011173,
+        "low_vol": 0.08268156424581005,
+        "no_wide_sessions": 0.09944134078212291,
+        "short_dated": 0.0011173184357541898,
+        "very_wide_quotes": 0.0,
+        "wide_quotes": 0.0,
+        "wide_strike_grid": 0.08268156424581005
+      },
+      "R3_median_coverage": 0.08268156424581005,
+      "R3_minimum_coverage": 0.0,
+      "R3_minimum_over_median": 0.0,
+      "R3_passed": false,
+      "R6_coverage_change_by_perturbation": {
+        "endpoint_outward": -0.07374301675977653,
+        "half_tick_resolution": 0.0,
+        "rate_shift_5bp": 0.0,
+        "relaxed_sync_5s": 0.0,
+        "spot_shift_1bp": 0.0,
+        "stale_spot_3s": -0.08268156424581005
+      },
+      "R6_passed": true,
+      "R6_worst_absolute_coverage_change": 0.08268156424581005,
+      "R6_worst_perturbation": "stale_spot_3s",
+      "role": "replication",
+      "seed": 20443159
+    }
+  ],
+  "summary": {
+    "R3_minimum_over_median_max": 0.0,
+    "R3_minimum_over_median_median": 0.0,
+    "R3_minimum_over_median_min": 0.0,
+    "R3_pass_count": 0,
+    "R6_pass_count": 23,
+    "R6_worst_change_max": 0.10133630289532294,
+    "R6_worst_change_median": 0.08240534521158129,
+    "declared_tally_changed": false,
+    "development_seed_reproduces_declared": {
+      "R3_minimum_over_median": 0.0,
+      "R6_worst_absolute_coverage_change": 0.08053691275167785
+    },
+    "replication_seeds": 23
+  }
+}
