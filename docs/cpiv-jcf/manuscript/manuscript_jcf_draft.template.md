@@ -681,9 +681,8 @@ over {{study.error.protocol_certified.n}} pairs, a factor of
 unrounded values.
 That number is a *selection* number. On the common set of
 {{study.own.protocol_certified.n}} pairs the two methods are numerically
-identical and the difference in mean absolute error is exactly zero. The
-informative comparison is therefore not the one a reader will instinctively
-make, and Section 6.4 makes it.
+identical and the difference in mean absolute error is exactly zero, so the
+informative comparison is the one Section 6.4 makes.
 The error profile in Table 2 shows the shape the mean hides. The raw
 midpoint's median absolute error is
 {{study.error.raw_midpoint.median}} percentage points, so its mean of
@@ -701,9 +700,8 @@ The identified set, at
 {{study.own.protocol_identified.n}} pairs, sits between the two: its mean
 absolute error is {{study.error.protocol_identified.mae}}, and its share
 inside 0.10 percentage points is
-{{study.error.protocol_identified.within_0.10}} %. The protocol produces a
-graded statement — certified, identified but imprecise, unresolved — rather
-than a binary one, and the grading is informative.
+{{study.error.protocol_identified.within_0.10}} %. The protocol's output is
+graded (certified, identified but imprecise, unresolved), not binary.
 
 **Table 2. Error profile in the benchmark, development draw**
 
@@ -798,7 +796,7 @@ Median certified coverage is {{sweep.coverage_certified.median}} %: a stable yie
 
 ### 6.6 The declared tally, including the failure
 
-The tally (Table 5) is the output of `verdict.py`, which applies the rules of the addendum to the sweep outputs and to nothing else. The development draw is excluded from the tally except for R3 and R6, which are computed on its seed (below).
+The tally (Table 5) is the output of `verdict.py`, which applies the rules of the addendum to the sweep outputs and to nothing else.
 
 **Table 5. The declared rule tally**
 
@@ -974,9 +972,8 @@ pairs, and it is not selecting a lucky day.
 **The protocol's own-set advantage is a selection effect, and the paper says
 so.** The common-set identity is reported as exactly zero rather than as a
 small number, and the frontier p-values sit beside every own-set comparison.
-The distinction between "this method is better" and "this method selected
-better data" is the difference between a reproducible method and a result
-that depends on the analyst's discretion.
+Distinguishing a better method from a better-selected sample is what keeps
+the result reproducible.
 **The thresholds can be fixed before any market data is read.** The addendum,
 dated 22 October 2026, the same day as the sweep manifest, fixes the generator, the settings, the seeds, the specifications, the nulls and the rules; Section 5.1 gives the provenance.
 **What is not established is any market claim.** The benchmark contains no

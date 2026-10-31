@@ -1,6 +1,6 @@
 # Claim–evidence matrix — JCF submission
 
-Checked against the rebuilt manuscript (`manuscript_jcf_draft.md`, 9,973 main-text words) on 2026-10-31. Paths are relative to `research/cpiv/measurement/outputs/` unless stated.
+Checked against the rebuilt manuscript (`manuscript_jcf_draft.md`, 9,921 main-text words) on 2026-10-31. Paths are relative to `research/cpiv/measurement/outputs/` unless stated.
 
 Status key: **Supported** = the named artifact shows it. **Open** = a provenance or verification step is still needed before the sentence is safe to submit.
 
