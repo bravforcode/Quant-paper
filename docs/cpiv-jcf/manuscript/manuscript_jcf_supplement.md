@@ -48,7 +48,7 @@ are not typeset with the article; they are published online alongside it.*
 | Period split | primary = days 0–14, holdout = days 15–29 |
 | Inference unit | underlying-day block, 2 000 resamples, seed 20261022 |
 
-*Note: every value is declared in the addendum, dated 22 October 2026, the same day as the sweep manifest; Section 5.1 gives the provenance.*
+*Note: the settings are declared in the addendum, dated 22 October 2026, except two. The finite shock is one tick of the quote grid; it is set in the protocol code and stated in Section 3.3, and the addendum does not list it. The displacement definition is in the preregistration document, not the addendum. Section 5.1 gives the provenance.*
 
 ## Appendix A. The protocol and the instrument in one page
 

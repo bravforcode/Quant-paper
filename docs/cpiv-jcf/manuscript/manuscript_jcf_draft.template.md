@@ -159,7 +159,7 @@ Answering that requires a counterfactual that respects the dependence in the
 data, and this paper constructs two size-matched nulls for each tolerance.
 
 ### 1.4 Why the validation is synthetic
-The obvious way to answer the previous question is with real quotes. This study does not use them. Option quotes with quote-level timestamps are licensed, no license permitting publication of results derived from them was obtained, and so no market data enters the paper. Options market data is not freely redistributable, and tables derived from quote data one may not redistribute cannot be published.
+The obvious way to answer the previous question is with real quotes. This study does not use them. Option quotes with quote-level timestamps are licensed, no license permitting publication of results derived from them was obtained, and so no market data enters the paper. Options market data is not freely redistributable.
 The alternative taken here is to make the *method* the object of validation
 and to give the method a test a real market could not have provided. A
 synthetic market can be constructed in which the true call–put implied
@@ -264,7 +264,7 @@ method is evaluated on the pairs it can use: the protocol's own set is small
 and accurate, the raw midpoint's is large and inaccurate, and the difference
 is the selection effect. On the **common set**, both are evaluated on the
 pairs they can both use, the values are identical, and the difference is
-exactly zero — reported as exactly zero rather than as a small number.
+exactly zero.
 
 ### 2.5 The counterfactual: size-matched random subsets
 Suppose the protocol certifies *k* of the *n* scored pairs. Its own-set mean
@@ -541,7 +541,7 @@ which tolerance an analyst should use on a real one.
 No market-data pre-registration is part of this paper: its universe, sampling rule and tick convention depend on a vendor schema the study lacks. Without market data the paper can freeze the protocol and the instrument, which a separate addendum does: the generator specification, the
 protocol settings, the seed list, the specification grid, the nulls, the
 number of trials and the decision rules.
-The addendum and the sweep manifest are both dated 22 October 2026. Git first records it on 26 October, after the sweep, so the repository cannot show which came first. The protocol is therefore *declared* in a dated addendum, not verified as pre-registered. The base-market study already run is the declared *development draw*, reported in full and excluded from the tally in Section 6.6 except for R3 and R6, which are computed on its seed. A later edit, dated 24 October, corrected a specification count (18 to 17) and changed no rule, seed or threshold.
+The addendum and the sweep manifest are both dated 22 October 2026. The repository cannot confirm that order: the first commit on this paper's branch that records the addendum is dated 30 October, and an earlier commit dated 26 October adds the same file on another branch. Both git records postdate the manifest. The protocol is therefore *declared* in a dated addendum, not verified as pre-registered. The base-market study already run is the declared *development draw*, reported in full and excluded from the tally in Section 6.6 except for R3 and R6, which are computed on its seed. A later edit, dated 24 October, corrected a specification count (18 to 17) and changed no rule, seed or threshold.
 `verdict.py` encodes the six
 rules and reads only the sweep outputs; the tally in Section 6.6 is its
 output. A code defect may be fixed after the declaration; a change to a rule, a
@@ -552,7 +552,7 @@ Harvey et al., 2016; Nosek et al., 2018), applied to one study.
 
 ### 5.2 The declared settings
 Every setting the protocol uses is a declared quantity, set out in the
-addendum and listed in Supplementary Table S2: the inversion map, the root
+addendum and listed in Supplementary Table S2, which notes the two exceptions: the inversion map, the root
 bracket, the near-bound guard, the resolution scale, the synchronization
 tolerance, the tolerance grid and primary tolerance, the sign band (0.05 percentage points, below which a sign disagreement is not counted), the
 perturbation set, the period split and the inference unit. No setting is a
@@ -687,8 +687,8 @@ raw-midpoint pairs inside 0.10 percentage points
 is {{study.error.raw_midpoint.within_0.10}} %, against
 {{study.error.protocol_certified.within_0.10}} % for the certified subset,
 whose maximum absolute error is {{study.error.protocol_certified.max}}. The
-tail is not noise smeared around an estimate; it is a set of pairs where the
-midpoint is simply not a measurement, and no downstream consumer can tell
+tail is a set of pairs where the midpoint is not a measurement, and no
+downstream consumer can tell
 which those are.
 The identified set, at
 {{study.own.protocol_identified.n}} pairs, sits between the two: its mean
@@ -754,7 +754,7 @@ certified set is far below both nulls, and the add-one p-values are
 | 0.15 | {{study.frontier.0_15.n}} | {{study.frontier.0_15.coverage}} % | {{study.frontier.0_15.mae}} | {{study.frontier.0_15.abstained_mae}} | {{study.frontier.0_15.null_mean}} | {{study.frontier.0_15.block_null_mean}} | {{study.frontier.0_15.p_pair}} | {{study.frontier.0_15.p_block}} |
 | 0.25 | {{study.frontier.0_25.n}} | {{study.frontier.0_25.coverage}} % | {{study.frontier.0_25.mae}} | {{study.frontier.0_25.abstained_mae}} | {{study.frontier.0_25.null_mean}} | {{study.frontier.0_25.block_null_mean}} | {{study.frontier.0_25.p_pair}} | {{study.frontier.0_25.p_block}} |
 
-*Note: each null draws a subset of exactly the certified size from the same scored universe, over {{sweep.frontier_trials}} Monte Carlo trials. The day-block null draws whole underlying-days with replacement. The p-values are add-one estimates. The 0.05 pp row is omitted because no pair is certified at that tolerance in this draw. Coverage is the scored-universe share; Section 6.3 reports the share of attempted. The rows are grid points plus two intermediate points of the seven-point axis in Supplementary B.3.*
+*Note: each null draws a subset of exactly the certified size from the same scored universe, over {{sweep.frontier_trials}} Monte Carlo trials. The day-block null draws whole underlying-days with replacement. The p-values are add-one estimates. The 0.05 pp row is omitted because no pair is certified at that tolerance in this draw. Coverage is the scored-universe share; Section 6.3 reports the share of attempted. Supplementary B.3 gives the full axis.*
 
 ![**Figure 1.** (a) Certified mean absolute error against the certification
 tolerance, with the pair-null 5th to 95th percentile band and the day-block
@@ -802,7 +802,7 @@ The tally (Table 5) is the output of `verdict.py`, which applies the rules of th
 | R4 | Coverage is non-decreasing in the certification tolerance | {{verdict.R4.passed}} |
 | R5 | The primary and holdout periods agree | {{verdict.R5.passed}} |
 | R6 | The perturbation set does not dominate the result | {{verdict.R6.passed}} |
-R3 and R6 are not computed over the replication draws; the sweep ran them on the development seed alone. An exploratory check outside the tally repeats both on all 23 replication seeds. R3 fails on every seed, because coarse tick, wide quotes and very wide quotes certify no pairs anywhere. R6 passes on every seed, with a worst shift of 7.9 to 10.1 percentage points against a threshold of 15. The R3 failure belongs to the specification set, not to the development draw.
+R3 and R6 are computed on the development seed alone. Addendum A1.1 requires every rule to be evaluated on the 23 replication seeds and excludes the development draw from every rule, so this departs from the declaration. An exploratory check outside the tally, run after the tally and therefore post hoc, repeats both on all 23 replication seeds. R3 fails on every seed, because coarse tick, wide quotes and very wide quotes certify no pairs anywhere. R6 passes on every seed, with a worst shift of 7.9 to 10.1 percentage points against a threshold of 15. On the development seed, base certified coverage is 8.1 per cent (Table 6), so no perturbation can lower it by more than 8.1 points; the stale-timestamp perturbation does so completely. R6 can therefore fail on that seed only through a rise above about 23 per cent.
 
 **R1 passed.** The certified set's mean absolute error was below the
 day-block null mean in {{verdict.R1.below_block_null}} of
@@ -813,7 +813,7 @@ That is the substantive result: the certified set is better, not merely smaller.
 certified set's own-set error was
 below the raw midpoint's in {{verdict.R2.better}} of
 {{verdict.R2.evaluable}} draws, against a required 16.
-**R3 failed.** It is reported as prominently as the passes. The rule required the minimum
+**R3 failed.** The rule required the minimum
 certified coverage across the ten market specifications to be at least half
 the median coverage. The observed ratio is
 {{verdict.R3.minimum_over_median}}, with a minimum coverage of
@@ -895,8 +895,7 @@ certified subset's own error of
 {{study.error.protocol_certified.mae}}. This is an important and
 slightly uncomfortable finding: the protocol certifies a pair as determined
 with respect to the *quote* uncertainty and is silent about the
-*model-input* uncertainty, which in these units is larger. The certification
-is a statement about the quotes, not about the inputs. The
+*model-input* uncertainty, which in these units is larger. The
 **protocol-setting** perturbations, by contrast, change nothing here: the
 resolution scale is not binding at the base market's microstructure,
 consistent with the endpoint stage, not the time-value stage, being where
@@ -908,8 +907,7 @@ development draw it is confined to the 60-day maturity, to pairs quoted at a
 single-tick half-spread, and to the three central strikes; it is zero in
 every wing bucket, at 14 and 30 days, at half-spreads of two ticks or more,
 and among true spreads below 0.1 percentage points. Table S1 in the
-supplementary material reports the full cross-tabulation, with the raw
-midpoint's error in each cell for comparison.
+supplementary material gives the full cross-tabulation.
 The strata are also the result most likely to be over-read. They are
 computed *in the benchmark*, against a truth defined by the benchmark's
 model. A certified set concentrated near the money is evidence that the
@@ -927,8 +925,7 @@ log-moneyness per expiry slice, the two surfaces differ by at most
 {{secondary.max_slice_surface_change}} percentage points of CPIV, more than two
 orders of magnitude larger than the certified subset's own measurement
 error of {{study.error.protocol_certified.mae}}. The comparison is
-descriptive only: the paper makes no claim that either surface is better
-specified, better behaved or more profitable.
+descriptive: neither surface is claimed to be better specified or more profitable.
 Abstaining on {{secondary.coverage_forgone}} % of the contracts moves the
 fitted surface by more than the measurement error of either set, and a
 practitioner who silently substituted one for the other would not know it.
@@ -1084,7 +1081,7 @@ No market data was used, licensed or otherwise. A market study is outside this p
 
 ## Use of artificial intelligence
 
-The author used Perplexity for deep research, and Claude (Anthropic, model Haiku 5.5, October 2026) as an editing aid for the language of this manuscript and as a coding aid for the analysis code, the test suite and the manuscript build scripts. The pre-registration addendum was written by the author without AI assistance.
+The author used Perplexity for deep research, and Claude (Anthropic, model Haiku 5.5, October 2026) as an editing aid for the language of this manuscript and as a coding aid for the analysis code, the test suite and the manuscript build scripts. The addendum was written by the author without AI assistance.
 No AI system generated a result, a number or a table: every number in this paper is
 produced by the released code from the released artifacts, and the manuscript build
 fails if any numeric slot in the text has no corresponding value in those artifacts.

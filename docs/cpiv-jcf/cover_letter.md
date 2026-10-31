@@ -1,16 +1,5 @@
 # Cover letter — Journal of Computational Finance
 
-> **No addressee and no reviewer suggestions, by instruction.** The letter
-> names no one and carries no suggested reviewers, so there is nothing to
-> look up and nothing to invent. The signature block comes from the title
-> page; "New submission" is from the package README, which records that
-> nothing here has been uploaded; the availability statement is drawn from
-> the manuscript's Data and code availability section. Written in the first
-> person because the paper is single-authored. Delete this note before
-> sending.
-
----
-
 I am pleased to submit my manuscript, **"When Is a Call–Put Implied-Volatility
 Spread Measurable? An Abstention-Aware Protocol Validated Against a Known
 Truth,"** for consideration in the *Journal of Computational Finance*.
@@ -24,7 +13,7 @@ measurement at all — it is an artifact of quote width, tick size, maturity and
 moneyness — and that the honest output of a measurement procedure is a label,
 not a number.
 
-The paper contributes a pre-registered synthetic validation of an
+The paper contributes a synthetic validation, under a dated addendum, of an
 abstention-aware protocol that, for every call–put pair, either certifies a
 CPIV at a declared tolerance or declines to answer. Because the generator
 defines a true spread before any quote exists, the study reports **accuracy** —
@@ -41,12 +30,13 @@ believe all three are of interest to a computational readership:
    smaller subset would have done as well. I answer this with two nulls — a
    pair null drawn uniformly over the scored universe, and a day-block null
    that preserves within-day dependence — and report the conservative block
-   null as primary. The certified subset beat both nulls in all 23 replication
-   draws. The method is general: it applies to any selection rule, not only
-   to CPIV.
+   null as primary. The certified subset beat the block null in all 23
+   replication draws. The method is general: it applies to any selection rule,
+   not only to CPIV.
 
-2. **A pre-registered failure, reported as such.** Six decision rules were
-   frozen before the replication sweep ran. Five passed. One failed: coverage
+2. **A declared failure, reported as such.** Six decision rules were declared
+   in a dated addendum; Section 5.1 sets out what that does and does not
+   establish. Five passed and one failed (R3). The failure is that coverage
    depends strongly on quote microstructure and falls towards zero on
    coarse-tick markets. I report this with the same prominence as the passes,
    because it is the result with the longest reach — a protocol whose coverage
@@ -75,7 +65,8 @@ instrument defined by the generator before any quote exists. The instrument,
 the protocol, the replication sweep, the decision-rule tally and the
 manuscript build are all implemented in code, and run manifests record the
 configuration, the seed, the environment and the output hashes of every run
-reported here. The code and the aggregate run artefacts — the study summary,
+reported here. The AI-use statement in the manuscript discloses the assistance
+used for the language and for the code. The code and the aggregate run artefacts — the study summary,
 the per-draw sweep outputs, the specification grid and the rule tally — are
 available from the author for review and will be deposited in a public
 repository on acceptance. No licensed market data was used, and no result in

@@ -43,7 +43,7 @@ package if the result breaks a stated limit.
 
 | Check | Result |
 |:--|:--|
-| Main text length (numbered Section 1 through Section 8, tables included) | 9 921 words — within the 10 000-word guidance; the same figure appears on the title page |
+| Main text length (numbered Section 1 through Section 8, tables included) | 9 983 words — within the 10 000-word guidance; the same figure appears on the title page |
 | Abstract | 198 words, one paragraph — within 150–200 |
 | Keywords | 6 — within 4–6 |
 | Key messages | 4, longest 71 characters — within 3–4 and 85 characters |
